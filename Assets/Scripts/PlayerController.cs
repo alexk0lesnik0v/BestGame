@@ -1,3 +1,4 @@
+using UnityEditor.Search;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -43,6 +44,11 @@ public class PlayerController : MonoBehaviour
         {
             Run();
         }
+
+        if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt))
+        {
+            Sit();
+        }
         
         float m_deltaX = Input.GetAxis("Horizontal") * m_moveSpeed * Time.deltaTime;
         float m_deltaZ = Input.GetAxis("Vertical") * m_moveSpeed * Time.deltaTime;
@@ -55,6 +61,11 @@ public class PlayerController : MonoBehaviour
         float m_rotationY = transform.localEulerAngles.y + m_delta;
         
         transform.localEulerAngles = new Vector3(m_rotationX, m_rotationY, 0);
+    }
+
+    private void Sit()
+    {
+        
     }
 
     private void Run()
