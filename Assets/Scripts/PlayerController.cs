@@ -39,8 +39,28 @@ public class PlayerController : MonoBehaviour
             m_rigidbody.AddForce(Vector3.up * m_jumpVelocity, ForceMode.Impulse);
         }
 
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            Run();
+        }
+        
         float m_deltaX = Input.GetAxis("Horizontal") * m_moveSpeed * Time.deltaTime;
         float m_deltaZ = Input.GetAxis("Vertical") * m_moveSpeed * Time.deltaTime;
+        transform.Translate(m_deltaX, 0, m_deltaZ);
+
+        m_rotationX -= Input.GetAxis("Mouse Y") * m_rotationSpeedVer;
+        m_rotationX = Mathf.Clamp(m_rotationX, m_minVert, m_maxVert);
+
+        float m_delta = Input.GetAxis("Mouse X") * m_rotationSpeedHor;
+        float m_rotationY = transform.localEulerAngles.y + m_delta;
+        
+        transform.localEulerAngles = new Vector3(m_rotationX, m_rotationY, 0);
+    }
+
+    private void Run()
+    {
+        float m_deltaX = Input.GetAxis("Horizontal") * m_moveSpeed * 2 * Time.deltaTime;
+        float m_deltaZ = Input.GetAxis("Vertical") * m_moveSpeed * 2 * Time.deltaTime;
         transform.Translate(m_deltaX, 0, m_deltaZ);
 
         m_rotationX -= Input.GetAxis("Mouse Y") * m_rotationSpeedVer;
