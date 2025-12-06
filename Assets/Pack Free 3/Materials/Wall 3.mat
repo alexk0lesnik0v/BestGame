@@ -109,7 +109,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _UvTiling: {r: 10, g: 10, b: 0, a: 0}
+    - _UvTiling: {r: 20, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6435844064304313600
