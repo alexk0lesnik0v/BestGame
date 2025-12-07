@@ -9,11 +9,12 @@ namespace Enemies
     {
         [SerializeField] private int m_health = 1;
         
-        [SerializeField] private Character m_player;
+        private Character m_player;
         private NavMeshAgent m_agent;
       
         void Start()
         {
+            m_player  = FindObjectOfType<Character>();
             m_agent = GetComponent<NavMeshAgent>();
         }
         
