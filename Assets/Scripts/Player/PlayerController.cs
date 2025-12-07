@@ -1,10 +1,11 @@
 ﻿using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player
 {
-    
+    [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private CharacterController m_characterController;
@@ -12,20 +13,27 @@ namespace Player
         [SerializeField] private float m_currentSpeed;
         [SerializeField] private float m_walkSpeed = 5f;
         [SerializeField] private float m_sprintSpeed = 10f;
+        [SerializeField] private float m_jumpSpeed = 2.5f;
+        [SerializeField] private float m_gravity = -9.81f;
 
         private Vector2 m_move;
+        private Vector3 m_movement;
+        private bool m_isJump = false;
 
         private void Start()
         {
+            m_characterController =  GetComponent<CharacterController>();
             m_currentSpeed = m_walkSpeed;
             
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-        
+       
         public void OnMove(InputValue inputValue)
         {
             m_move =  inputValue.Get<Vector2>();
+            m_movement.x = m_move.x;
+            m_movement.z = m_move.y;
         }
         
         public void OnSprint(InputValue inputValue)
@@ -40,9 +48,30 @@ namespace Player
             }
         }
 
+        public void OnJump(InputValue inputValue)
+        {
+            Debug.Log(inputValue.Get<float>());
+            if (m_characterController.isGrounded && !m_isJump) m_isJump = true;
+        }
+
         private void Update()
         {
-            m_characterController.Move((GetForward() * m_move.y + GetRight() * m_move.x) * Time.deltaTime * m_currentSpeed);
+            m_characterController.Move((GetForward() * m_movement.z + GetRight() * m_movement.x + GetUp() * m_movement.y) * Time.deltaTime * m_currentSpeed);
+           
+            if (m_characterController.isGrounded)
+            {
+                m_movement.y = m_gravity * 0.1f;
+
+                if (m_isJump)
+                {
+                    m_movement.y = m_jumpSpeed;
+                    m_isJump = false;
+                }
+            }
+            else
+            {
+                m_movement.y += m_gravity * Time.deltaTime;
+            }
         }
 
         private Vector3 GetForward()
@@ -59,6 +88,15 @@ namespace Player
             right.y = 0;
             
             return right.normalized;
+        }
+        
+        private Vector3 GetUp()
+        {
+            Vector3 up = m_cinemachineCamera.transform.up;
+            up.z = 0;
+            up.x = 0;
+            
+            return up.normalized;
         }
     }
 }
