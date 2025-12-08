@@ -15,15 +15,19 @@ namespace Player
         [SerializeField] private float m_sprintSpeed = 10f;
         [SerializeField] private float m_jumpSpeed = 2.5f;
         [SerializeField] private float m_gravity = -9.81f;
+        [SerializeField] private float m_crouch = 0.6f;
 
         private Vector2 m_move;
         private Vector3 m_movement;
         private bool m_isJump = false;
+        private bool m_isCrouch = false;
+        private float m_playerHeight;
 
         private void Start()
         {
             m_characterController =  GetComponent<CharacterController>();
             m_currentSpeed = m_walkSpeed;
+            m_playerHeight = m_characterController.height;
             
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -38,7 +42,7 @@ namespace Player
         
         public void OnSprint(InputValue inputValue)
         {
-            if (inputValue.Get<float>() > 0.5f)
+            if (inputValue.Get<float>() > 0.5f && !m_isCrouch)
             {
                 m_currentSpeed =  m_sprintSpeed;
             }
@@ -50,8 +54,21 @@ namespace Player
 
         public void OnJump(InputValue inputValue)
         {
-            Debug.Log(inputValue.Get<float>());
             if (m_characterController.isGrounded && !m_isJump) m_isJump = true;
+        }
+
+        public void OnCrouch(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_isCrouch = true;
+                m_characterController.height = m_playerHeight * m_crouch;
+            }
+            else
+            {
+                m_characterController.height = m_playerHeight;
+                m_isCrouch = false;
+            }
         }
 
         private void Update()
