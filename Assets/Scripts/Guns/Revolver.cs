@@ -26,7 +26,7 @@ namespace Guns
 
         private float m_nextFire = 0f;
 
-        public void OnFire()
+        public void Fire()
         {
             Debug.Log("Fire");
         }

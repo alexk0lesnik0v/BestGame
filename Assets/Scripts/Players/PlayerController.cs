@@ -1,4 +1,5 @@
-﻿using Unity.Cinemachine;
+﻿using Guns;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,7 @@ namespace Players
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Revolver m_revolver;
         [SerializeField] private CharacterController m_characterController;
         [SerializeField] private CinemachineCamera m_cinemachineCamera;
         [SerializeField] private float m_currentSpeed;
@@ -68,6 +70,11 @@ namespace Players
                 m_characterController.height = m_playerHeight;
                 m_isCrouch = false;
             }
+        }
+
+        public void OnFire()
+        {
+            m_revolver.Fire();
         }
 
         private void Update()
