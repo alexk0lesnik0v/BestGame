@@ -26,20 +26,20 @@ namespace Guns
 
         private float m_nextFire = 0f;
 
-        public void OnAttack()
+        public void OnFire()
         {
             Debug.Log("Fire");
         }
        
         private void Update()
         {
-            if (Input.GetButton("Fire1") && Time.time > m_nextFire)
+            /*if (Input.GetButton("Fire1") && Time.time > m_nextFire)
             {
                 
                     m_nextFire = Time.time + 1f / m_fireRate;
                     Shoot();
                 
-            }
+            }*/
        }
         
         void Shoot()
@@ -58,7 +58,7 @@ namespace Guns
                 Destroy(impact, 0.1f);
 
 
-                if (hit.rigidbody != null)
+                if (hit.rigidbody is not null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                 }
