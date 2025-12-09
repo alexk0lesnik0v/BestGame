@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8e6522c-707b-45b1-b2c0-a912c30dcfb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CharacterTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CharacterTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyMonsterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/EnemyMonsterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Character.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Character.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TestShooting.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TestShooting.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,9 +22,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="36QQqkjUYS3P1yak4WuZsjrrXaJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,8 +36,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "oleg",
+    "git-widget-placeholder": "alex",
     "junie.onboarding.icon.badge.shown": "true",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
@@ -38,7 +46,7 @@
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.9f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\user\Desktop\Bloodstones Shadows\Bloodstones Shadows&quot; -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\Desktop\Bloodstones Shadows\Bloodstones Shadows" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -50,7 +58,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.9f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.2.15f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\user\Desktop\Bloodstones Shadows\Bloodstones Shadows&quot; -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\user\Desktop\Bloodstones Shadows\Bloodstones Shadows" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -101,6 +109,9 @@
       <option name="presentableId" value="Default" />
       <updated>1764936508967</updated>
       <workItem from="1764936510773" duration="79000" />
+      <workItem from="1765279842902" duration="54000" />
+      <workItem from="1765279917313" duration="154000" />
+      <workItem from="1765280087171" duration="51000" />
     </task>
     <servers />
   </component>

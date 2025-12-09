@@ -1,4 +1,4 @@
-﻿namespace Player
+﻿namespace Players
 {
     public class TestShooting
     {

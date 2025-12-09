@@ -1,4 +1,4 @@
-﻿using Player;
+﻿using Players;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,13 +9,13 @@ namespace Enemies
     {
         [SerializeField] private int m_health = 1;
         
-        private Character m_player;
+        private Player m_player;
         private NavMeshAgent m_agent;
         private Animator m_animator;
       
         void Start()
         {
-            m_player  = FindObjectOfType<Character>();
+            m_player  = FindObjectOfType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animator = GetComponent<Animator>();
         }
@@ -32,7 +32,7 @@ namespace Enemies
         
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent<Character>(out var character))
+            if (other.gameObject.TryGetComponent<Player>(out var character))
             {
                 m_animator.SetBool("isAttack", true);
             }

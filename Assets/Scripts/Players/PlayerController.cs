@@ -1,9 +1,8 @@
 ﻿using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Player
+namespace Players
 {
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
