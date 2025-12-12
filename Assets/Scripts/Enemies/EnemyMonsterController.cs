@@ -8,6 +8,7 @@ namespace Enemies
 
     {
         [SerializeField] private int m_health = 1;
+        [SerializeField] private GameObject m_bullet;
         
         private Player m_player;
         private NavMeshAgent m_agent;
@@ -36,15 +37,21 @@ namespace Enemies
             {
                 m_animator.SetBool("isAttack", true);
             }
+            else if (other == m_bullet)
+            {
+                m_animator.SetBool("Hit", true);
+            }
             else
             {
                 m_animator.SetBool("isAttack", false);
+                m_animator.SetBool("Hit", false);
             }
         }
 
         public void OnTriggerExit(Collider other)
         {
             m_animator.SetBool("isAttack", false);
+            m_animator.SetBool("Hit", false);
         }
     }
 }
