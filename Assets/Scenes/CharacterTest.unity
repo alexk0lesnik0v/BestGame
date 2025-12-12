@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 338573197}
   - component: {fileID: 338573196}
   - component: {fileID: 338573200}
+  - component: {fileID: 338573201}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -502,6 +503,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &338573201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338573195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!1001 &588574069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +597,7 @@ GameObject:
   - component: {fileID: 633539406}
   - component: {fileID: 633539405}
   - component: {fileID: 633539409}
+  - component: {fileID: 633539410}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -710,6 +724,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &633539410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633539404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!1 &709897570
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +749,7 @@ GameObject:
   - component: {fileID: 709897572}
   - component: {fileID: 709897571}
   - component: {fileID: 709897575}
+  - component: {fileID: 709897576}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -849,6 +876,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &709897576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709897570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!4 &740581884 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7549839213062440707, guid: 7dae5c5fc4839184a8c43350c08dfe40, type: 3}
@@ -867,6 +906,7 @@ GameObject:
   - component: {fileID: 751178895}
   - component: {fileID: 751178894}
   - component: {fileID: 751178898}
+  - component: {fileID: 751178899}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -993,6 +1033,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &751178899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751178893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!1 &780983352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1108,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &790389321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790389322}
+  m_Layer: 8
+  m_Name: ObjectGrabPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &790389322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790389321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.32, z: 1.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 138807423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &979224466
 PrefabInstance:
@@ -1422,6 +1505,7 @@ GameObject:
   - component: {fileID: 1753148653}
   - component: {fileID: 1753148652}
   - component: {fileID: 1753148656}
+  - component: {fileID: 1753148657}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -1548,6 +1632,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1753148657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753148651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!1 &1839660026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1771,7 @@ GameObject:
   - component: {fileID: 2018402589}
   - component: {fileID: 2018402588}
   - component: {fileID: 2018402592}
+  - component: {fileID: 2018402593}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1801,6 +1898,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2018402593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018402587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
 --- !u!4 &2109385614 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4122984898083174766, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
@@ -1932,8 +2041,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3302280177983625427, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2109385614}
-    m_AddedComponents: []
+    - targetCorrespondingSourceObject: {fileID: 3302280177983625427, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 790389322}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7546873277320716672, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8982362958467864064}
   m_SourcePrefab: {fileID: 100100000, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+--- !u!1 &8982362958467864063 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7546873277320716672, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+  m_PrefabInstance: {fileID: 8982362958467864062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8982362958467864064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982362958467864063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b0dd69011641fc84fb435363f3742e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Players.PlayerDrop
+  m_playerCameraTransform: {fileID: 1111769927}
+  m_objectGrabPointTransform: {fileID: 790389322}
+  m_pickUpDistance: 100
+  m_pickUpLayerMask:
+    serializedVersion: 2
+    m_Bits: 183
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

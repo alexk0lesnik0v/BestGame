@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5722770209416459304}
   - component: {fileID: 6548108527829468171}
   - component: {fileID: 3057070030279393391}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 5193305286376410028}
   - component: {fileID: 7308995258162544128}
   - component: {fileID: 3575593872562548890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeb1c34a08b4749bc449bc0492b4569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerController
+  m_revolver: {fileID: 0}
   m_characterController: {fileID: 3524699229518341191}
   m_cinemachineCamera: {fileID: 5722770209416459304}
   m_currentSpeed: 0
