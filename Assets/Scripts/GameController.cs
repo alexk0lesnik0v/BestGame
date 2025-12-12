@@ -5,8 +5,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private Camera m_camera;
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
     }
     private void OnGUI()
     {
