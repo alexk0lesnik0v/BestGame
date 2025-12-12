@@ -17,6 +17,12 @@ namespace PickUps
             m_objectRigidBody.useGravity = false;
         }
 
+        public void Drop()
+        {
+            this.m_objectGrabPointTransform = null;
+            m_objectRigidBody.useGravity = true;
+        }
+
         private void Update()  
         {
             if (m_objectGrabPointTransform is not null)

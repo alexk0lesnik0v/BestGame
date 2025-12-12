@@ -1192,6 +1192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1254,6 +1258,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25e5afd707887244b43f5823e3b23ba, type: 3}
+--- !u!1 &1088192850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8039642580661379506, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
+  m_PrefabInstance: {fileID: 3232193282582287439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1111769924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,7 +1495,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7341354745701311741, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
   m_PrefabInstance: {fileID: 3232193282582287439}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1088192850}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f0bb30e1a84403b2237265f9c39ec0, type: 3}
@@ -1644,6 +1653,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e653afdd8347f38beb317ced0f03f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUps.ObjectGrabbable
+--- !u!1 &1802441159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7173594771390635449, guid: 7dae5c5fc4839184a8c43350c08dfe40, type: 3}
+  m_PrefabInstance: {fileID: 588574069}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839660026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1722,10 @@ PrefabInstance:
     - target: {fileID: 5889796698577009325, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_Name
       value: Mutant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889796698577009325, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6554727886518165527, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2072,6 +2090,8 @@ MonoBehaviour:
   m_pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
+  m_weapon: {fileID: 1088192850}
+  m_handLamp: {fileID: 1802441159}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
