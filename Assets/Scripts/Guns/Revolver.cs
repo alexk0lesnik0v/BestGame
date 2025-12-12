@@ -25,7 +25,7 @@ namespace Guns
         [SerializeField] private Camera m_camera;
 
         private float m_nextFire = 0f;
-        private bool m_isFiring = true;
+        private bool m_isFiring = false;
         
         [SerializeField] private Animator m_animator;
 
