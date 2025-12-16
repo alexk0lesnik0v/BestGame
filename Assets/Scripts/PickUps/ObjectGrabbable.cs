@@ -15,13 +15,15 @@ namespace PickUps
         {
             this.m_objectGrabPointTransform = objectGrabPointTransform;
             m_objectRigidBody.useGravity = false;
-            m_objectRigidBody.freezeRotation = true;
+            m_objectRigidBody.freezeRotation = false;
+            m_objectRigidBody.isKinematic = true;
         }
 
         public void Drop()
         {
             this.m_objectGrabPointTransform = null;
             m_objectRigidBody.useGravity = true;
+            m_objectRigidBody.isKinematic = false;
         }
 
         private void Update()  

@@ -1,5 +1,6 @@
 ﻿using Guns;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ namespace Players
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private PlayerDrop m_playerDrop;
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private CharacterController m_characterController;
         [SerializeField] private CinemachineCamera m_cinemachineCamera;
@@ -74,7 +76,11 @@ namespace Players
 
         public void OnFire()
         {
-            m_revolver.Fire();
+            If (m_playerDrop.IsGrabbed() == true)
+            {
+                m_revolver.Fire();
+            }
+            else return;
         }
 
         private void Update()

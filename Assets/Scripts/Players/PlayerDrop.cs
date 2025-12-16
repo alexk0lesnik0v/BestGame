@@ -14,19 +14,27 @@ namespace Players
         [SerializeField] private GameObject m_handLamp;
         
         private ObjectGrabbable m_objectGrabbable;
+
+        public bool IsGrabbed()
+        {
+            if (m_objectGrabbable is null) 
+                return false;
+            else 
+                return true;
+        }
        
         public void OnInteract(InputValue inputValue)
         {
-            if (m_objectGrabbable == null)
+            if (m_objectGrabbable is null)
             {
-                m_weapon.SetActive(false);
-                m_handLamp.SetActive(false);
-                if (Physics.Raycast(m_playerCameraTransform.position, m_playerCameraTransform.forward,
+               if (Physics.Raycast(m_playerCameraTransform.position, m_playerCameraTransform.forward,
                         out RaycastHit hit, m_pickUpDistance, m_pickUpLayerMask))
                 {
                     if (hit.transform.TryGetComponent(out m_objectGrabbable))
                     {
                         m_objectGrabbable.Grab(m_objectGrabPointTransform);
+                        m_weapon.SetActive(false);
+                        m_handLamp.SetActive(false);
                     }
                 }
             }
