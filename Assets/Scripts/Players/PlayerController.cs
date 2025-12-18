@@ -9,7 +9,6 @@ namespace Players
     [RequireComponent(typeof(CharacterController))]
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private PlayerDrop m_playerDrop;
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private CharacterController m_characterController;
         [SerializeField] private CinemachineCamera m_cinemachineCamera;
@@ -76,11 +75,7 @@ namespace Players
 
         public void OnFire()
         {
-            If (m_playerDrop.IsGrabbed() == true)
-            {
-                m_revolver.Fire();
-            }
-            else return;
+            m_revolver.Fire();
         }
 
         private void Update()

@@ -24,7 +24,10 @@ namespace Guns
 
         [SerializeField] private Camera m_camera;
 
+        [SerializeField] private GameObject m_bullet;
+
         private float m_nextFire = 0f;
+        private float m_bulletSpeed = 100f;
         private bool m_isFiring = false;
         
         [SerializeField] private Animator m_animator;
@@ -41,8 +44,7 @@ namespace Guns
 
         public void StopFire()
         {
-            m_animator.SetBool("Fire", false);
-            m_animator.SetBool("StopFire", true);
+            m_animator.SetBool("Shoot", false);
         }
         private void Update()
         {
@@ -50,18 +52,26 @@ namespace Guns
             {
                 m_nextFire = Time.time + 1f / m_fireRate;
                 Shoot();
-                
-                m_isFiring = false;
             }
-       }
+            m_isFiring = false;
+        }
         
         private void Shoot()
         {
-            m_animator.SetBool("Fire", true);
+            m_animator.SetBool("Shoot", true);
+            m_animator.SetBool("StopFire", false);
             
             m_audioSource.PlayOneShot(m_shotSFX);
 
             m_muzzleFlash.Play();
+            
+            GameObject newBullet = Instantiate(m_bullet, 
+                this.transform.position + new Vector3(1, 0, 0),
+                this.transform.rotation) as GameObject;
+
+            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
+
+            bulletRB.linearVelocity = this.transform.forward * m_bulletSpeed;
         
             RaycastHit hit;
 
