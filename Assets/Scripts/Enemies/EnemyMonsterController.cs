@@ -23,7 +23,16 @@ namespace Enemies
         
         void Update()
         {
-            m_agent.SetDestination(m_player.transform.position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, 100f))
+            {
+                Debug.Log(hit.transform.name);
+                if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
+                {
+                    m_agent.SetDestination(m_player.transform.position);
+                }
+            }
             
             if (m_health <= 0)
             {
