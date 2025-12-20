@@ -18,7 +18,7 @@ namespace Players
         [SerializeField] private float m_jumpSpeed = 2.5f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
-
+        
         private Vector2 m_move;
         private Vector3 m_movement;
         private bool m_isJump = false;
@@ -81,7 +81,7 @@ namespace Players
         private void Update()
         {
             m_characterController.Move((GetForward() * m_movement.z + GetRight() * m_movement.x + GetUp() * m_movement.y) * Time.deltaTime * m_currentSpeed);
-           
+
             if (m_characterController.isGrounded)
             {
                 m_movement.y = m_gravity * 0.1f;

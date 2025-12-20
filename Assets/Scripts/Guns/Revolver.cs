@@ -65,13 +65,14 @@ namespace Guns
 
             m_muzzleFlash.Play();
             
-            GameObject newBullet = Instantiate(m_bullet, 
+            /*GameObject newBullet = Instantiate(m_bullet, 
                 this.transform.position + new Vector3(1, 0, 0),
                 this.transform.rotation) as GameObject;
 
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
 
             bulletRB.linearVelocity = this.transform.forward * m_bulletSpeed;
+            */
         
             RaycastHit hit;
 
@@ -81,7 +82,6 @@ namespace Guns
 
                 GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impact, 0.1f);
-
 
                 if (hit.rigidbody is not null)
                 {

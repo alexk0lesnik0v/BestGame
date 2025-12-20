@@ -1,4 +1,5 @@
-﻿using Players;
+﻿using Guns;
+using Players;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,8 +8,7 @@ namespace Enemies
     public class EnemyMonsterController:  MonoBehaviour
 
     {
-        [SerializeField] private int m_health = 1;
-        [SerializeField] private GameObject m_bullet;
+        [SerializeField] private int m_health = 3;
         
         private Player m_player;
         private NavMeshAgent m_agent;
@@ -36,22 +36,20 @@ namespace Enemies
             if (other.gameObject.TryGetComponent<Player>(out var character))
             {
                 m_animator.SetBool("isAttack", true);
+                m_agent.isStopped = true;
             }
-            else if (other == m_bullet)
+            
+            if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
             {
-                m_animator.SetBool("Hit", true);
-            }
-            else
-            {
-                m_animator.SetBool("isAttack", false);
-                m_animator.SetBool("Hit", false);
+                m_health -= 1;
+                Debug.Log("Critical hit!");
             }
         }
 
         public void OnTriggerExit(Collider other)
         {
             m_animator.SetBool("isAttack", false);
-            m_animator.SetBool("Hit", false);
+            m_agent.isStopped = false;
         }
     }
 }
