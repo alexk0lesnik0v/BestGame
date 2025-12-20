@@ -24,8 +24,9 @@ namespace Enemies
         void Update()
         {
             RaycastHit hit;
+            float radius = 5f;
 
-            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, 100f))
+            if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
             {
                 Debug.Log(hit.transform.name);
                 if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
