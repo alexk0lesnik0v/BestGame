@@ -1,4 +1,5 @@
-﻿using Guns;
+﻿using System.Collections.Generic;
+using Guns;
 using Players;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,17 +10,26 @@ namespace Enemies
 
     {
         [SerializeField] private int m_health = 2;
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_audioClip;
+        [SerializeField] private Transform m_patrolRoute;
+        [SerializeField] private List<Transform> m_locations;
         
         private Player m_player;
         private NavMeshAgent m_agent;
         private Animator m_animator;
         private bool m_playerDetected = false;
-      
+        private int m_locationIndex = 0;
+        
         void Start()
         {
             m_player  = FindObjectOfType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animator = GetComponent<Animator>();
+            
+            InitializePatrolRoute();
+
+            MoveToNextPatrolLocation();
         }
         
         private void Update()
@@ -32,11 +42,35 @@ namespace Enemies
             }
             
             View();
+            
+            if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
+            {
+                MoveToNextPatrolLocation();
+            }
 
             if (m_playerDetected && m_health > 0)
             {
                 m_agent.SetDestination(m_player.transform.position);
+                m_audioSource.PlayOneShot(m_audioClip);
             }
+        }
+        
+        void InitializePatrolRoute()
+        {
+            foreach (Transform child in m_patrolRoute)
+            {
+                m_locations.Add(child);
+            }
+        }
+
+        void MoveToNextPatrolLocation()
+        { 
+            if(m_locations.Count == 0)
+                return;
+
+            m_agent.destination = m_locations[m_locationIndex].position;
+
+            m_locationIndex = (m_locationIndex + 1) % m_locations.Count;
         }
         
         public void OnTriggerEnter(Collider other)
