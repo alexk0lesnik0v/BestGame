@@ -21,14 +21,15 @@ namespace Enemies
             m_animator = GetComponent<Animator>();
         }
         
-        void Update()
+        private void Update()
         {
-            View();
-            
             if (m_health <= 0)
             {
                 m_animator.SetBool("isDead", true);
+                m_animator.Play("Dead");
             }
+            
+            View();
         }
         
         public void OnTriggerEnter(Collider other)
@@ -54,15 +55,18 @@ namespace Enemies
 
         private void View()
         {
-            RaycastHit hit;
-            float radius = 5f;
-
-            if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
+            if (m_health > 0)
             {
-                Debug.Log(hit.transform.name);
-                if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
+                RaycastHit hit;
+                float radius = 5f;
+
+                if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
                 {
-                    m_agent.SetDestination(m_player.transform.position);
+                    Debug.Log(hit.transform.name);
+                    if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
+                    {
+                        m_agent.SetDestination(m_player.transform.position);
+                    }
                 }
             }
         }
