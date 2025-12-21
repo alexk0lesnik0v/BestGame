@@ -23,21 +23,11 @@ namespace Enemies
         
         void Update()
         {
-            RaycastHit hit;
-            float radius = 5f;
-
-            if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
-            {
-                Debug.Log(hit.transform.name);
-                if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
-                {
-                    m_agent.SetDestination(m_player.transform.position);
-                }
-            }
+            View();
             
             if (m_health <= 0)
             {
-                Destroy(gameObject);
+                m_animator.SetBool("isDead", true);
             }
         }
         
@@ -60,6 +50,21 @@ namespace Enemies
         {
             m_animator.SetBool("isAttack", false);
             m_agent.isStopped = false;
+        }
+
+        private void View()
+        {
+            RaycastHit hit;
+            float radius = 5f;
+
+            if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
+            {
+                Debug.Log(hit.transform.name);
+                if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
+                {
+                    m_agent.SetDestination(m_player.transform.position);
+                }
+            }
         }
     }
 }
