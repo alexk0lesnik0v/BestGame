@@ -8,7 +8,7 @@ namespace Enemies
     public class EnemyMonsterController:  MonoBehaviour
 
     {
-        [SerializeField] private int m_health = 3;
+        [SerializeField] private int m_health = 2;
         
         private Player m_player;
         private NavMeshAgent m_agent;
@@ -26,6 +26,7 @@ namespace Enemies
         {
             if (m_health <= 0)
             {
+                m_agent.isStopped = true;
                 m_animator.Play("Dead");
                 Destroy(this.gameObject.GetComponent<Collider>());
             }
