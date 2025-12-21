@@ -49,7 +49,7 @@ namespace Enemies
                 MoveToNextPatrolLocation();
             }
 
-            if (m_playerDetected && m_health > 0  && !m_isAttack)
+            if (m_playerDetected && m_health > 0 && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);
                 m_animator.SetBool("isRuning", true);
@@ -81,7 +81,10 @@ namespace Enemies
         {
             if (other.gameObject.TryGetComponent<Player>(out var character))
             {
+                m_agent.SetDestination(character.transform.position);
                 m_animator.SetBool("isAttack", true);
+                m_animator.Play("Attack");
+                m_audioSource.PlayOneShot(m_audioClip);
                 m_isAttack = true;
                 m_agent.isStopped = true;
             }
@@ -105,7 +108,7 @@ namespace Enemies
             if (m_health > 0)
             {
                 RaycastHit hit;
-                float radius = 10f;
+                float radius = 3f;
 
                 if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 100f))
                 {
