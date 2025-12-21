@@ -16957,6 +16957,10 @@ PrefabInstance:
       propertyPath: m_patrolRoute
       value: 
       objectReference: {fileID: 2010472708}
+    - target: {fileID: 4751472471999102243, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5889796698577009325, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_Name
       value: Mutant

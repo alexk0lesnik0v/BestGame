@@ -51,6 +51,8 @@ namespace Enemies
             if (m_playerDetected && m_health > 0)
             {
                 m_agent.SetDestination(m_player.transform.position);
+                m_animator.SetBool("isRuning", true);
+                m_agent.speed = 4;
                 m_audioSource.PlayOneShot(m_audioClip);
             }
         }
