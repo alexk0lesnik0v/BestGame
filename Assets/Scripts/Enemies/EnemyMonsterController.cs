@@ -19,6 +19,7 @@ namespace Enemies
         private NavMeshAgent m_agent;
         private Animator m_animator;
         private bool m_playerDetected = false;
+        private bool m_isAttack  = false;
         private int m_locationIndex = 0;
         
         void Start()
@@ -48,10 +49,11 @@ namespace Enemies
                 MoveToNextPatrolLocation();
             }
 
-            if (m_playerDetected && m_health > 0)
+            if (m_playerDetected && m_health > 0  && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);
                 m_animator.SetBool("isRuning", true);
+                m_animator.Play("Run");
                 m_agent.speed = 4;
                 m_audioSource.PlayOneShot(m_audioClip);
             }
@@ -80,6 +82,7 @@ namespace Enemies
             if (other.gameObject.TryGetComponent<Player>(out var character))
             {
                 m_animator.SetBool("isAttack", true);
+                m_isAttack = true;
                 m_agent.isStopped = true;
             }
             
@@ -93,6 +96,7 @@ namespace Enemies
         public void OnTriggerExit(Collider other)
         {
             m_animator.SetBool("isAttack", false);
+            m_isAttack  = false;
             m_agent.isStopped = false;
         }
 

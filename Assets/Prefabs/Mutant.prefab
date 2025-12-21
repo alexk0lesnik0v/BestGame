@@ -82,6 +82,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27c70984b9f4990489d83faa91f41371, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8379960195130564743}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27c70984b9f4990489d83faa91f41371, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3050998877352948249}
   m_SourcePrefab: {fileID: 100100000, guid: 27c70984b9f4990489d83faa91f41371, type: 3}
 --- !u!1 &5889796698577009325 stripped
 GameObject:
@@ -130,6 +133,8 @@ MonoBehaviour:
   m_health: 2
   m_audioSource: {fileID: 8379960195130564743}
   m_audioClip: {fileID: 8300000, guid: dd34675d1ddd6824eae8c703dd45191b, type: 3}
+  m_patrolRoute: {fileID: 0}
+  m_locations: []
 --- !u!195 &4751472471999102243
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -140,7 +145,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
+  m_Speed: 0.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -291,3 +296,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3050998877352948249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5889796698577009325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afcf1817a85474a93e85575a94d54fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.Enemy

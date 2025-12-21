@@ -1,4 +1,5 @@
-﻿using Guns;
+﻿using Enemies;
+using Guns;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Players
         [SerializeField] private float m_jumpSpeed = 2.5f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
+        [SerializeField] private GameObject m_deathUI;
         
         private Vector2 m_move;
         private Vector3 m_movement;
@@ -121,6 +123,15 @@ namespace Players
             up.x = 0;
             
             return up.normalized;
+        }
+        
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
+            {
+                m_deathUI.SetActive(true);
+                this.enabled = false;
+            }
         }
     }
 }
