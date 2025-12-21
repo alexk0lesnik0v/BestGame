@@ -25,8 +25,8 @@ namespace Enemies
         {
             if (m_health <= 0)
             {
-                m_animator.SetBool("isDead", true);
                 m_animator.Play("Dead");
+                Destroy(this.gameObject.GetComponent<Collider>());
             }
             
             View();
