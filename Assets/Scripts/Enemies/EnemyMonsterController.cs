@@ -38,7 +38,7 @@ namespace Enemies
             if (m_health <= 0)
             {
                 m_agent.isStopped = true;
-                m_animator.Play("Dead");
+                m_animator.Play("Death");
                 Destroy(this.gameObject.GetComponent<Collider>());
             }
             
@@ -52,7 +52,7 @@ namespace Enemies
             if (m_playerDetected && m_health > 0 && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);
-                m_animator.SetBool("isRuning", true);
+                m_animator.SetBool("isRunning", true);
                 m_animator.Play("Run");
                 m_agent.speed = 4;
                 m_audioSource.PlayOneShot(m_audioClip);
