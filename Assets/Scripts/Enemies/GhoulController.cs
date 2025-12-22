@@ -19,6 +19,7 @@ namespace Enemies
         private Animation m_animation;
         private bool m_playerDetected = false;
         private bool m_isAttack  = false;
+        private bool m_isDead = false;
         private int m_locationIndex = 0;
         
         void Start()
@@ -41,6 +42,8 @@ namespace Enemies
                 m_agent.isStopped = true;
                 m_animation.Play("Death");
                 Destroy(this.gameObject.GetComponent<Collider>());
+                this.enabled = false;
+                m_isDead = true;
             }
             
             View();
@@ -79,19 +82,22 @@ namespace Enemies
         
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent<Player>(out var character))
+            if (!m_isDead)
             {
-                m_agent.SetDestination(character.transform.position);
-                m_animation.Play("Attack2");
-                m_audioSource.PlayOneShot(m_audioClip);
-                m_isAttack = true;
-                m_agent.isStopped = true;
-            }
+                if (other.gameObject.TryGetComponent<Player>(out var character))
+                {
+                    m_agent.SetDestination(character.transform.position);
+                    m_animation.Play("Attack2");
+                    m_audioSource.PlayOneShot(m_audioClip);
+                    m_isAttack = true;
+                    m_agent.isStopped = true;
+                }
             
-            if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
-            {
-                m_health -= 1;
-                Debug.Log("Critical hit!");
+                if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
+                {
+                    m_health -= 1;
+                    Debug.Log("Critical hit!");
+                }
             }
         }
 

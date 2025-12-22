@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 3225265448202834035}
   - component: {fileID: 5670145131896210546}
   - component: {fileID: 1469893215944175072}
-  - component: {fileID: 6868480438187333405}
   - component: {fileID: 7196404179898928025}
   - component: {fileID: 3208285505659083117}
   m_Layer: 0
@@ -227,7 +226,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 31.565254, y: -0.0000009536743, z: -37.774254}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.53020495, y: 0.53020495, z: 0.53020495}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7451128110420281697}
@@ -414,29 +413,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!135 &6868480438187333405
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770230026063570311}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!111 &7196404179898928025
 Animation:
   m_ObjectHideFlags: 0
@@ -446,12 +424,13 @@ Animation:
   m_GameObject: {fileID: 770230026063570311}
   m_Enabled: 1
   serializedVersion: 4
-  m_Animation: {fileID: 7400008, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
+  m_Animation: {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
   m_Animations:
   - {fileID: 7400008, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
   - {fileID: 7400002, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
   - {fileID: 7400004, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
   - {fileID: 7400010, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
+  - {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
