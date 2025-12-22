@@ -112,7 +112,7 @@ namespace Enemies
             if (m_health > 0)
             {
                 RaycastHit hit;
-                float radius = 3f;
+                float radius = 4f;
 
                 if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 10f))
                 {
