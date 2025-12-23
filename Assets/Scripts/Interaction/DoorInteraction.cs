@@ -28,3 +28,12 @@ public class DoorInteraction : MonoBehaviour, IInteractable
         return true;
     }
 }
+
+//public class ButtonDoor
+//{
+//    [SerializeField] DoorInteraction d;'
+//    public bool Interact(Interactor interactor)
+//    {
+//        d.Open();;
+//    }
+//}
