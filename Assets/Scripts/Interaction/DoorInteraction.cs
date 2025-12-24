@@ -17,10 +17,10 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     }
     public void OpenDoorDown()
     {
-        transform.DOLocalMove(m_openDoorDown = new Vector3(0,-3, 6.5f), m_duration);
+        transform.DOLocalMove(m_openDoorDown, m_duration);
     }
     public void OpenDoorUp()
     {
-        transform.DOLocalMove(m_openDoorUp = new Vector3(0,2,6.5f), m_duration);
+        transform.DOLocalMove(m_openDoorUp, m_duration);
     }
 }

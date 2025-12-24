@@ -5,6 +5,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float m_castDistance = 5f;
     [SerializeField] private Vector3 m_raycastOffset = new Vector3(0, 1f, 0);
     [SerializeField] private GameObject m_interactionUI;
+    [SerializeField] private Camera m_camera;
 
     private void Update()
     {
@@ -33,7 +34,7 @@ public class Interactor : MonoBehaviour
     {
         interactable = null;
 
-        Ray ray = new Ray(transform.position + m_raycastOffset, transform.forward);
+        Ray ray = new Ray(m_camera.transform.position, m_camera.transform.forward);
 
         if (Physics.Raycast(ray, out RaycastHit hitInfo, m_castDistance))
         {
