@@ -65,15 +65,6 @@ namespace Guns
 
             m_muzzleFlash.Play();
             
-            /*GameObject newBullet = Instantiate(m_bullet, 
-                this.transform.position + new Vector3(1, 0, 0),
-                this.transform.rotation) as GameObject;
-
-            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
-
-            bulletRB.linearVelocity = this.transform.forward * m_bulletSpeed;
-            */
-        
             RaycastHit hit;
 
             if (Physics.Raycast(m_camera.transform.position, m_camera.transform.forward, out hit, m_range))

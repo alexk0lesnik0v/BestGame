@@ -22,13 +22,12 @@ namespace Players
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
         [SerializeField] private GameObject m_deathUI;
-        [SerializeField] private Button m_restartButton;
-        [SerializeField] private Button m_mainmenuButton;
         
         private Vector2 m_move;
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
+        private bool m_isDead = false;
         private float m_playerHeight;
 
         private void Start()
@@ -81,7 +80,10 @@ namespace Players
 
         public void OnFire()
         {
-            m_revolver.Fire();
+            if (!m_isDead)
+            {
+                m_revolver.Fire();
+            }
         }
 
         private void Update()
@@ -135,27 +137,11 @@ namespace Players
             {
                 m_deathUI.SetActive(true);
                 this.enabled = false;
+                m_isDead = true;
+                
+                Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-
-        }
-        private void OnEnable()
-        {
-            m_restartButton.onClick.AddListener(OnRestart);
-            m_mainmenuButton.onClick.AddListener(OnMainMenu);
-        }
-        private void OnDisable()
-        {
-            m_restartButton.onClick.RemoveListener(OnRestart);
-            m_mainmenuButton.onClick.RemoveListener(OnMainMenu);
-        }
-        private void OnRestart()
-        {
-
-        }
-        private void OnMainMenu()
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }
