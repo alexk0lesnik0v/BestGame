@@ -6,12 +6,17 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button m_playBtn;
     [SerializeField] private Button m_exitBtn;
-    //public Button btn;
-    //private void OnEnable()
-    //{
-    //    btn.onClick.AddListener(OnPlay);
-    //}
 
+    private void OnEnable()
+    {
+        m_playBtn.onClick.AddListener(OnPlay);
+        m_exitBtn.onClick.AddListener(OnExit);
+    }
+    private void OnDisable()
+    {
+        m_playBtn?.onClick.RemoveListener(OnPlay);
+        m_exitBtn?.onClick.RemoveListener(OnExit);
+    }
     public void OnPlay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
