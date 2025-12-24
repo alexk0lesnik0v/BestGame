@@ -92,6 +92,7 @@ namespace Enemies
             if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
             {
                 m_health -= 1;
+                m_playerDetected =  true;
                 Debug.Log("Critical hit!");
             }
         }
