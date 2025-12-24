@@ -364,6 +364,9 @@ MonoBehaviour:
   m_jumpSpeed: 2.5
   m_gravity: -9.81
   m_crouch: 0.5
+  m_deathUI: {fileID: 0}
+  m_restartButton: {fileID: 0}
+  m_mainmenuButton: {fileID: 0}
 --- !u!114 &3575593872562548890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +414,7 @@ MonoBehaviour:
   m_castDistance: 5
   m_raycastOffset: {x: 0, y: 1, z: 0}
   m_interactionUI: {fileID: 0}
+  m_camera: {fileID: 0}
 --- !u!135 &7525765607849109805
 SphereCollider:
   m_ObjectHideFlags: 0
