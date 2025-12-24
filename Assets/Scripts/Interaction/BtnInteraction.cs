@@ -1,8 +1,10 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class BtnInteraction : MonoBehaviour, IInteractable
 {
-    //[SerializeField] private DoorInteraction m_doorInteraction;
+    [SerializeField] private DoorInteraction m_doorInteraction;
+    private bool m_isOpen = false;
     public bool CanInteract()
     {
         return true;
@@ -10,7 +12,15 @@ public class BtnInteraction : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        //m_doorInteraction.Interact(interactor);
+        if (m_isOpen)
+        {
+            m_doorInteraction.OpenDoorDown();
+        }
+        else
+        {
+            m_doorInteraction.OpenDoorUp();
+        }
+        m_isOpen = !m_isOpen;
         return true;
     }
 }
