@@ -117,7 +117,7 @@ namespace Enemies
 
                 if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 10f))
                 {
-                    Debug.Log(hit.transform.name);
+                    //Debug.Log(hit.transform.name);
                     if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
                     {
                         m_playerDetected =  true;
