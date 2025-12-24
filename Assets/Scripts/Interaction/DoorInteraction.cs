@@ -3,37 +3,24 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Vector3 m_targetRotation = new Vector3(0, -100f, 0);
-    [SerializeField] private float m_rotationSpeed = 1f;
-
-    private bool m_isOpen = false;
-
+    [SerializeField] private Vector3 m_openDoorDown;
+    [SerializeField] private Vector3 m_openDoorUp;
+    [SerializeField] private float m_duration = 2f;
     public bool CanInteract()
     {
-        return true;
+        return false;
     }
 
     public bool Interact(Interactor interactor)
     {
-        if (m_isOpen)
-        {
-            transform.DORotate(-m_targetRotation, m_rotationSpeed, RotateMode.WorldAxisAdd);
-        }
-        else
-        {
-            transform.DORotate(m_targetRotation, m_rotationSpeed, RotateMode.WorldAxisAdd);
-        }
-        m_isOpen = !m_isOpen;
-
         return true;
     }
+    public void OpenDoorDown()
+    {
+        transform.DOLocalMove(m_openDoorDown = new Vector3(0,-3, 6.5f), m_duration);
+    }
+    public void OpenDoorUp()
+    {
+        transform.DOLocalMove(m_openDoorUp = new Vector3(0,2,6.5f), m_duration);
+    }
 }
-
-//public class ButtonDoor
-//{
-//    [SerializeField] DoorInteraction d;'
-//    public bool Interact(Interactor interactor)
-//    {
-//        d.Open();;
-//    }
-//}
