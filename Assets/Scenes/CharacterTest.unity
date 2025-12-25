@@ -11555,7 +11555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &993700306
 Transform:
   m_ObjectHideFlags: 0
@@ -17926,7 +17926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1594199092
 Transform:
   m_ObjectHideFlags: 0
@@ -19438,6 +19438,10 @@ MonoBehaviour:
   m_doorLight2: {fileID: 2103131172}
   m_doorLight3: {fileID: 1443924439}
   m_doorLight4: {fileID: 2056668437}
+  m_doorGreenLight1: {fileID: 1944543477}
+  m_doorGreenLight2: {fileID: 1594199091}
+  m_doorGreenLight3: {fileID: 1991055897}
+  m_doorGreenLight4: {fileID: 993700305}
   m_button1: {fileID: 777608746}
   m_button2: {fileID: 777608745}
   m_button3: {fileID: 777608744}
@@ -21973,7 +21977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1944543478
 Transform:
   m_ObjectHideFlags: 0
@@ -22850,7 +22854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1991055898
 Transform:
   m_ObjectHideFlags: 0
