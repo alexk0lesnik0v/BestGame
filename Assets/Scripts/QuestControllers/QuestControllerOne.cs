@@ -1,5 +1,6 @@
 ﻿using System;
 using Interaction;
+using Players;
 using UnityEngine;
 
 namespace QuestControllers
@@ -21,10 +22,11 @@ namespace QuestControllers
         [SerializeField] TestButtonPush m_button3;
         [SerializeField] TestButtonPush m_button4;
         
+        [SerializeField] private DoorInteraction m_doorQuestInteraction;
         [SerializeField] private DoorInteraction m_doorInteraction;
-
+        
         private int m_winIndex = 0;
-
+        
         private void Start()
         {
             m_doorLight1.SetActive(true);
@@ -87,7 +89,7 @@ namespace QuestControllers
             
             if (m_winIndex ==4)
             {
-                m_doorInteraction.OpenDoorUp();
+                m_doorQuestInteraction.OpenDoorUp();
             }
 
             if (m_winIndex == 1 &&  m_button1.m_isPushed)
@@ -130,6 +132,14 @@ namespace QuestControllers
                 m_doorGreenLight2.SetActive(false);
                 m_doorGreenLight3.SetActive(false);
                 m_doorGreenLight4.SetActive(false);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.TryGetComponent<Player>(out var player))
+            {
+                m_doorInteraction.OpenDoorDown();
             }
         }
     }

@@ -12787,7 +12787,7 @@ Transform:
   m_GameObject: {fileID: 1111769924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.92, y: 4.244, z: 19.2}
+  m_LocalPosition: {x: 0.58, y: 3.179, z: -0.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19415,6 +19415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731433597}
   - component: {fileID: 1731433596}
+  - component: {fileID: 1731433598}
   m_Layer: 0
   m_Name: Quest1
   m_TagString: Untagged
@@ -19446,7 +19447,8 @@ MonoBehaviour:
   m_button2: {fileID: 777608745}
   m_button3: {fileID: 777608744}
   m_button4: {fileID: 777608743}
-  m_doorInteraction: {fileID: 1862083501}
+  m_doorQuestInteraction: {fileID: 1862083501}
+  m_doorInteraction: {fileID: 1978400750}
 --- !u!4 &1731433597
 Transform:
   m_ObjectHideFlags: 0
@@ -19456,12 +19458,33 @@ Transform:
   m_GameObject: {fileID: 1731433595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.07951, y: 0, z: -6.33577}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 29.2, y: 3.31, z: 7.92}
+  m_LocalScale: {x: 10.794409, y: 3.2548034, z: 0.14835}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1731433598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731433595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1733170766
 GameObject:
   m_ObjectHideFlags: 0
@@ -22662,7 +22685,7 @@ GameObject:
   - component: {fileID: 1978400751}
   - component: {fileID: 1978400750}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: EnterQuestOneDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25365,15 +25388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.92
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 2.435
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.2
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalRotation.w
