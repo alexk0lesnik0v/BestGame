@@ -18,10 +18,6 @@ namespace QuestControllers
             {
                 m_doorInteraction.OpenDoorUp();
             }
-            else
-            {
-                m_doorInteraction.OpenDoorDown();
-            }
         }
     }
 }
