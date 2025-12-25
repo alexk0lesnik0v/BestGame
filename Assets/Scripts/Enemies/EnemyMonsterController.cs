@@ -20,6 +20,7 @@ namespace Enemies
         private Animator m_animator;
         private bool m_playerDetected = false;
         private bool m_isAttack  = false;
+        private bool m_isVoice = false;
         private int m_locationIndex = 0;
         
         void Start()
@@ -55,7 +56,11 @@ namespace Enemies
                 m_animator.SetBool("isRunning", true);
                 m_animator.Play("Run");
                 m_agent.speed = 4;
-                m_audioSource.PlayOneShot(m_audioClip);
+                if (!m_isVoice)
+                {
+                    m_audioSource.PlayOneShot(m_audioClip);
+                    m_isVoice = true;
+                }
             }
         }
         
@@ -84,9 +89,14 @@ namespace Enemies
                 m_agent.SetDestination(character.transform.position);
                 m_animator.SetBool("isAttack", true);
                 m_animator.Play("Attack");
-                m_audioSource.PlayOneShot(m_audioClip);
                 m_isAttack = true;
                 m_agent.isStopped = true;
+
+                if (!m_isVoice)
+                {
+                    m_audioSource.PlayOneShot(m_audioClip);
+                    m_isVoice = true;
+                }
             }
             
             if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
