@@ -8019,42 +8019,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1067960233194754096, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorLight
-      value: 
-      objectReference: {fileID: 1719578948}
-    - target: {fileID: 1067960233194754096, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorInteraction
-      value: 
-      objectReference: {fileID: 1862083501}
-    - target: {fileID: 3341080362220887481, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_Name
-      value: Button4
-      objectReference: {fileID: 0}
     - target: {fileID: 3484264055303167825, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorLight
+      propertyPath: m_doorLight1
       value: 
       objectReference: {fileID: 2103131172}
     - target: {fileID: 3484264055303167825, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorInteraction
+      propertyPath: m_doorLight2
       value: 
-      objectReference: {fileID: 1862083501}
-    - target: {fileID: 5146935310292837133, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_Name
-      value: Button3
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1719578948}
     - target: {fileID: 5875838312706572145, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorLight
+      propertyPath: m_doorLight1
       value: 
       objectReference: {fileID: 1443924439}
     - target: {fileID: 5875838312706572145, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorInteraction
+      propertyPath: m_doorLight2
       value: 
-      objectReference: {fileID: 1862083501}
-    - target: {fileID: 6604759918027892831, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_Name
-      value: Button1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2103131172}
     - target: {fileID: 7171783042492519909, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.11
@@ -8095,22 +8075,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7286944834950702910, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_Name
-      value: Button2
-      objectReference: {fileID: 0}
+    - target: {fileID: 7802205848303049173, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
+      propertyPath: m_doorLight
+      value: 
+      objectReference: {fileID: 1719578948}
     - target: {fileID: 8136767449632043977, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
       propertyPath: m_Name
       value: PlaneQwest1
       objectReference: {fileID: 0}
     - target: {fileID: 8874093380581123542, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorLight
+      propertyPath: m_doorLight1
       value: 
       objectReference: {fileID: 2056668437}
     - target: {fileID: 8874093380581123542, guid: e88d8eb06bc8e874bb2dea11c413f8e7, type: 3}
-      propertyPath: m_doorInteraction
+      propertyPath: m_doorLight2
       value: 
-      objectReference: {fileID: 1862083501}
+      objectReference: {fileID: 1443924439}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

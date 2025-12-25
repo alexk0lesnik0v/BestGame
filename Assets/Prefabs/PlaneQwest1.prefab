@@ -255,6 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e963bdf19e4b09ad51d8be78c8522e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction.TestButtonPush
+  m_doorLight1: {fileID: 0}
+  m_doorLight2: {fileID: 0}
 --- !u!1 &8136767449632043977
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429632560887276463, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_Name
-      value: Platform (2)
+      value: Button4
       objectReference: {fileID: 0}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -365,7 +367,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429632560887276463, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_Name
-      value: Platform
+      value: Button3
       objectReference: {fileID: 0}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,7 +504,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429632560887276463, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_Name
-      value: Platform (3)
+      value: Button1
       objectReference: {fileID: 0}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -544,11 +546,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5804197102262934464, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5071753392443375076, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7802205848303049173}
   m_SourcePrefab: {fileID: 100100000, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+--- !u!1 &1746537359627974164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5071753392443375076, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+  m_PrefabInstance: {fileID: 6800029370911738864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7802205848303049173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746537359627974164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825bf43b817744bebbcfd8e662bc97ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction.OnePlatformController
+  m_doorLight: {fileID: 0}
 --- !u!4 &3377616418006842659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
@@ -564,7 +588,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 429632560887276463, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_Name
-      value: Platform (1)
+      value: Button2
       objectReference: {fileID: 0}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
