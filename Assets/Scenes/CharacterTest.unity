@@ -27574,12 +27574,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
       propertyPath: m_time
-      value: 301
+      value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 897744993}
     - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
       propertyPath: m_addTime
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
+      propertyPath: m_deathUI
+      value: 
+      objectReference: {fileID: 1805107012}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

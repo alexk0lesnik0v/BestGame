@@ -1,3 +1,4 @@
+using Players;
 using TMPro;
 using UnityEngine;
 
@@ -5,10 +6,14 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text m_timerText;
     [SerializeField] private float m_time = 301;
+    
+    [SerializeField] private GameObject m_deathUI;
+    [SerializeField] private PlayerController m_player;
 
     private float m_restartTime;
     private bool m_isStart = false;
     private bool m_canStart = false;
+    
     private void Start()
     {
         m_restartTime = m_time;
@@ -19,17 +24,26 @@ public class Timer : MonoBehaviour
         {
             m_time -= Time.deltaTime;
             m_timerText.text = ((int)(m_time / 60)).ToString() + " : " + ((int)(m_time % 60)).ToString();
-
         }
         else if(m_canStart)
         {
-            
             m_time -= Time.deltaTime;
             m_timerText.text = ((int)(m_time / 60)).ToString() + " : " + ((int)(m_time % 60)).ToString();
         }
         else
         {
             m_time = m_restartTime;
+        }
+
+        if (m_time <= 0)
+        {
+            m_time = 0;
+            m_deathUI.SetActive(true);
+            m_player.enabled = false;
+            m_player.m_isDead = true;
+                
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
     public void StartTimer()
