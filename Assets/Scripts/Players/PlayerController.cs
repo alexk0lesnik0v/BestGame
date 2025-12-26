@@ -27,7 +27,7 @@ namespace Players
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
-        private bool m_isDead = false;
+        public bool m_isDead = false;
         private float m_playerHeight;
 
         private void Start()
