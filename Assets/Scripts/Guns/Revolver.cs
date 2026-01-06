@@ -54,12 +54,12 @@ namespace Guns
                 Shoot();
             }
             m_isFiring = false;
+            m_animator.Play("PrepareForShooting");
         }
         
         private void Shoot()
         {
-            m_animator.SetBool("Shoot", true);
-            m_animator.SetBool("StopFire", false);
+            m_animator.Play("Shooting");
             
             m_audioSource.PlayOneShot(m_shotSFX);
 
