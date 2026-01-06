@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2706418
+      value: 8.189264
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.81
+      value: -17.4733
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.w
@@ -67,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_Name
       value: SpikeTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -132,7 +136,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 4
   m_Animation: {fileID: 4322999816587138089, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 4322999816587138089, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0

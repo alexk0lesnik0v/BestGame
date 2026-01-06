@@ -4,7 +4,15 @@ using UnityEngine;
 public class SpikeTrap : MonoBehaviour
 {
     [SerializeField] private float m_spikeDamage;
-    [SerializeField] private Animation m_animation;
+    
+    private Animation m_animation;
+
+    private void Start()
+    {
+        m_animation = GetComponent<Animation>();
+        m_animation.Play("Spike");
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,7 +22,7 @@ public class SpikeTrap : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(m_spikeDamage);
-                Debug.Log($"Получен урон, текущее хп {playerHealth.Health}");
+                Debug.Log($"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ {playerHealth.Health}");
             }
 
         }
