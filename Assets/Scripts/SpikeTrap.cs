@@ -1,9 +1,9 @@
 using Players;
 using UnityEngine;
 
-public class Trap : MonoBehaviour
+public class SpikeTrap : MonoBehaviour
 {
-    public float damageAmount = 10f;
+    [SerializeField] private float m_spikeDamage;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -11,7 +11,7 @@ public class Trap : MonoBehaviour
             Player playerHealth = other.GetComponent<Player>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damageAmount);
+                playerHealth.TakeDamage(m_spikeDamage);
                 Debug.Log($"Получен урон, текущее хп {playerHealth.Health}");
             }
 
