@@ -3,7 +3,6 @@ using UnityEngine;
 public class Interactor : MonoBehaviour
 {
     [SerializeField] private float m_castDistance = 5f;
-    [SerializeField] private Vector3 m_raycastOffset = new Vector3(0, 1f, 0);
     [SerializeField] private GameObject m_interactionUI;
     [SerializeField] private Camera m_camera;
 
