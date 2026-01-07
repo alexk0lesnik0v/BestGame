@@ -23,12 +23,12 @@ public class Timer : MonoBehaviour
         if (m_isStart)
         {
             m_time -= Time.deltaTime;
-            m_timerText.text = ((int)(m_time / 60)).ToString() + " : " + ((int)(m_time % 60)).ToString();
+            m_timerText.text = ((int)(m_time / 60)).ToString("D2") + " : " + ((int)(m_time % 60)).ToString("D2");
         }
         else if(m_canStart)
         {
             m_time -= Time.deltaTime;
-            m_timerText.text = ((int)(m_time / 60)).ToString() + " : " + ((int)(m_time % 60)).ToString();
+            m_timerText.text = ((int)(m_time / 60)).ToString("D2") + " : " + ((int)(m_time % 60)).ToString("D2");
         }
         else
         {
