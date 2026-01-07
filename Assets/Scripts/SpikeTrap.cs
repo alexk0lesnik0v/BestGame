@@ -15,7 +15,15 @@ public class SpikeTrap : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.TryGetComponent<Player>(out var player))
+        {
+            m_animation.Play("Spike");
+            
+            player.TakeDamage(m_spikeDamage);
+            Debug.Log($"������� ����, ������� �� {player.Health}");
+        }
+        
+        /* if (other.CompareTag("Player"))
         {
             m_animation.Play("Spike");
             Player playerHealth = other.GetComponent<Player>();
@@ -25,6 +33,6 @@ public class SpikeTrap : MonoBehaviour
                 Debug.Log($"������� ����, ������� �� {playerHealth.Health}");
             }
 
-        }
+        }*/
     }
 }
