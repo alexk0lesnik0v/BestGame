@@ -21,6 +21,7 @@ namespace PickUps
             this.transform.parent = m_objectGrabPointTransform;
             this.transform.localPosition = Vector3.zero;
             this.transform.localEulerAngles = new Vector3(-105f, 0f, 0f);
+            this.gameObject.layer = 9;
         }
 
         public void Drop()
@@ -29,6 +30,7 @@ namespace PickUps
             this.transform.parent = null;
             //m_objectRigidBody.useGravity = true;
             m_objectRigidBody.isKinematic = false;
+            this.gameObject.layer = 0;
         }
 
         private void Update()  
