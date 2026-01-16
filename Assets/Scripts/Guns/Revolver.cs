@@ -11,6 +11,8 @@ namespace Guns
         [SerializeField] private float m_force = 155f;
 
         [SerializeField] private float m_range = 100f;
+        
+        [SerializeField] private float m_rotateSpeed = 5f;
 
         [SerializeField] private ParticleSystem m_muzzleFlash;
 
@@ -48,6 +50,8 @@ namespace Guns
         }
         private void Update()
         {
+            var angle = transform.eulerAngles;
+            
             if (m_isFiring && Time.time > m_nextFire)
             {
                 m_nextFire = Time.time + 1f / m_fireRate;

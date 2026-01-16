@@ -3,7 +3,12 @@ guid: beeaef6ad99c3d042b1962c83570b362
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trap01
+    second: {fileID: 2100000, guid: e78f7b5c8f3fcdc48862b7c742fd1f4b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
