@@ -1,4 +1,6 @@
-﻿using PickUps;
+﻿using System;
+using Inventories;
+using PickUps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,8 +14,17 @@ namespace Players
         [SerializeField] private LayerMask m_pickUpLayerMask;
         [SerializeField] private GameObject m_weapon;
         [SerializeField] private GameObject m_handLamp;
+        [SerializeField] InventoryManager m_inventoryManager;
         
         private ObjectGrabbable m_objectGrabbable;
+        private Item m_item;
+        
+        private Camera m_mainCamera;
+
+        private void Start()
+        {
+            m_mainCamera = Camera.main;
+        }
 
         public bool IsGrabbed()
         {
@@ -36,6 +47,11 @@ namespace Players
                         m_weapon.SetActive(false);
                         m_handLamp.SetActive(false);
                     }
+                    /*else if (hit.transform.TryGetComponent(out m_item))
+                    {
+                        m_inventoryManager.AddItem(m_item.m_item, m_item.m_amount);
+                        Destroy(m_item.gameObject);
+                    }*/
                 }
             }
             else
@@ -44,6 +60,17 @@ namespace Players
                 m_objectGrabbable = null;
                 m_weapon.SetActive(true);
                 m_handLamp.SetActive(true);
+            }
+            
+            Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit _hit;
+            if (Physics.Raycast(ray, out _hit, m_pickUpDistance))
+            {
+                if (_hit.collider.TryGetComponent(out m_item))
+                {
+                    m_inventoryManager.AddItem(m_item.m_item, m_item.m_amount);
+                    Destroy(m_item.gameObject);
+                }
             }
         }
     }

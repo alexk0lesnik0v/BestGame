@@ -42,7 +42,7 @@ namespace Inventories
                 m_UIPanel.SetActive(false);
             }
             
-            Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            /*Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, m_reachDistance))
             {
@@ -51,16 +51,17 @@ namespace Inventories
                     AddItem(item.m_item, item.m_amount);
                     Destroy(item.gameObject);
                 }
-            }
+            }*/
         }
 
-        private void AddItem(ItemScriptableObject item, int amount)
+        public void AddItem(ItemScriptableObject item, int amount)
         {
             foreach (InventorySlot slot in m_slots)
             {
                 if (slot.m_item == item)
                 {
                     slot.m_amount += amount;
+                    slot.m_itemAmountText.text = slot.m_amount.ToString();
                     return;
                 }
                 else if (slot.m_isEmpty)
@@ -68,6 +69,9 @@ namespace Inventories
                     slot.m_item = item;
                     slot.m_amount = amount;
                     slot.m_isEmpty = false;
+                    slot.SetIcon(item.m_icon);
+                    slot.m_itemAmountText.text = amount.ToString();
+                    break;
                 }
             }
         }
