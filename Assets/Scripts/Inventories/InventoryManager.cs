@@ -10,11 +10,16 @@ namespace Inventories
         [SerializeField] private GameObject m_UIPanel;
         [SerializeField] private Transform m_inventoryPanel;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
+        [SerializeField] private float m_reachDistance = 3f;
         
         public bool m_isOpened = false;
+        
+        private Camera m_mainCamera;
 
         private void Start()
         {
+            m_mainCamera = Camera.main;
+            
             for (int i = 0; i < m_inventoryPanel.childCount; i++)
             {
                 if (m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
@@ -35,6 +40,35 @@ namespace Inventories
             else
             {
                 m_UIPanel.SetActive(false);
+            }
+            
+            Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, m_reachDistance))
+            {
+                if (hit.collider.TryGetComponent(out Item item))
+                {
+                    AddItem(item.m_item, item.m_amount);
+                    Destroy(item.gameObject);
+                }
+            }
+        }
+
+        private void AddItem(ItemScriptableObject item, int amount)
+        {
+            foreach (InventorySlot slot in m_slots)
+            {
+                if (slot.m_item == item)
+                {
+                    slot.m_amount += amount;
+                    return;
+                }
+                else if (slot.m_isEmpty)
+                {
+                    slot.m_item = item;
+                    slot.m_amount = amount;
+                    slot.m_isEmpty = false;
+                }
             }
         }
     }
