@@ -1,5 +1,6 @@
 ﻿using Enemies;
 using Guns;
+using Inventories;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Players
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
         [SerializeField] private GameObject m_deathUI;
+        [SerializeField] private InventoryManager m_inventory;
         
         private Vector2 m_move;
         private Vector3 m_movement;
@@ -83,6 +85,14 @@ namespace Players
             if (!m_isDead)
             {
                 m_revolver.Fire();
+            }
+        }
+        
+        private void OnInventory(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_inventory.m_isOpened = !m_inventory.m_isOpened;
             }
         }
 

@@ -19690,6 +19690,7 @@ GameObject:
   - component: {fileID: 1634638411}
   - component: {fileID: 1634638410}
   - component: {fileID: 1634638409}
+  - component: {fileID: 1634638413}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -19780,6 +19781,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1634638413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634638408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c470770ced6a4fcda3f7fc969433ddaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventories.InventoryManager
+  m_UIPanel: {fileID: 1950276958}
+  m_inventoryPanel: {fileID: 1156696922}
+  m_slots: []
+  m_isOpened: 0
 --- !u!1 &1635074004
 GameObject:
   m_ObjectHideFlags: 0
@@ -27006,6 +27023,10 @@ PrefabInstance:
       propertyPath: m_deathUI
       value: 
       objectReference: {fileID: 1805107012}
+    - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_inventory
+      value: 
+      objectReference: {fileID: 1634638413}
     - target: {fileID: 7546873277320716672, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_Name
       value: Player
