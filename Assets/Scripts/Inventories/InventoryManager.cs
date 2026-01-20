@@ -61,9 +61,13 @@ namespace Inventories
             {
                 if (slot.m_item == item)
                 {
-                    slot.m_amount += amount;
-                    slot.m_itemAmountText.text = slot.m_amount.ToString();
-                    return;
+                    if (slot.m_amount + amount <= item.m_maximumAmount)
+                    {
+                        slot.m_amount += amount;
+                        slot.m_itemAmountText.text = slot.m_amount.ToString();
+                        return;
+                    }
+                    continue;
                 }
                 else if (slot.m_isEmpty)
                 {
