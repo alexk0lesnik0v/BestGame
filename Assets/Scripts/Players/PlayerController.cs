@@ -29,7 +29,7 @@ namespace Players
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
-        public bool m_isDead = false;
+        public bool m_isNotFiring = false;
         private float m_playerHeight;
 
         private void Start()
@@ -82,7 +82,7 @@ namespace Players
 
         public void OnFire()
         {
-            if (!m_isDead)
+            if (!m_isNotFiring)
             {
                 m_revolver.Fire();
             }
@@ -93,6 +93,23 @@ namespace Players
             if (inputValue.Get<float>() > 0.5f)
             {
                 m_inventory.m_isOpened = !m_inventory.m_isOpened;
+
+                if (m_inventory.m_isOpened)
+                {
+                    this.enabled = false;
+                    m_isNotFiring = true;
+                
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    this.enabled = true;
+                    m_isNotFiring = false;
+                
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
             }
         }
 
@@ -147,7 +164,7 @@ namespace Players
             {
                 m_deathUI.SetActive(true);
                 this.enabled = false;
-                m_isDead = true;
+                m_isNotFiring = true;
                 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
