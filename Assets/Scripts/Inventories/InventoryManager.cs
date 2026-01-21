@@ -17,6 +17,11 @@ namespace Inventories
         
         private Camera m_mainCamera;
 
+        private void Awake()
+        {
+            m_UIPanel.SetActive(true);
+        }
+
         private void Start()
         {
             m_mainCamera = Camera.main;
@@ -30,6 +35,7 @@ namespace Inventories
             }
             
             m_UIPanel.SetActive(false);
+            m_inventoryPanel.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -37,10 +43,12 @@ namespace Inventories
             if (m_isOpened)
             {
                 m_UIPanel.SetActive(true);
+                m_inventoryPanel.gameObject.SetActive(true);
             }
             else
             {
                 m_UIPanel.SetActive(false);
+                m_inventoryPanel.gameObject.SetActive(false);
             }
             
             /*Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());

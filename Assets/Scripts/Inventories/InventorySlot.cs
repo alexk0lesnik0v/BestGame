@@ -15,8 +15,8 @@ namespace Inventories
 
         private void Awake()
         {
-            m_iconGO = transform.GetChild(0).gameObject;
-            m_itemAmountText = transform.GetChild(1).gameObject.GetComponent<TMP_Text>();
+            m_iconGO = transform.GetChild(0).GetChild(0).gameObject;
+            m_itemAmountText = transform.GetChild(0).GetChild(1).gameObject.GetComponent<TMP_Text>();
         }
 
         public void SetIcon(Sprite icon)

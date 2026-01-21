@@ -25,7 +25,7 @@ namespace Enemies
         
         void Start()
         {
-            m_player  = FindObjectOfType<Player>();
+            m_player  = FindAnyObjectByType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animator = GetComponent<Animator>();
             
