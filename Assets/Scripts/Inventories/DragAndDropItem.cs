@@ -44,13 +44,17 @@ namespace Inventories
             transform.SetParent(m_oldSlot.transform);
             transform.position = m_oldSlot.transform.position;
             
-            if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel") // renamed to UIBG
+            if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel")
             {
-                // Выброс объектов из инвентаря - Спавним префаб обекта перед персонажем
-                GameObject itemObject = Instantiate(m_oldSlot.m_item.m_itemPrefab, m_player.position + Vector3.up + m_player.forward, Quaternion.identity);
-                // Устанавливаем количество объектов такое какое было в слоте
-                itemObject.GetComponent<Item>().m_amount = m_oldSlot.m_amount;
-                // убираем значения InventorySlot
+                int amount = m_oldSlot.m_amount;
+
+                while (amount > 0)
+                {
+                    GameObject itemObject = Instantiate(m_oldSlot.m_item.m_itemPrefab, m_player.position + Vector3.up + m_player.forward, Quaternion.identity);
+                    itemObject.GetComponent<Item>().m_amount = 1;
+                    amount -= 1;
+                }
+                
                 NullifySlotData();
             }
             else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent is null)
@@ -59,14 +63,12 @@ namespace Inventories
             }
             else if(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>() is not null)
             {
-                //Перемещаем данные из одного слота в другой
                 ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>());
             }
         }
         
-        public void NullifySlotData() // made public 
+        public void NullifySlotData()
         {
-            // убираем значения InventorySlot
             m_oldSlot.m_item = null;
             m_oldSlot.m_amount = 0;
             m_oldSlot.m_isEmpty = true;
@@ -76,14 +78,12 @@ namespace Inventories
         }
         void ExchangeSlotData(InventorySlot newSlot)
         {
-            // Временно храним данные newSlot в отдельных переменных
             ItemScriptableObject item = newSlot.m_item;
             int amount = newSlot.m_amount;
             bool isEmpty = newSlot.m_isEmpty;
             GameObject iconGO = newSlot.m_iconGO;
             TMP_Text itemAmountText = newSlot.m_itemAmountText;
 
-            // Заменяем значения newSlot на значения oldSlot
             newSlot.m_item = m_oldSlot.m_item;
             newSlot.m_amount = m_oldSlot.m_amount;
             if (!m_oldSlot.m_isEmpty)
@@ -100,7 +100,6 @@ namespace Inventories
             
             newSlot.m_isEmpty = m_oldSlot.m_isEmpty;
 
-            // Заменяем значения oldSlot на значения newSlot сохраненные в переменных
             m_oldSlot.m_item = item;
             m_oldSlot.m_amount = amount;
             if (!isEmpty)
