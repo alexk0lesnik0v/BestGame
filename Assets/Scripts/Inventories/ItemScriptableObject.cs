@@ -11,6 +11,7 @@ namespace Inventories
         public Sprite m_icon;
         public ItemType m_itemType;
         [SerializeField] private string m_itemDescription;
+        public bool m_isConsumeable;
         
         [Header("Consumable Characteristics")]
         public float m_changeHealth;

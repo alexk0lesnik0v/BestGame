@@ -44,7 +44,7 @@ namespace Inventories
             transform.SetParent(m_oldSlot.transform);
             transform.position = m_oldSlot.transform.position;
             
-            if (eventData.pointerCurrentRaycast.gameObject.name == "UIPanel")
+            if (eventData.pointerCurrentRaycast.gameObject.name == "UIBG")
             {
                 int amount = m_oldSlot.m_amount;
 

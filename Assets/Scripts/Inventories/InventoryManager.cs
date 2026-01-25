@@ -8,7 +8,7 @@ namespace Inventories
 {
     public class InventoryManager : MonoBehaviour
     {
-        [SerializeField] private GameObject m_UIPanel;
+        [SerializeField] private GameObject m_UIBG;
         [SerializeField] private Transform m_inventoryPanel;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
         [SerializeField] private float m_reachDistance = 3f;
@@ -19,7 +19,7 @@ namespace Inventories
 
         private void Awake()
         {
-            m_UIPanel.SetActive(true);
+            m_UIBG.SetActive(true);
         }
 
         private void Start()
@@ -34,7 +34,7 @@ namespace Inventories
                 }
             }
             
-            m_UIPanel.SetActive(false);
+            m_UIBG.SetActive(false);
             m_inventoryPanel.gameObject.SetActive(false);
         }
 
@@ -42,12 +42,12 @@ namespace Inventories
         {
             if (m_isOpened)
             {
-                m_UIPanel.SetActive(true);
+                m_UIBG.SetActive(true);
                 m_inventoryPanel.gameObject.SetActive(true);
             }
             else
             {
-                m_UIPanel.SetActive(false);
+                m_UIBG.SetActive(false);
                 m_inventoryPanel.gameObject.SetActive(false);
             }
             

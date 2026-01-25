@@ -24,6 +24,7 @@ namespace Players
         [SerializeField] private float m_crouch = 0.6f;
         [SerializeField] private GameObject m_deathUI;
         [SerializeField] private InventoryManager m_inventory;
+        [SerializeField] private QuickslotInventory m_quickslotInventory;
         
         private Vector2 m_move;
         private Vector3 m_movement;
@@ -110,6 +111,14 @@ namespace Players
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
                 }
+            }
+        }
+
+        private void OnUseInventory(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_quickslotInventory.UseItem();
             }
         }
 

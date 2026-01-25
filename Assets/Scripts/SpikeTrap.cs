@@ -20,7 +20,7 @@ public class SpikeTrap : MonoBehaviour
             m_animation.Play("Spike");
             
             player.TakeDamage(m_spikeDamage);
-            Debug.Log($"������� ����, ������� �� {player.Health}");
+            Debug.Log($"������� ����, ������� �� {player.health}");
         }
         
         /* if (other.CompareTag("Player"))
