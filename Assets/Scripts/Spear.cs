@@ -11,8 +11,10 @@ public class Spear : MonoBehaviour
     {
         transform.DOLocalMove(m_isActive, m_duration);
     }
+
     public void IsNoActive()
     {
         transform.DOLocalMove(m_isNoActive, m_duration);
     }
+
 }

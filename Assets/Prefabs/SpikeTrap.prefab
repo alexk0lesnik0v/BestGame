@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50.15
+      value: 81.17781
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50.15
+      value: 81.17781
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50.15
+      value: 81.17781
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.189264
+      value: -0.033955336
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.019370079
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.4733
+      value: 34.909832
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.w
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trap
   m_spikeDamage: 10
-  m_animation: {fileID: 5876780538192749795}
 --- !u!65 &8087678266610537171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -124,8 +123,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02168957, y: 0.015806183, z: 0.027544599}
-  m_Center: {x: 0.00073724467, y: 0.0034309786, z: -0.0015910458}
+  m_Size: {x: 0.020476572, y: 0.00970881, z: 0.019606842}
+  m_Center: {x: 0.00013074461, y: 0.0035789236, z: 0.00018272789}
 --- !u!111 &5876780538192749795
 Animation:
   m_ObjectHideFlags: 0

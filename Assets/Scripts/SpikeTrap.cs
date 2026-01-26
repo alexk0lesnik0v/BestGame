@@ -20,19 +20,8 @@ public class SpikeTrap : MonoBehaviour
             m_animation.Play("Spike");
             
             player.TakeDamage(m_spikeDamage);
-            Debug.Log($"������� ����, ������� �� {player.Health}");
+            Debug.Log($"Take damage, your current health: {player.Health}");
         }
-        
-        /* if (other.CompareTag("Player"))
-        {
-            m_animation.Play("Spike");
-            Player playerHealth = other.GetComponent<Player>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(m_spikeDamage);
-                Debug.Log($"������� ����, ������� �� {playerHealth.Health}");
-            }
 
-        }*/
     }
 }
