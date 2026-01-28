@@ -5,7 +5,7 @@ namespace Inventories
     public enum ItemType {Default, Food, Weapon, Instrument}
     public class ItemScriptableObject : ScriptableObject
     {
-        [SerializeField] private string m_itemName;
+        public string m_itemName;
         public GameObject m_itemPrefab;
         public int m_maximumAmount;
         public Sprite m_icon;

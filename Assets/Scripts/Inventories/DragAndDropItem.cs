@@ -104,7 +104,7 @@ namespace Inventories
             m_oldSlot.m_amount = amount;
             if (!isEmpty)
             {
-                m_oldSlot.SetIcon(iconGO.GetComponent<Image>().sprite);
+                m_oldSlot.SetIcon(item.m_icon);
                 m_oldSlot.m_itemAmountText.text = amount.ToString();
             }
             else

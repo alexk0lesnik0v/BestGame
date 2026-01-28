@@ -1,4 +1,5 @@
-﻿using Players;
+﻿using Guns;
+using Players;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,11 +7,14 @@ namespace Inventories
 {
     public class QuickslotInventory : MonoBehaviour
     {
+        [SerializeField] private Revolver m_revolver;
+        [SerializeField] private Axe m_axe;
         public Transform m_quickslotParent;
         public InventoryManager m_inventoryManager;
         public int m_currentQuickslotID = 0;
         public Sprite m_selectedSprite;
         public Sprite m_notSelectedSprite;
+        public InventorySlot m_activeSlot =  null;
         
         private Player m_player;
 
@@ -36,6 +40,8 @@ namespace Inventories
                 }
                 
                 m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_selectedSprite;
+                m_activeSlot = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>();
+                ShowItemInHand();
             }
             
             if (mw < -0.1)
@@ -51,6 +57,8 @@ namespace Inventories
                 }
                 
                 m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_selectedSprite;
+                m_activeSlot = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>();
+                ShowItemInHand();
             }
             
             for(int i = 0; i < m_quickslotParent.childCount; i++)
@@ -62,10 +70,13 @@ namespace Inventories
                         if (m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite == m_notSelectedSprite)
                         {
                             m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_selectedSprite;
+                            m_activeSlot = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>();
+                            ShowItemInHand();
                         }
                         else
                         {
                             m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_notSelectedSprite;
+                            m_activeSlot = null;
                         }
                     }
                     else
@@ -73,6 +84,8 @@ namespace Inventories
                         m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_notSelectedSprite;
                         m_currentQuickslotID = i;
                         m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_selectedSprite;
+                        m_activeSlot = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>();
+                        ShowItemInHand();
                     }
                 }
             }
@@ -110,9 +123,39 @@ namespace Inventories
             }
             else
             {
-                m_player.Heal(100);
+                m_player.Heal(0);
                 
                 Debug.Log("Health " + m_player.health);
+            }
+        }
+
+        private void ShowItemInHand()
+        {
+            if (m_activeSlot.m_item is not null)
+            {
+                if (m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                {
+                    if (m_activeSlot.m_item.m_itemName == "Revolver")
+                    {
+                        m_axe.gameObject.SetActive(false);
+                        m_revolver.gameObject.SetActive(true);
+                    }
+                    else if (m_activeSlot.m_item.m_itemName == "Axe")
+                    {
+                        m_revolver.gameObject.SetActive(false);
+                        m_axe.gameObject.SetActive(true);
+                    }
+                }
+                else
+                {
+                    m_revolver.gameObject.SetActive(false);
+                    m_axe.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                m_revolver.gameObject.SetActive(false);
+                m_axe.gameObject.SetActive(false);
             }
         }
     }

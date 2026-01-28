@@ -85,7 +85,22 @@ namespace Players
         {
             if (!m_isNotFiring)
             {
-                m_revolver.Fire();
+                if (m_quickslotInventory.m_activeSlot is not null)
+                {
+                    if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                    {
+                        if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                        {
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                            {
+                                if (!m_inventory.m_isOpened)
+                                {
+                                    m_revolver.Fire();
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
         
