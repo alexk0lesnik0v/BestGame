@@ -10,6 +10,7 @@ namespace Inventories
     {
         [SerializeField] private GameObject m_UIBG;
         [SerializeField] private Transform m_inventoryPanel;
+        [SerializeField] private Transform m_quickslotPanel;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
         [SerializeField] private float m_reachDistance = 3f;
         
@@ -31,6 +32,14 @@ namespace Inventories
                 if (m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
                 {
                     m_slots.Add(m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>());
+                }
+            }
+
+            for (int i = 0; i < m_quickslotPanel.childCount; i++)
+            {
+                if (m_quickslotPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
+                {
+                    m_slots.Add(m_quickslotPanel.GetChild(i).GetComponent<InventorySlot>());
                 }
             }
             
@@ -75,15 +84,21 @@ namespace Inventories
                         slot.m_itemAmountText.text = slot.m_amount.ToString();
                         return;
                     }
-                    continue;
                 }
-                else if (slot.m_isEmpty)
+            }
+
+            foreach (InventorySlot slot in m_slots)
+            {
+                if (slot.m_isEmpty)
                 {
                     slot.m_item = item;
                     slot.m_amount = amount;
                     slot.m_isEmpty = false;
                     slot.SetIcon(item.m_icon);
-                    slot.m_itemAmountText.text = amount.ToString();
+                    if (slot.m_item.m_maximumAmount != 1)
+                    {
+                        slot.m_itemAmountText.text = amount.ToString();
+                    }
                     break;
                 }
             }

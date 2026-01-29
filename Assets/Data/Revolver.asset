@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: Assembly-CSharp::Inventories.ItemCreator
   m_itemName: Revolver
-  m_itemPrefab: {fileID: 8039642580661379506, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
+  m_itemPrefab: {fileID: 8118060938411577827, guid: 8be06068bf690b94881cfa3d402c4d0c, type: 3}
   m_maximumAmount: 1
   m_icon: {fileID: 21300000, guid: 7b7010f0eb1377b4c8c7eb94b4169e71, type: 3}
   m_itemType: 2

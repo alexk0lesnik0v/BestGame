@@ -12,9 +12,11 @@ namespace Inventories
     {
         public InventorySlot m_oldSlot;
         private Transform m_player;
+        private QuickslotInventory m_quickslotInventory;
 
         private void Start()
         {
+            m_quickslotInventory = FindObjectOfType<QuickslotInventory>();
             m_player = FindAnyObjectByType<Player>().transform;
             m_oldSlot = transform.GetComponentInParent<InventorySlot>();
         }
@@ -51,11 +53,20 @@ namespace Inventories
                 while (amount > 0)
                 {
                     GameObject itemObject = Instantiate(m_oldSlot.m_item.m_itemPrefab, m_player.position + Vector3.up + m_player.forward, Quaternion.identity);
-                    itemObject.GetComponent<Item>().m_amount = 1;
+                    if (itemObject.GetComponent<Item>() is not null)
+                    {
+                        itemObject.GetComponent<Item>().m_amount = 1;
+                    }
+                    else
+                    {
+                        itemObject.GetComponentInChildren<Item>().m_amount = 1;
+                    }
+                    
                     amount -= 1;
                 }
                 
                 NullifySlotData();
+                m_quickslotInventory.CheckItemInHand();
             }
             else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent is null)
             {
@@ -64,6 +75,7 @@ namespace Inventories
             else if(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>() is not null)
             {
                 ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>());
+                m_quickslotInventory.CheckItemInHand();
             }
         }
         
@@ -89,7 +101,14 @@ namespace Inventories
             if (!m_oldSlot.m_isEmpty)
             {
                 newSlot.SetIcon(m_oldSlot.m_iconGO.GetComponent<Image>().sprite);
-                newSlot.m_itemAmountText.text = m_oldSlot.m_amount.ToString();
+                if (m_oldSlot.m_item.m_maximumAmount != 1)
+                {
+                    newSlot.m_itemAmountText.text = m_oldSlot.m_amount.ToString();
+                }
+                else
+                {
+                    newSlot.m_itemAmountText.text = "";
+                }
             }
             else
             {
@@ -105,7 +124,14 @@ namespace Inventories
             if (!isEmpty)
             {
                 m_oldSlot.SetIcon(item.m_icon);
-                m_oldSlot.m_itemAmountText.text = amount.ToString();
+                if (m_oldSlot.m_item.m_maximumAmount != 1)
+                {
+                    m_oldSlot.m_itemAmountText.text = amount.ToString();
+                }
+                else
+                {
+                    m_oldSlot.m_itemAmountText.text = "";
+                }
             }
             else
             {

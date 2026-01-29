@@ -112,6 +112,18 @@ namespace Inventories
             }
         }
 
+        public void CheckItemInHand()
+        {
+            if (m_activeSlot is not null)
+            {
+                ShowItemInHand();
+            }
+            else
+            {
+                HideItemInHand();
+            }
+        }
+
         private void ChangeCharacteristics()
         {
             if(m_player.health + m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_changeHealth <= 100)
@@ -157,6 +169,12 @@ namespace Inventories
                 m_revolver.gameObject.SetActive(false);
                 m_axe.gameObject.SetActive(false);
             }
+        }
+
+        private void HideItemInHand()
+        {
+            m_revolver.gameObject.SetActive(false);
+            m_axe.gameObject.SetActive(false);
         }
     }
 }

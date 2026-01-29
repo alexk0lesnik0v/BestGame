@@ -1395,8 +1395,8 @@ GameObject:
   - component: {fileID: 8479539421077661877}
   - component: {fileID: 4776624886713867655}
   - component: {fileID: 4858365959757348353}
-  - component: {fileID: 699170964271411741}
   - component: {fileID: 177594200371534082}
+  - component: {fileID: 8815648100623479832}
   m_Layer: 0
   m_Name: RevolverItem
   m_TagString: Untagged
@@ -1594,27 +1594,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Inventories.Item
   m_item: {fileID: 11400000, guid: 93d8122ec664b1749802d39b9af750ea, type: 2}
   m_amount: 1
---- !u!65 &699170964271411741
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8118060938411577827}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.3, z: 0.3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &177594200371534082
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1642,6 +1621,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &8815648100623479832
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118060938411577827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.08
+  m_Height: 0.35
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8129537206533814319
 GameObject:
   m_ObjectHideFlags: 0

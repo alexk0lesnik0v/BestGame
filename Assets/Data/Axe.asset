@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: Assembly-CSharp::Inventories.ItemCreator
   m_itemName: Axe
-  m_itemPrefab: {fileID: 4386009861843685756, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+  m_itemPrefab: {fileID: 4386009861843685756, guid: 557fba593e05c0c45944cf8cb3092ea5, type: 3}
   m_maximumAmount: 1
   m_icon: {fileID: 21300000, guid: 3e79e5802867640408f8e6dbc6dab6ba, type: 3}
   m_itemType: 2
