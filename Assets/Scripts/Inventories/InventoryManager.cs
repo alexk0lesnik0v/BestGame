@@ -59,17 +59,6 @@ namespace Inventories
                 m_UIBG.SetActive(false);
                 m_inventoryPanel.gameObject.SetActive(false);
             }
-            
-            /*Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, m_reachDistance))
-            {
-                if (hit.collider.TryGetComponent(out Item item))
-                {
-                    AddItem(item.m_item, item.m_amount);
-                    Destroy(item.gameObject);
-                }
-            }*/
         }
 
         public void AddItem(ItemScriptableObject item, int amount)
