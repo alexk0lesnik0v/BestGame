@@ -32,6 +32,7 @@ namespace Players
         private bool m_isCrouch = false;
         public bool m_isNotFiring = false;
         private float m_playerHeight;
+        private float m_reloadingTime = 10f;
 
         private void Start()
         {
@@ -96,6 +97,29 @@ namespace Players
                                 if (!m_inventory.m_isOpened)
                                 {
                                     m_revolver.Fire();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void OnReloading()
+        {
+            if (!m_isNotFiring)
+            {
+                if (m_quickslotInventory.m_activeSlot is not null)
+                {
+                    if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                    {
+                        if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                        {
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                            {
+                                if (!m_inventory.m_isOpened)
+                                {
+                                    m_revolver.Reloading();
                                 }
                             }
                         }
