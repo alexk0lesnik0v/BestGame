@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace Guns
     public class Revolver : MonoBehaviour
     {
         [SerializeField] private float m_damage = 21f;
-
+        
         [SerializeField] [Min(0)] private int m_bulletCount = 6;
 
         [SerializeField] private float m_force = 155f;
@@ -35,6 +36,8 @@ namespace Guns
         private bool m_isReloading = false;
         
         [SerializeField] private Animator m_animator;
+        
+        [Min(0)] public int m_bulletItemCount = 0;
 
         private void Start()
         {
@@ -100,8 +103,27 @@ namespace Guns
         {
             m_isReloading = true;
             m_animator.Play("OpenReloader");
-            m_bulletCount = 6;
 
+            if (m_bulletItemCount == 0)
+            {
+                StartCoroutine(WaitReloading(2f));
+                return;
+            }
+            
+            int needBullets = 6 - m_bulletCount;
+            int availableBullets = m_bulletItemCount - needBullets;
+            
+            if (availableBullets >= 0)
+            {
+                m_bulletItemCount -= needBullets;
+                m_bulletCount = 6;
+            }
+            else
+            {
+                m_bulletCount = m_bulletItemCount;
+                m_bulletItemCount =0;
+            }
+            
             StartCoroutine(WaitReloading(2f));
         }
 

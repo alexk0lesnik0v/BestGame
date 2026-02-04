@@ -1,4 +1,5 @@
 ﻿using System;
+using Guns;
 using Inventories;
 using PickUps;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Players
         [SerializeField] private GameObject m_weapon;
         [SerializeField] private GameObject m_handLamp;
         [SerializeField] InventoryManager m_inventoryManager;
+        [SerializeField] private Revolver m_revolver;
         
         private ObjectGrabbable m_objectGrabbable;
         private Item m_item;
@@ -47,11 +49,6 @@ namespace Players
                         m_weapon.SetActive(false);
                         m_handLamp.SetActive(false);
                     }
-                    /*else if (hit.transform.TryGetComponent(out m_item))
-                    {
-                        m_inventoryManager.AddItem(m_item.m_item, m_item.m_amount);
-                        Destroy(m_item.gameObject);
-                    }*/
                 }
             }
             else
@@ -69,6 +66,11 @@ namespace Players
                 if (_hit.collider.TryGetComponent(out m_item))
                 {
                     m_inventoryManager.AddItem(m_item.m_item, m_item.m_amount);
+                    if (m_item.m_item.m_itemType == ItemType.Bullet)
+                    {
+                        m_revolver.m_bulletItemCount += 12;
+                    }
+                    
                     Destroy(m_item.gameObject);
                 }
             }

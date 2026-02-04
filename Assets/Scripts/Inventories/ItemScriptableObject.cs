@@ -2,7 +2,7 @@
 
 namespace Inventories
 {
-    public enum ItemType {Default, Food, Weapon, Instrument}
+    public enum ItemType {Default, Food, Weapon, Bullet, Instrument}
     public class ItemScriptableObject : ScriptableObject
     {
         public string m_itemName;

@@ -105,21 +105,24 @@ namespace Players
             }
         }
 
-        public void OnReloading()
+        public void OnReloading(InputValue inputValue)
         {
-            if (!m_isNotFiring)
+            if (inputValue.Get<float>() > 0.5f)
             {
-                if (m_quickslotInventory.m_activeSlot is not null)
+                if (!m_isNotFiring)
                 {
-                    if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                    if (m_quickslotInventory.m_activeSlot is not null)
                     {
-                        if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                        if (m_quickslotInventory.m_activeSlot.m_item is not null)
                         {
-                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
                             {
-                                if (!m_inventory.m_isOpened)
+                                if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
                                 {
-                                    m_revolver.Reloading();
+                                    if (!m_inventory.m_isOpened)
+                                    {
+                                        m_revolver.Reloading();
+                                    }
                                 }
                             }
                         }
