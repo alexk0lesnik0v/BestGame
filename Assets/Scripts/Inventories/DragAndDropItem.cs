@@ -1,0 +1,146 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using Players;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
+
+namespace Inventories
+{
+    public class DragAndDropItem : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+    {
+        public InventorySlot m_oldSlot;
+        private Transform m_player;
+        private QuickslotInventory m_quickslotInventory;
+
+        private void Start()
+        {
+            m_quickslotInventory = FindObjectOfType<QuickslotInventory>();
+            m_player = FindAnyObjectByType<Player>().transform;
+            m_oldSlot = transform.GetComponentInParent<InventorySlot>();
+        }
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (m_oldSlot.m_isEmpty)
+                return;
+            GetComponent<RectTransform>().position += new Vector3(eventData.delta.x, eventData.delta.y);
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            if (m_oldSlot.m_isEmpty)
+             return;
+            GetComponentInChildren<Image>().color = new Color(1, 1, 1, 0.75f);
+            GetComponentInChildren<Image>().raycastTarget = false;
+            transform.SetParent(transform.parent.parent.parent);
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            if (m_oldSlot.m_isEmpty)
+                return;
+            GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1f);
+            GetComponentInChildren<Image>().raycastTarget = true;
+
+            transform.SetParent(m_oldSlot.transform);
+            transform.position = m_oldSlot.transform.position;
+            
+            if (eventData.pointerCurrentRaycast.gameObject.name == "UIBG")
+            {
+                int amount = m_oldSlot.m_amount;
+
+                while (amount > 0)
+                {
+                    GameObject itemObject = Instantiate(m_oldSlot.m_item.m_itemPrefab, m_player.position + Vector3.up + m_player.forward, Quaternion.identity);
+                    if (itemObject.GetComponent<Item>() is not null)
+                    {
+                        itemObject.GetComponent<Item>().m_amount = 1;
+                    }
+                    else
+                    {
+                        itemObject.GetComponentInChildren<Item>().m_amount = 1;
+                    }
+                    
+                    amount -= 1;
+                }
+                
+                NullifySlotData();
+                m_quickslotInventory.CheckItemInHand();
+            }
+            else if (eventData.pointerCurrentRaycast.gameObject.transform.parent.parent is null)
+            {
+                return;
+            }
+            else if(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>() is not null)
+            {
+                ExchangeSlotData(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.GetComponent<InventorySlot>());
+                m_quickslotInventory.CheckItemInHand();
+            }
+        }
+        
+        public void NullifySlotData()
+        {
+            m_oldSlot.m_item = null;
+            m_oldSlot.m_amount = 0;
+            m_oldSlot.m_isEmpty = true;
+            m_oldSlot.m_iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+            m_oldSlot.m_iconGO.GetComponent<Image>().sprite = null;
+            m_oldSlot.m_itemAmountText.text = "";
+        }
+        void ExchangeSlotData(InventorySlot newSlot)
+        {
+            ItemScriptableObject item = newSlot.m_item;
+            int amount = newSlot.m_amount;
+            bool isEmpty = newSlot.m_isEmpty;
+            GameObject iconGO = newSlot.m_iconGO;
+            TMP_Text itemAmountText = newSlot.m_itemAmountText;
+
+            newSlot.m_item = m_oldSlot.m_item;
+            newSlot.m_amount = m_oldSlot.m_amount;
+            if (!m_oldSlot.m_isEmpty)
+            {
+                newSlot.SetIcon(m_oldSlot.m_iconGO.GetComponent<Image>().sprite);
+                if (m_oldSlot.m_item.m_maximumAmount != 1)
+                {
+                    newSlot.m_itemAmountText.text = m_oldSlot.m_amount.ToString();
+                }
+                else
+                {
+                    newSlot.m_itemAmountText.text = "";
+                }
+            }
+            else
+            {
+                newSlot.m_iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                newSlot.m_iconGO.GetComponent<Image>().sprite = null;
+                newSlot.m_itemAmountText.text = "";
+            }
+            
+            newSlot.m_isEmpty = m_oldSlot.m_isEmpty;
+
+            m_oldSlot.m_item = item;
+            m_oldSlot.m_amount = amount;
+            if (!isEmpty)
+            {
+                m_oldSlot.SetIcon(item.m_icon);
+                if (m_oldSlot.m_item.m_maximumAmount != 1)
+                {
+                    m_oldSlot.m_itemAmountText.text = amount.ToString();
+                }
+                else
+                {
+                    m_oldSlot.m_itemAmountText.text = "";
+                }
+            }
+            else
+            {
+                m_oldSlot.m_iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                m_oldSlot.m_iconGO.GetComponent<Image>().sprite = null;
+                m_oldSlot.m_itemAmountText.text = "";
+            }
+            
+            m_oldSlot.m_isEmpty = isEmpty;
+        }
+    }
+}

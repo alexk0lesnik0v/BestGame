@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Guns
@@ -5,8 +7,8 @@ namespace Guns
     public class Revolver : MonoBehaviour
     {
         [SerializeField] private float m_damage = 21f;
-
-        [SerializeField] private float m_fireRate = 10f;
+        
+        [SerializeField] [Min(0)] private int m_bulletCount = 6;
 
         [SerializeField] private float m_force = 155f;
 
@@ -31,10 +33,13 @@ namespace Guns
         private float m_nextFire = 0f;
         private float m_bulletSpeed = 100f;
         private bool m_isFiring = false;
+        private bool m_isReloading = false;
         
         [SerializeField] private Animator m_animator;
+        
+        [Min(0)] public int m_bulletItemCount = 0;
 
-        private void start()
+        private void Start()
         {
             m_animator = GetComponent<Animator>();
         }
@@ -52,17 +57,26 @@ namespace Guns
         {
             var angle = transform.eulerAngles;
             
-            if (m_isFiring && Time.time > m_nextFire)
+            if (m_isFiring && !m_isReloading && m_bulletCount > 0)
             {
-                m_nextFire = Time.time + 1f / m_fireRate;
                 Shoot();
             }
+            else if (m_isFiring && !m_isReloading && m_bulletCount == 0)
+            {
+                m_animator.Play("Shooting");
+            }
             m_isFiring = false;
-            m_animator.Play("PrepareForShooting");
+
+            if (!m_isFiring && !m_isReloading)
+            {
+                m_animator.Play("PrepareForShooting");
+            }
         }
         
         private void Shoot()
         {
+            m_bulletCount -= 1;
+            
             m_animator.Play("Shooting");
             
             m_audioSource.PlayOneShot(m_shotSFX);
@@ -83,6 +97,41 @@ namespace Guns
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                 }
             }
+        }
+
+        public void Reloading()
+        {
+            m_isReloading = true;
+            m_animator.Play("OpenReloader");
+
+            if (m_bulletItemCount == 0)
+            {
+                StartCoroutine(WaitReloading(2f));
+                return;
+            }
+            
+            int needBullets = 6 - m_bulletCount;
+            int availableBullets = m_bulletItemCount - needBullets;
+            
+            if (availableBullets >= 0)
+            {
+                m_bulletItemCount -= needBullets;
+                m_bulletCount = 6;
+            }
+            else
+            {
+                m_bulletCount = m_bulletItemCount;
+                m_bulletItemCount =0;
+            }
+            
+            StartCoroutine(WaitReloading(2f));
+        }
+
+        IEnumerator WaitReloading(float time)
+        {
+            yield return new WaitForSeconds(time);
+            Debug.Log("Reloading is over");
+            m_isReloading = false;
         }
     }
 }

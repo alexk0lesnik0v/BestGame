@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour
             m_time = 0;
             m_deathUI.SetActive(true);
             m_player.enabled = false;
-            m_player.m_isDead = true;
+            m_player.m_isNotFiring = true;
                 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

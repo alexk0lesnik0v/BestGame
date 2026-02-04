@@ -1,5 +1,6 @@
 ﻿using Enemies;
 using Guns;
+using Inventories;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -22,13 +23,16 @@ namespace Players
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
         [SerializeField] private GameObject m_deathUI;
+        [SerializeField] private InventoryManager m_inventory;
+        [SerializeField] private QuickslotInventory m_quickslotInventory;
         
         private Vector2 m_move;
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
-        public bool m_isDead = false;
+        public bool m_isNotFiring = false;
         private float m_playerHeight;
+        private float m_reloadingTime = 10f;
 
         private void Start()
         {
@@ -80,9 +84,83 @@ namespace Players
 
         public void OnFire()
         {
-            if (!m_isDead)
+            if (!m_isNotFiring)
             {
-                m_revolver.Fire();
+                if (m_quickslotInventory.m_activeSlot is not null)
+                {
+                    if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                    {
+                        if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                        {
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                            {
+                                if (!m_inventory.m_isOpened)
+                                {
+                                    m_revolver.Fire();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void OnReloading(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                if (!m_isNotFiring)
+                {
+                    if (m_quickslotInventory.m_activeSlot is not null)
+                    {
+                        if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                        {
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                            {
+                                if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                                {
+                                    if (!m_inventory.m_isOpened)
+                                    {
+                                        m_revolver.Reloading();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        private void OnInventory(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_inventory.m_isOpened = !m_inventory.m_isOpened;
+
+                if (m_inventory.m_isOpened)
+                {
+                    this.enabled = false;
+                    m_isNotFiring = true;
+                
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    this.enabled = true;
+                    m_isNotFiring = false;
+                
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+            }
+        }
+
+        private void OnUseInventory(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_quickslotInventory.UseItem();
             }
         }
 
@@ -137,7 +215,7 @@ namespace Players
             {
                 m_deathUI.SetActive(true);
                 this.enabled = false;
-                m_isDead = true;
+                m_isNotFiring = true;
                 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
