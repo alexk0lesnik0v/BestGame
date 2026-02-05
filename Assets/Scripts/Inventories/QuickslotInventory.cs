@@ -8,6 +8,7 @@ namespace Inventories
     public class QuickslotInventory : MonoBehaviour
     {
         [SerializeField] private Revolver m_revolver;
+        [SerializeField] private BarabanOfBullets m_baraban;
         [SerializeField] private Axe m_axe;
         public Transform m_quickslotParent;
         public InventoryManager m_inventoryManager;
@@ -151,22 +152,26 @@ namespace Inventories
                     {
                         m_axe.gameObject.SetActive(false);
                         m_revolver.gameObject.SetActive(true);
+                        m_baraban.gameObject.SetActive(true);
                     }
                     else if (m_activeSlot.m_item.m_itemName == "Axe")
                     {
                         m_revolver.gameObject.SetActive(false);
+                        m_baraban.gameObject.SetActive(false);
                         m_axe.gameObject.SetActive(true);
                     }
                 }
                 else
                 {
                     m_revolver.gameObject.SetActive(false);
+                    m_baraban.gameObject.SetActive(false);
                     m_axe.gameObject.SetActive(false);
                 }
             }
             else
             {
                 m_revolver.gameObject.SetActive(false);
+                m_baraban.gameObject.SetActive(false);
                 m_axe.gameObject.SetActive(false);
             }
         }
@@ -174,6 +179,7 @@ namespace Inventories
         private void HideItemInHand()
         {
             m_revolver.gameObject.SetActive(false);
+            m_baraban.gameObject.SetActive(false);
             m_axe.gameObject.SetActive(false);
         }
     }
