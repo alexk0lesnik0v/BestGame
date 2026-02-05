@@ -8,8 +8,6 @@ namespace Guns
     {
         [SerializeField] private float m_damage = 21f;
         
-        [SerializeField] [Min(0)] private int m_bulletCount = 6;
-
         [SerializeField] private float m_force = 155f;
 
         [SerializeField] private float m_range = 100f;
@@ -37,6 +35,7 @@ namespace Guns
         
         [SerializeField] private Animator m_animator;
         
+        [SerializeField] [Min(0)] public int m_bulletCount = 6;
         [Min(0)] public int m_bulletItemCount = 0;
 
         private void Start()
