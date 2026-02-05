@@ -119,7 +119,7 @@ namespace Guns
             }
             else
             {
-                m_bulletCount = m_bulletItemCount;
+                m_bulletCount = m_bulletCount + m_bulletItemCount;
                 m_bulletItemCount =0;
             }
             
