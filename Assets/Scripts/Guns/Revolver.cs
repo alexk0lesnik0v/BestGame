@@ -19,6 +19,12 @@ namespace Guns
         [SerializeField] private Transform m_bulletSpawn;
 
         [SerializeField] private AudioClip m_shotSFX;
+        
+        [SerializeField] private AudioClip m_noBulletsSFX;
+        
+        [SerializeField] private AudioClip m_reloadingSFX;
+        
+        [SerializeField] private AudioClip m_nullReloadingSFX;
 
         [SerializeField] private AudioSource m_audioSource;
 
@@ -63,6 +69,7 @@ namespace Guns
             else if (m_isFiring && !m_isReloading && m_bulletCount == 0)
             {
                 m_animator.Play("Shooting");
+                m_audioSource.PlayOneShot(m_noBulletsSFX);
             }
             m_isFiring = false;
 
@@ -102,9 +109,18 @@ namespace Guns
         {
             m_isReloading = true;
             m_animator.Play("OpenReloader");
-
+            
             if (m_bulletItemCount == 0)
             {
+                if (m_bulletCount == 0)
+                {
+                    m_audioSource.PlayOneShot(m_nullReloadingSFX);
+                }
+                else
+                {
+                    m_audioSource.PlayOneShot(m_reloadingSFX);
+                }
+                
                 StartCoroutine(WaitReloading(2f));
                 return;
             }
@@ -119,10 +135,11 @@ namespace Guns
             }
             else
             {
-                m_bulletCount = m_bulletCount + m_bulletItemCount;
+                m_bulletCount += m_bulletItemCount;
                 m_bulletItemCount =0;
             }
             
+            m_audioSource.PlayOneShot(m_reloadingSFX);
             StartCoroutine(WaitReloading(2f));
         }
 

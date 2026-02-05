@@ -14,18 +14,6 @@ public class SpearTrap : MonoBehaviour
             player.TakeDamage(m_spearDamage);
             Debug.Log($"������� ����, ������� �� {player.health}");
         }
-        
-        /*if (other.gameObject.CompareTag("Player"))
-        {
-            m_spear.IsActive();
-            Player playerHealth = other.GetComponent<Player>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(m_spearDamage);
-                Debug.Log($"������� ����, ������� �� {playerHealth.Health}");
-            }
-     
-        }*/
     }
     
     private void OnTriggerExit(Collider other)
