@@ -111,11 +111,13 @@ namespace Guns
         public void Reloading()
         {
             m_isReloading = true;
+            this.transform.localEulerAngles = new Vector3(-30f, 0f, 50f);
             m_animator.Play("OpenReloader");
 
             if (m_bulletCount == 6)
             {
                 m_audioSource.PlayOneShot(m_nullReloadingSFX);
+                this.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
                 m_isReloading = false;
                 return;
             }
@@ -159,6 +161,7 @@ namespace Guns
         {
             yield return new WaitForSeconds(time);
             Debug.Log("Reloading is over");
+            this.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             m_isReloading = false;
         }
     }
