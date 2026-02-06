@@ -28784,6 +28784,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: bae3771192144054b985e5f350b93fc6, type: 3}
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_inventoryManager
+      value: 
+      objectReference: {fileID: 1634638413}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_nullReloadingSFX
       value: 
       objectReference: {fileID: 8300000, guid: 302b345635fc26b4fa5bb11cc17171e9, type: 3}

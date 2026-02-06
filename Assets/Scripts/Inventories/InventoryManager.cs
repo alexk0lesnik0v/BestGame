@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 namespace Inventories
 {
@@ -94,6 +95,30 @@ namespace Inventories
             }
             
             m_quickslotInventory.CheckItemInHand();
+        }
+
+        public void UseBulletItem()
+        {
+            foreach (InventorySlot slot in m_slots)
+            {
+                if (!slot.m_isEmpty)
+                {
+                    if (slot.m_item.m_itemType == ItemType.Bullet)
+                    {
+                        slot.m_amount -= 6;
+                        slot.m_itemAmountText.text = slot.m_amount.ToString();
+                        if (slot.m_amount <= 0)
+                        {
+                            slot.m_item = null;
+                            slot.m_amount = 0;
+                            slot.m_isEmpty = true;
+                            slot.m_iconGO.GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                            slot.m_iconGO.GetComponent<Image>().sprite = null;
+                            slot.m_itemAmountText.text = "";
+                        }
+                    }
+                }
+            }
         }
     }
 }

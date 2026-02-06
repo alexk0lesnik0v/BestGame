@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Inventories;
 using UnityEngine;
 
 namespace Guns
@@ -33,6 +34,8 @@ namespace Guns
         [SerializeField] private Camera m_camera;
 
         [SerializeField] private GameObject m_bullet;
+
+        [SerializeField] private InventoryManager m_inventoryManager;
 
         private float m_nextFire = 0f;
         private float m_bulletSpeed = 100f;
@@ -140,6 +143,7 @@ namespace Guns
             }
             
             m_audioSource.PlayOneShot(m_reloadingSFX);
+            m_inventoryManager.UseBulletItem();
             StartCoroutine(WaitReloading(2f));
         }
 
