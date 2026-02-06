@@ -1516,7 +1516,6 @@ GameObject:
   - component: {fileID: 4626555707272644038}
   - component: {fileID: 7341354745701311741}
   - component: {fileID: 6731460348611770651}
-  - component: {fileID: -379305164811254688}
   m_Layer: 0
   m_Name: ReichsrevolverM1879
   m_TagString: Untagged
@@ -1591,18 +1590,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guns.Revolver
   m_damage: 21
-  m_fireRate: 10
   m_force: 155
   m_range: 100
   m_rotateSpeed: 5
   m_muzzleFlash: {fileID: 6853718079507204148}
   m_bulletSpawn: {fileID: 7870379776275210523}
   m_shotSFX: {fileID: 8300000, guid: bd7351f143511bf48ad92747eddc87de, type: 3}
+  m_noBulletsSFX: {fileID: 0}
+  m_reloadingSFX: {fileID: 0}
+  m_nullReloadingSFX: {fileID: 0}
   m_audioSource: {fileID: 6731460348611770651}
   m_hitEffect: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
   m_camera: {fileID: 0}
   m_bullet: {fileID: 115080, guid: da85ce98a277047408cecc6730c45bd7, type: 3}
+  m_inventoryManager: {fileID: 0}
   m_animator: {fileID: 7135942645721021284}
+  m_bulletCount: 6
+  m_bulletItemCount: 0
 --- !u!82 &6731460348611770651
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1700,20 +1704,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-379305164811254688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8039642580661379506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23eddf10c30443180637bbd96216eda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventories.Item
-  m_item: {fileID: 11400000, guid: 93d8122ec664b1749802d39b9af750ea, type: 2}
-  m_amount: 1
 --- !u!1 &8638195806879768667
 GameObject:
   m_ObjectHideFlags: 0
