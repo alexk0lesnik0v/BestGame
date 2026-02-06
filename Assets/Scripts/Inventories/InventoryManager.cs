@@ -97,7 +97,7 @@ namespace Inventories
             m_quickslotInventory.CheckItemInHand();
         }
 
-        public void UseBulletItem()
+        public void UseBulletItem(int amount)
         {
             foreach (InventorySlot slot in m_slots)
             {
@@ -105,7 +105,7 @@ namespace Inventories
                 {
                     if (slot.m_item.m_itemType == ItemType.Bullet)
                     {
-                        slot.m_amount -= 6;
+                        slot.m_amount -= amount;
                         slot.m_itemAmountText.text = slot.m_amount.ToString();
                         if (slot.m_amount <= 0)
                         {

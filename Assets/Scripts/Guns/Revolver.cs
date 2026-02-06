@@ -112,6 +112,13 @@ namespace Guns
         {
             m_isReloading = true;
             m_animator.Play("OpenReloader");
+
+            if (m_bulletCount == 6)
+            {
+                m_audioSource.PlayOneShot(m_nullReloadingSFX);
+                m_isReloading = false;
+                return;
+            }
             
             if (m_bulletItemCount == 0)
             {
@@ -135,15 +142,16 @@ namespace Guns
             {
                 m_bulletItemCount -= needBullets;
                 m_bulletCount = 6;
+                m_inventoryManager.UseBulletItem(needBullets);
             }
             else
             {
                 m_bulletCount += m_bulletItemCount;
-                m_bulletItemCount =0;
+                m_bulletItemCount = 0;
+                m_inventoryManager.UseBulletItem(6);
             }
             
             m_audioSource.PlayOneShot(m_reloadingSFX);
-            m_inventoryManager.UseBulletItem();
             StartCoroutine(WaitReloading(2f));
         }
 
