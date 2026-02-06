@@ -11,6 +11,7 @@ namespace Inventories
         [SerializeField] private GameObject m_UIBG;
         [SerializeField] private Transform m_inventoryPanel;
         [SerializeField] private Transform m_quickslotPanel;
+        [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
         [SerializeField] private float m_reachDistance = 3f;
         
@@ -27,19 +28,19 @@ namespace Inventories
         {
             m_mainCamera = Camera.main;
             
-            for (int i = 0; i < m_inventoryPanel.childCount; i++)
-            {
-                if (m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
-                {
-                    m_slots.Add(m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>());
-                }
-            }
-
             for (int i = 0; i < m_quickslotPanel.childCount; i++)
             {
                 if (m_quickslotPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
                 {
                     m_slots.Add(m_quickslotPanel.GetChild(i).GetComponent<InventorySlot>());
+                }
+            }
+            
+            for (int i = 0; i < m_inventoryPanel.childCount; i++)
+            {
+                if (m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>() is not null)
+                {
+                    m_slots.Add(m_inventoryPanel.GetChild(i).GetComponent<InventorySlot>());
                 }
             }
             
@@ -91,6 +92,8 @@ namespace Inventories
                     break;
                 }
             }
+            
+            m_quickslotInventory.CheckItemInHand();
         }
     }
 }

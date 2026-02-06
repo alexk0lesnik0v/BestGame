@@ -68,7 +68,7 @@ namespace Players
                     m_inventoryManager.AddItem(m_item.m_item, m_item.m_amount);
                     if (m_item.m_item.m_itemType == ItemType.Bullet)
                     {
-                        m_revolver.m_bulletItemCount += 12;
+                        m_revolver.m_bulletItemCount += m_item.m_amount;
                     }
                     
                     Destroy(m_item.gameObject);

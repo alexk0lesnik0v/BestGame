@@ -20922,6 +20922,7 @@ MonoBehaviour:
   m_UIBG: {fileID: 1950276958}
   m_inventoryPanel: {fileID: 1156696922}
   m_quickslotPanel: {fileID: 209468582}
+  m_quickslotInventory: {fileID: 209468586}
   m_slots: []
   m_reachDistance: 3
   m_isOpened: 0
