@@ -85,7 +85,7 @@ namespace Guns
         
         private void Shoot()
         {
-            m_animator.Play("ShootingRotate");
+            m_animator.Play("Shooting");
             
             m_bulletCount -= 1;
             
