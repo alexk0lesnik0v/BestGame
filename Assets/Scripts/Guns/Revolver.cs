@@ -75,12 +75,6 @@ namespace Guns
                 m_audioSource.PlayOneShot(m_noBulletsSFX);
             }
             m_isFiring = false;
-
-            if (!m_isFiring && !m_isReloading)
-            {
-                //m_animator.Play("PrepareForShooting");
-                //m_animator.Play("ShootingRotate");
-            }
         }
         
         private void Shoot()
@@ -112,31 +106,15 @@ namespace Guns
         public void Reloading()
         {
             m_isReloading = true;
-            this.transform.localEulerAngles = new Vector3(-30f, 0f, 50f);
-            m_animator.Play("OpenReloader");
-
-            if (m_bulletCount == 6)
+            
+            if (m_bulletCount == 6 || m_bulletItemCount == 0)
             {
                 m_audioSource.PlayOneShot(m_nullReloadingSFX);
-                this.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
                 m_isReloading = false;
                 return;
             }
             
-            if (m_bulletItemCount == 0)
-            {
-                if (m_bulletCount == 0)
-                {
-                    m_audioSource.PlayOneShot(m_nullReloadingSFX);
-                }
-                else
-                {
-                    m_audioSource.PlayOneShot(m_reloadingSFX);
-                }
-                
-                StartCoroutine(WaitReloading(2f));
-                return;
-            }
+            m_animator.Play("OpenReloader");
             
             int needBullets = 6 - m_bulletCount;
             int availableBullets = m_bulletItemCount - needBullets;
@@ -162,7 +140,6 @@ namespace Guns
         {
             yield return new WaitForSeconds(time);
             Debug.Log("Reloading is over");
-            this.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
             m_isReloading = false;
         }
     }
