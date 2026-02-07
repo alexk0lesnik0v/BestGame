@@ -13,8 +13,6 @@ namespace Guns
 
         [SerializeField] private float m_range = 100f;
         
-        [SerializeField] private float m_rotateSpeed = 5f;
-
         [SerializeField] private ParticleSystem m_muzzleFlash;
 
         [SerializeField] private Transform m_bulletSpawn;
@@ -37,8 +35,6 @@ namespace Guns
 
         [SerializeField] private InventoryManager m_inventoryManager;
 
-        private float m_nextFire = 0f;
-        private float m_bulletSpeed = 100f;
         private bool m_isFiring = false;
         private bool m_isReloading = false;
         
@@ -57,21 +53,15 @@ namespace Guns
             Debug.Log("Fire");
             m_isFiring = true;
         }
-
-        public void StopFire()
-        {
-            m_animator.SetBool("Shoot", false);
-        }
         private void Update()
         {
-            var angle = transform.eulerAngles;
-            
             if (m_isFiring && !m_isReloading && m_bulletCount > 0)
             {
                 Shoot();
             }
             else if (m_isFiring && !m_isReloading && m_bulletCount == 0)
             {
+                m_animator.Play("ShootingNoBullets");
                 m_audioSource.PlayOneShot(m_noBulletsSFX);
             }
             m_isFiring = false;
