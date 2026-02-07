@@ -50,6 +50,7 @@ namespace Guns
         private void Start()
         {
             m_animator = GetComponent<Animator>();
+            m_animator.Play("PrepareForShooting");
         }
         public void Fire()
         {
@@ -78,15 +79,22 @@ namespace Guns
 
             if (!m_isFiring && !m_isReloading)
             {
-                m_animator.Play("PrepareForShooting");
+                //m_animator.Play("PrepareForShooting");
+                //m_animator.Play("ShootingRotate");
             }
         }
         
         private void Shoot()
         {
+            m_animator.SetBool("Shoot", true);
+            
+            m_animator.Play("ShootingRotate");
+            
             m_bulletCount -= 1;
             
-            m_animator.Play("Shooting");
+            //m_animator.Play("PrepareForShooting");
+            
+            //m_animator.Play("Shooting");
             
             m_audioSource.PlayOneShot(m_shotSFX);
 
@@ -106,6 +114,8 @@ namespace Guns
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                 }
             }
+            
+            m_animator.SetBool("Shoot", false);
         }
 
         public void Reloading()
