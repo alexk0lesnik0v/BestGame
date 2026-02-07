@@ -72,7 +72,6 @@ namespace Guns
             }
             else if (m_isFiring && !m_isReloading && m_bulletCount == 0)
             {
-                m_animator.Play("PrepareForShooting");
                 m_audioSource.PlayOneShot(m_noBulletsSFX);
             }
             m_isFiring = false;
