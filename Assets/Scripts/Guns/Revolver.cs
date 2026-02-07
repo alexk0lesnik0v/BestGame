@@ -72,7 +72,7 @@ namespace Guns
             }
             else if (m_isFiring && !m_isReloading && m_bulletCount == 0)
             {
-                m_animator.Play("Shooting");
+                m_animator.Play("PrepareForShooting");
                 m_audioSource.PlayOneShot(m_noBulletsSFX);
             }
             m_isFiring = false;
@@ -86,15 +86,9 @@ namespace Guns
         
         private void Shoot()
         {
-            m_animator.SetBool("Shoot", true);
-            
             m_animator.Play("ShootingRotate");
             
             m_bulletCount -= 1;
-            
-            //m_animator.Play("PrepareForShooting");
-            
-            //m_animator.Play("Shooting");
             
             m_audioSource.PlayOneShot(m_shotSFX);
 
@@ -114,8 +108,6 @@ namespace Guns
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                 }
             }
-            
-            m_animator.SetBool("Shoot", false);
         }
 
         public void Reloading()
