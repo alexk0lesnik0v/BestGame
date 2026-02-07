@@ -131,5 +131,12 @@ namespace Enemies
                 }
             }
         }
+
+        public void Died()
+        {
+            m_agent.isStopped = true;
+            m_animator.Play("Death");
+            Destroy(this.gameObject.GetComponent<Collider>());
+        }
     }
 }

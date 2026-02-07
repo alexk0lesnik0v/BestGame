@@ -14,6 +14,7 @@ namespace Players
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Revolver m_revolver;
+        [SerializeField] private Axe m_axe;
         [SerializeField] private CharacterController m_characterController;
         [SerializeField] private CinemachineCamera m_cinemachineCamera;
         [SerializeField] private float m_currentSpeed;
@@ -36,7 +37,7 @@ namespace Players
 
         private void Start()
         {
-            m_characterController =  GetComponent<CharacterController>();
+            m_characterController = GetComponent<CharacterController>();
             m_currentSpeed = m_walkSpeed;
             m_playerHeight = m_characterController.height;
             
@@ -97,6 +98,13 @@ namespace Players
                                 if (!m_inventory.m_isOpened)
                                 {
                                     m_revolver.Fire();
+                                }
+                            }
+                            else if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Axe")
+                            {
+                                if (!m_inventory.m_isOpened)
+                                {
+                                    m_axe.Attack();
                                 }
                             }
                         }
@@ -209,7 +217,7 @@ namespace Players
             return up.normalized;
         }
         
-        public void OnTriggerEnter(Collider other)
+        /*public void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
             {
@@ -220,6 +228,6 @@ namespace Players
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
-        }
+        }*/
     }
 }
