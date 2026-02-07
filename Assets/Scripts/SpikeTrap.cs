@@ -4,6 +4,8 @@ using UnityEngine;
 public class SpikeTrap : MonoBehaviour
 {
     [SerializeField] private float m_spikeDamage;
+    [SerializeField] private AudioClip m_audioClip;
+    [SerializeField] private AudioSource m_source;
     
     private Animation m_animation;
 
@@ -18,21 +20,10 @@ public class SpikeTrap : MonoBehaviour
         if (other.gameObject.TryGetComponent<Player>(out var player))
         {
             m_animation.Play("Spike");
-            
+            m_source.PlayOneShot(m_audioClip);
             player.TakeDamage(m_spikeDamage);
-            Debug.Log($"������� ����, ������� �� {player.health}");
+            Debug.Log($"Your current health: {player.health}");
         }
         
-        /* if (other.CompareTag("Player"))
-        {
-            m_animation.Play("Spike");
-            Player playerHealth = other.GetComponent<Player>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(m_spikeDamage);
-                Debug.Log($"������� ����, ������� �� {playerHealth.Health}");
-            }
-
-        }*/
     }
 }

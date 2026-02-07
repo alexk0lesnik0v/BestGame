@@ -5,27 +5,18 @@ public class SpearTrap : MonoBehaviour
 {
     [SerializeField] private Spear m_spear;
     [SerializeField] private float m_spearDamage;
+    [SerializeField] private AudioSource m_source;
+    [SerializeField] private AudioClip m_clip;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<Player>(out var player))
         {
             m_spear.IsActive();
-            
+            m_source.PlayOneShot(m_clip);
             player.TakeDamage(m_spearDamage);
-            Debug.Log($"������� ����, ������� �� {player.health}");
+            Debug.Log($"Your current health: {player.health}");
         }
         
-        /*if (other.gameObject.CompareTag("Player"))
-        {
-            m_spear.IsActive();
-            Player playerHealth = other.GetComponent<Player>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(m_spearDamage);
-                Debug.Log($"������� ����, ������� �� {playerHealth.Health}");
-            }
-     
-        }*/
     }
     
     private void OnTriggerExit(Collider other)
