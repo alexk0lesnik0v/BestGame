@@ -2781,7 +2781,7 @@ Transform:
   m_GameObject: {fileID: 186501793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.45, y: 3.63862, z: -4.71}
+  m_LocalPosition: {x: 13.45, y: 14.94, z: -4.71}
   m_LocalScale: {x: 0.046996, y: 8.9990425, z: 6.690555}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29018,6 +29018,10 @@ PrefabInstance:
       propertyPath: m_inventoryManager
       value: 
       objectReference: {fileID: 1634638413}
+    - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_quickslotInventory
+      value: 
+      objectReference: {fileID: 209468586}
     - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_playerCameraTransform
       value: 

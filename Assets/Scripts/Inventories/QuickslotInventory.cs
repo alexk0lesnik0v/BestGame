@@ -193,7 +193,7 @@ namespace Inventories
             }
         }
 
-        private void HideItemInHand()
+        public void HideItemInHand()
         {
             m_revolver.gameObject.SetActive(false);
             m_baraban.gameObject.SetActive(false);

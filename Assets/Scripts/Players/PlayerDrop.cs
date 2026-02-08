@@ -13,7 +13,7 @@ namespace Players
         [SerializeField] private Transform m_objectGrabPointTransform;
         [SerializeField] private float m_pickUpDistance = 2f;
         [SerializeField] private LayerMask m_pickUpLayerMask;
-        [SerializeField] private GameObject m_weapon;
+        [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private GameObject m_handLamp;
         [SerializeField] InventoryManager m_inventoryManager;
         [SerializeField] private Revolver m_revolver;
@@ -48,7 +48,7 @@ namespace Players
                     if (hit.transform.TryGetComponent(out m_objectGrabbable))
                     {
                         m_objectGrabbable.Grab(m_objectGrabPointTransform);
-                        m_weapon.SetActive(false);
+                        m_quickslotInventory.HideItemInHand();
                         m_handLamp.SetActive(false);
                     }
                 }
@@ -57,7 +57,7 @@ namespace Players
             {
                 m_objectGrabbable.Drop();
                 m_objectGrabbable = null;
-                m_weapon.SetActive(true);
+                m_quickslotInventory.CheckItemInHand();
                 m_handLamp.SetActive(true);
             }
             
