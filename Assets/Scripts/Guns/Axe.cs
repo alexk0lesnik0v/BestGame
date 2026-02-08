@@ -1,4 +1,5 @@
-﻿using Enemies;
+﻿using System.Collections;
+using Enemies;
 using UnityEngine;
 
 namespace Guns
@@ -27,6 +28,13 @@ namespace Guns
             m_animator.Play("AxeAttack");
             
             m_audioSource.PlayOneShot(m_vzmah);
+            
+            StartCoroutine(WaitAttack(0.3f));
+        }
+        
+        IEnumerator WaitAttack(float time)
+        {
+            yield return new WaitForSeconds(time);
             
             RaycastHit hit;
 
