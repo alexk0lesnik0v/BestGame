@@ -9,7 +9,7 @@ namespace Enemies
     public class EnemyMonsterController:  MonoBehaviour
 
     {
-        [SerializeField] private int m_health = 2;
+        [SerializeField] private int m_health = 10;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
         [SerializeField] private Transform m_patrolRoute;

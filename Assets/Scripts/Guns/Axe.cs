@@ -20,7 +20,7 @@ namespace Guns
         private void Start()
         {
             m_animator = GetComponent<Animator>();
-            m_animator.Play("AxeIdle");
+            m_animator.Play("AxeOnHand");
         }
         
         public void Attack()
@@ -60,6 +60,11 @@ namespace Guns
                     }
                 }
             }
+        }
+
+        public void AxeOnHand()
+        {
+            m_animator.Play("AxeOnHand");
         }
     }
 }

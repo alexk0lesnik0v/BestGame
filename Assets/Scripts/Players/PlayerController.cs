@@ -26,11 +26,17 @@ namespace Players
         [SerializeField] private GameObject m_deathUI;
         [SerializeField] private InventoryManager m_inventory;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_walkingSound;
+        [SerializeField] private AudioClip m_runningSound;
+        [SerializeField] private AudioClip m_jumpingSound;
         
         private Vector2 m_move;
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
+        private bool m_isWalk = false;
+        private bool m_isRun = false;
         public bool m_isNotFiring = false;
         private float m_playerHeight;
         private float m_reloadingTime = 10f;
@@ -56,10 +62,12 @@ namespace Players
         {
             if (inputValue.Get<float>() > 0.5f && !m_isCrouch)
             {
+                m_isRun = true;
                 m_currentSpeed =  m_sprintSpeed;
             }
             else
             {
+                m_isRun = false;
                 m_currentSpeed =  m_walkSpeed;
             }
         }

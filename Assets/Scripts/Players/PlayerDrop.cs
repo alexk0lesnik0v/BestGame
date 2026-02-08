@@ -17,6 +17,8 @@ namespace Players
         [SerializeField] private GameObject m_handLamp;
         [SerializeField] InventoryManager m_inventoryManager;
         [SerializeField] private Revolver m_revolver;
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_addItemSounds;
         
         private ObjectGrabbable m_objectGrabbable;
         private Item m_item;
@@ -72,6 +74,7 @@ namespace Players
                     }
                     
                     Destroy(m_item.gameObject);
+                    m_audioSource.PlayOneShot(m_addItemSounds);
                 }
             }
         }
