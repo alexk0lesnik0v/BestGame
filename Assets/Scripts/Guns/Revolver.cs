@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Enemies;
 using Inventories;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Guns
 {
     public class Revolver : MonoBehaviour
     {
-        [SerializeField] private float m_damage = 21f;
+        [SerializeField] private float m_damage = 25f;
         
         [SerializeField] private float m_force = 155f;
 
@@ -89,6 +90,15 @@ namespace Guns
                 if (hit.rigidbody is not null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * m_force);
+                    
+                    if (hit.rigidbody.TryGetComponent<Enemy>(out var enemy))
+                    {
+                        enemy.TakeDamage(m_damage);
+                    }
+                    else
+                    {
+                        
+                    }
                 }
             }
         }
@@ -123,7 +133,7 @@ namespace Guns
             }
             
             m_audioSource.PlayOneShot(m_reloadingSFX);
-            StartCoroutine(WaitReloading(2f));
+            StartCoroutine(WaitReloading(1f));
         }
 
         IEnumerator WaitReloading(float time)
@@ -131,6 +141,11 @@ namespace Guns
             yield return new WaitForSeconds(time);
             Debug.Log("Reloading is over");
             m_isReloading = false;
+        }
+        
+        public void RevolverOnHand()
+        {
+            m_animator.Play("RevolverOnHand");
         }
     }
 }

@@ -10,6 +10,9 @@ namespace Inventories
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private BarabanOfBullets m_baraban;
         [SerializeField] private Axe m_axe;
+        [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private AudioClip m_itemSounds;
+        
         public Transform m_quickslotParent;
         public InventoryManager m_inventoryManager;
         public int m_currentQuickslotID = 0;
@@ -27,7 +30,7 @@ namespace Inventories
         private void Update()
         {
             float mw = Input.GetAxis("Mouse ScrollWheel");
-            if (mw > 0.1)
+            if (mw < -0.1)
             {
                 m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_notSelectedSprite;
                 
@@ -45,7 +48,7 @@ namespace Inventories
                 ShowItemInHand();
             }
             
-            if (mw < -0.1)
+            if (mw > 0.1)
             {
                 m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_notSelectedSprite;
                 if (m_currentQuickslotID <= 0)
@@ -151,14 +154,28 @@ namespace Inventories
                     if (m_activeSlot.m_item.m_itemName == "Revolver")
                     {
                         m_axe.gameObject.SetActive(false);
-                        m_revolver.gameObject.SetActive(true);
-                        m_baraban.gameObject.SetActive(true);
+
+                        if (!m_revolver.gameObject.activeSelf)
+                        {
+                            m_revolver.gameObject.SetActive(true);
+                            m_revolver.RevolverOnHand();
+                            m_baraban.gameObject.SetActive(true);
+                            
+                            m_audioSource.PlayOneShot(m_itemSounds);
+                        }
                     }
                     else if (m_activeSlot.m_item.m_itemName == "Axe")
                     {
                         m_revolver.gameObject.SetActive(false);
                         m_baraban.gameObject.SetActive(false);
-                        m_axe.gameObject.SetActive(true);
+
+                        if (!m_axe.gameObject.activeSelf)
+                        {
+                            m_axe.gameObject.SetActive(true);
+                            m_axe.AxeOnHand();
+                            
+                            m_audioSource.PlayOneShot(m_itemSounds);
+                        }
                     }
                 }
                 else
@@ -176,7 +193,7 @@ namespace Inventories
             }
         }
 
-        private void HideItemInHand()
+        public void HideItemInHand()
         {
             m_revolver.gameObject.SetActive(false);
             m_baraban.gameObject.SetActive(false);

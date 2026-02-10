@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3297463251379894716}
   - component: {fileID: 5028304859244890803}
+  - component: {fileID: -2623792739827969976}
   m_Layer: 9
   m_Name: Axe
   m_TagString: Untagged
@@ -45,6 +46,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcf13be04074154a36afb5847bf3754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guns.Axe
+  m_animator: {fileID: 0}
+--- !u!95 &-2623792739827969976
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4386009861843685756}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf667c136dfaf1a45a6e75071873f24d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8327684780846975056
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +80,6 @@ GameObject:
   - component: {fileID: 1278455339532983561}
   - component: {fileID: 7706941530894636667}
   - component: {fileID: 4868227032018145052}
-  - component: {fileID: 7356093085379460841}
   m_Layer: 9
   m_Name: Object1538
   m_TagString: Untagged
@@ -135,15 +158,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7356093085379460841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8327684780846975056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcf13be04074154a36afb5847bf3754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Guns.Axe
