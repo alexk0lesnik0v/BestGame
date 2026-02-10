@@ -89,7 +89,7 @@ namespace QuestControllers
             
             if (m_winIndex ==4)
             {
-                m_doorQuestInteraction.OpenDoorUp();
+                m_doorQuestInteraction.OpenDoorDown();
             }
 
             if (m_winIndex == 1 &&  m_button1.m_isPushed)
@@ -139,7 +139,7 @@ namespace QuestControllers
         {
             if (other.gameObject.TryGetComponent<Player>(out var player))
             {
-                m_doorInteraction.OpenDoorDown();
+                m_doorInteraction.OpenDoorUp();
             }
         }
     }
