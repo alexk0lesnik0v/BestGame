@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3438191992241777425}
   - component: {fileID: 3550676234439944659}
   - component: {fileID: 744166143998217234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 7577240517558570209}
   - component: {fileID: 5910746323149842548}
   - component: {fileID: 3718539405931959541}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 2833949608699488728}
   - component: {fileID: 4616178832550437546}
   - component: {fileID: 5457043575700250046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 5834373171713445426}
   - component: {fileID: 2015717894484169588}
   - component: {fileID: 2477716154942548695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,6 +563,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 461f9ae2a2cf1144b82a676fb9250d8b, type: 3}
       propertyPath: m_Name
       value: HandLamp_Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 461f9ae2a2cf1144b82a676fb9250d8b, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
