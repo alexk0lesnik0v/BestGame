@@ -31,9 +31,9 @@ namespace Enemies
             
             m_animation.Play("Walk");
             
-            InitializePatrolRoute();
+            //InitializePatrolRoute();
 
-            MoveToNextPatrolLocation();
+            //MoveToNextPatrolLocation();
         }
         
         private void Update()
@@ -49,10 +49,10 @@ namespace Enemies
             
             View();
             
-            if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
+            /*if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
             {
                 MoveToNextPatrolLocation();
-            }
+            }*/
 
             if (m_playerDetected && m_health > 0 && !m_isAttack)
             {

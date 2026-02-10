@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5207177864144150743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.143, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 0.90000004, y: 0.9, z: 0.90000004}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6067fc7a01c3cf4e9c57aab33df5672, type: 2}
+  - {fileID: 2100000, guid: 9ecdf50b98a69c74a8a34e053cb5cd98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -166,7 +166,7 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LinearLimit:
-    limit: 0.2
+    limit: 0.1
     bounciness: 0
     contactDistance: 0
   m_AngularXLimitSpring:
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interaction.TestButtonPush
   m_doorLight1: {fileID: 0}
   m_doorLight2: {fileID: 0}
+  m_isPushed: 0
 --- !u!1 &8136767449632043977
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +307,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button4
       objectReference: {fileID: 0}
+    - target: {fileID: 451240425555520672, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173343682485638841, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596393906634785544, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ecdf50b98a69c74a8a34e053cb5cd98, type: 2}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1691895
@@ -506,6 +519,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button1
       objectReference: {fileID: 0}
+    - target: {fileID: 451240425555520672, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173343682485638841, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596393906634785544, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ecdf50b98a69c74a8a34e053cb5cd98, type: 2}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.16919
@@ -573,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction.OnePlatformController
   m_doorLight: {fileID: 0}
+  m_isPushed: 0
 --- !u!4 &3377616418006842659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
@@ -590,6 +616,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button2
       objectReference: {fileID: 0}
+    - target: {fileID: 451240425555520672, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_LinearLimit.limit
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173343682485638841, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7596393906634785544, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ecdf50b98a69c74a8a34e053cb5cd98, type: 2}
     - target: {fileID: 8106825210863941331, guid: 48a17e2d3eb5ecc459dc9ac7894d5ad9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.1691895
