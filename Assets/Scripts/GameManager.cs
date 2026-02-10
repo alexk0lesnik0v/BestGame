@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip m_clip;
     void Start()
     {
-        m_source.PlayOneShot(m_clip);
+        m_source.clip = m_clip;
+        m_source.Play();
     }
 }
