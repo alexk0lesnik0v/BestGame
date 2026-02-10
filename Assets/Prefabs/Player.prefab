@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerController
   m_revolver: {fileID: 822149255819041058}
-  m_axe: {fileID: 0}
+  m_axe: {fileID: 4302655763373322313}
   m_characterController: {fileID: 3524699229518341191}
   m_cinemachineCamera: {fileID: 5722770209416459304}
   m_currentSpeed: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_deathUI: {fileID: 0}
   m_inventory: {fileID: 0}
   m_quickslotInventory: {fileID: 0}
-  m_audioSource: {fileID: 0}
+  m_audioSource: {fileID: 1894237348985293805}
   m_walkingSound: {fileID: 0}
   m_runningSound: {fileID: 0}
   m_jumpingSound: {fileID: 0}
@@ -758,10 +758,12 @@ MonoBehaviour:
   m_pickUpLayerMask:
     serializedVersion: 2
     m_Bits: 183
-  m_weapon: {fileID: 79915864303377517}
+  m_quickslotInventory: {fileID: 0}
   m_handLamp: {fileID: 4613011106013978076}
   m_inventoryManager: {fileID: 0}
-  m_revolver: {fileID: 0}
+  m_revolver: {fileID: 822149255819041058}
+  m_audioSource: {fileID: 1894237348985293805}
+  m_addItemSounds: {fileID: 8300000, guid: a74054929d7a2b54fb7e309a07b4d199, type: 3}
 --- !u!114 &6678803738929197234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,6 +1196,18 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 6151902352386997873}
+    - target: {fileID: 7341354745701311741, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
+      propertyPath: m_noBulletsSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: cd8bdd695dbae2c4e9fe35cf841d2209, type: 3}
+    - target: {fileID: 7341354745701311741, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
+      propertyPath: m_reloadingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: bae3771192144054b985e5f350b93fc6, type: 3}
+    - target: {fileID: 7341354745701311741, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
+      propertyPath: m_nullReloadingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 302b345635fc26b4fa5bb11cc17171e9, type: 3}
     - target: {fileID: 7483602496028007983, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -1227,17 +1241,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
---- !u!1 &79915864303377517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8039642580661379506, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
-  m_PrefabInstance: {fileID: 7965011055763373535}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &822149255819041058 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7341354745701311741, guid: 63d96903e31921940a77fc9d0f61ffd5, type: 3}
   m_PrefabInstance: {fileID: 7965011055763373535}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79915864303377517}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1f0bb30e1a84403b2237265f9c39ec0, type: 3}
@@ -1304,11 +1313,156 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_udar
+      value: 
+      objectReference: {fileID: 8300000, guid: 6daccdb5f408a014e8a9131c2df6508f, type: 3}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_vzmah
+      value: 
+      objectReference: {fileID: 8300000, guid: a39c17225f9d8fe4a9152ee1a171a711, type: 3}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_animator
+      value: 
+      objectReference: {fileID: 2731521519351032498}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_hitEffect
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_audioSource
+      value: 
+      objectReference: {fileID: 4855109239007601845}
+    - target: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      propertyPath: m_udarOnMonster
+      value: 
+      objectReference: {fileID: 8300000, guid: fb4095ecbf23197479f386b46d421f2c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4386009861843685756, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4855109239007601845}
   m_SourcePrefab: {fileID: 100100000, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+--- !u!95 &2731521519351032498 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -2623792739827969976, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+  m_PrefabInstance: {fileID: 9114786734126594810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4302655763373322313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5028304859244890803, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+  m_PrefabInstance: {fileID: 9114786734126594810}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800844371740289926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcf13be04074154a36afb5847bf3754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Guns.Axe
+--- !u!1 &4800844371740289926 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4386009861843685756, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
+  m_PrefabInstance: {fileID: 9114786734126594810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &4855109239007601845
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800844371740289926}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &6033921236183663430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3297463251379894716, guid: 587fb9bd76260af4da2c64c8cb4ceafd, type: 3}
