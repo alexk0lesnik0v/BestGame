@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,18 +12,10 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OnPause();
-        }
-        else
-        {
-            OnResume();
-        }
     }
     public void OnPause()
     {
-        m_pauseMenu.SetActive(true);
+        //m_pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         m_isPaused = true;
     }

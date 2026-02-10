@@ -9,7 +9,6 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip m_soundDuration;
     [SerializeField] private AudioSource m_audioSource;
     
-    private bool m_isOpen = false;
     
     public bool CanInteract()
     {
@@ -22,30 +21,13 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     }
     public void OpenDoorDown()
     {
-        if (!m_isOpen)
-        {
-            m_isOpen = false;
-        }
-        else
-        {
             m_audioSource.PlayOneShot(m_soundDuration);
             transform.DOLocalMove(m_openDoorDown, m_duration);
-            m_isOpen = false;
-        }
-        
-        
+              
     }
     public void OpenDoorUp()
-    {
-        if (m_isOpen)
-        {
-            m_isOpen = true;
-        }
-        else
-        {
+    {        
             m_audioSource.PlayOneShot(m_soundDuration);
-            transform.DOLocalMove(m_openDoorUp, m_duration);
-            m_isOpen = true;
-        }
+            transform.DOLocalMove(m_openDoorUp, m_duration);     
     }
 }
