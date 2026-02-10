@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1672732756200678252}
   - component: {fileID: 3300563960447836717}
   - component: {fileID: 8506155354627406228}
+  - component: {fileID: -5999642869703505431}
+  - component: {fileID: 5526377230061196849}
   m_Layer: 0
   m_Name: Cartriidge
   m_TagString: Untagged
@@ -122,6 +124,47 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8c6f1711cf49f654cb671321e418b824, type: 3}
+--- !u!114 &-5999642869703505431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203671270888142010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23eddf10c30443180637bbd96216eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventories.Item
+  m_item: {fileID: 11400000, guid: d27d37aaa97fe7546aa54b1c79b8422e, type: 2}
+  m_amount: 12
+--- !u!54 &5526377230061196849
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203671270888142010}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &925659014302786644
 PrefabInstance:
   m_ObjectHideFlags: 0
