@@ -77,7 +77,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b6067fc7a01c3cf4e9c57aab33df5672, type: 2}
+  - {fileID: 2100000, guid: f550f167c7b91be4c91551ff2e97274e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1103,6 +1103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e963bdf19e4b09ad51d8be78c8522e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interaction.TestButtonPush
+  m_doorLight1: {fileID: 0}
+  m_doorLight2: {fileID: 0}
+  m_isPushed: 0
 --- !u!222 &3003272238205144147
 CanvasRenderer:
   m_ObjectHideFlags: 0
