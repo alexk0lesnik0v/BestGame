@@ -5173,7 +5173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -17317,6 +17317,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1830473914}
     m_Modifications:
+    - target: {fileID: 163352887310981680, guid: 8be06068bf690b94881cfa3d402c4d0c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 6017016802534394169, guid: 8be06068bf690b94881cfa3d402c4d0c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 8118060938411577827, guid: 8be06068bf690b94881cfa3d402c4d0c, type: 3}
       propertyPath: m_Name
       value: RevolverItem
