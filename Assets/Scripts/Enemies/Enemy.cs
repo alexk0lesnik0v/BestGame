@@ -4,7 +4,7 @@ namespace Enemies
 {
     public class Enemy : MonoBehaviour
     {
-        private EnemyMonsterController  m_controller;
+        private EnemyMonsterController m_controller;
         private float m_health = 50;
 
         private void Start()
