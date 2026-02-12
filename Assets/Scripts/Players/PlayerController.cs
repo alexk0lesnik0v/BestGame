@@ -225,17 +225,11 @@ namespace Players
             return up.normalized;
         }
         
-        /*public void OnTriggerEnter(Collider other)
+        public void Dead()
         {
-            if (other.gameObject.TryGetComponent<Enemy>(out var enemy))
-            {
-                m_deathUI.SetActive(true);
-                this.enabled = false;
-                m_isNotFiring = true;
-                
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-        }*/
+            this.enabled = false;
+            m_cinemachineCamera.enabled = false;
+            m_isNotFiring = true;
+        }
     }
 }

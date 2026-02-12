@@ -19,7 +19,7 @@ MonoBehaviour:
   m_itemType: 1
   m_itemDescription: 
   m_isConsumeable: 1
-  m_changeHealth: 10
+  m_changeHealth: 20
   m_changeHunger: 0
   m_changeThirst: 0
-  m_healAmount: 10
+  m_healAmount: 20

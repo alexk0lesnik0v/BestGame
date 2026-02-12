@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.86
+      value: 9.881565
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000009536743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -147.64
+      value: -114.60943
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,15 +38,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4bd021667c72e27418474230eb0d1316, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2da8c497ac17f47bfc961ef6f2e9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trap
-  m_spikeDamage: 10
+  m_spikeDamage: 20
   m_audioClip: {fileID: 8300000, guid: 825fdf8a6395828469d88b60a019e5cb, type: 3}
   m_source: {fileID: 2343889198578211698}
 --- !u!65 &8087678266610537171
