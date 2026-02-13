@@ -20,7 +20,7 @@ namespace Players
         [SerializeField] private float m_currentSpeed;
         [SerializeField] private float m_walkSpeed = 5f;
         [SerializeField] private float m_sprintSpeed = 10f;
-        [SerializeField] private float m_jumpSpeed = 2.5f;
+        [SerializeField] private float m_jumpSpeed = 3f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
         [SerializeField] private GameObject m_deathUI;
@@ -39,7 +39,6 @@ namespace Players
         private bool m_isRun = false;
         public bool m_isNotFiring = false;
         private float m_playerHeight;
-        private float m_reloadingTime = 10f;
 
         private void Start()
         {
@@ -156,6 +155,7 @@ namespace Players
                 if (m_inventory.m_isOpened)
                 {
                     this.enabled = false;
+                    m_cinemachineCamera.enabled = false;
                     m_isNotFiring = true;
                 
                     Cursor.lockState = CursorLockMode.None;
@@ -164,6 +164,7 @@ namespace Players
                 else
                 {
                     this.enabled = true;
+                    m_cinemachineCamera.enabled = true;
                     m_isNotFiring = false;
                 
                     Cursor.lockState = CursorLockMode.Locked;

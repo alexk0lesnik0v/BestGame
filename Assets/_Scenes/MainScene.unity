@@ -5983,6 +5983,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
+      propertyPath: m_time
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6635668279266243255, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 1542632323}
     - target: {fileID: 7067380087419977242, guid: 57f014b8af47c9c4eade739d610c4535, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7049,6 +7057,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
       objectReference: {fileID: 1876489802}
@@ -7184,6 +7196,10 @@ PrefabInstance:
       propertyPath: m_inventory
       value: 
       objectReference: {fileID: 1876489802}
+    - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_jumpSpeed
+      value: 2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_quickslotInventory
       value: 
@@ -12661,6 +12677,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghoul
       objectReference: {fileID: 0}
+    - target: {fileID: 3208285505659083117, guid: 1a0ae06ae90f54140adf6cc600eb4ab9, type: 3}
+      propertyPath: m_health
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6477229572221050017, guid: 1a0ae06ae90f54140adf6cc600eb4ab9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5302049
@@ -15026,6 +15046,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1550564489}
     m_Modifications:
+    - target: {fileID: 3877907880951495791, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_health
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5889796698577009325, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_Name
       value: Mutant
@@ -20815,6 +20839,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aeb1c34a08b4749bc449bc0492b4569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerController
+--- !u!114 &1542632323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3575593872562548890, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+  m_PrefabInstance: {fileID: 500337895}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64a8aa83160478b9e21738b66e09cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.Character
 --- !u!1001 &1543639794
 PrefabInstance:
   m_ObjectHideFlags: 0

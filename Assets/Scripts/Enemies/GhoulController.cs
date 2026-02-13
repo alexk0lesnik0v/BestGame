@@ -6,14 +6,17 @@ using UnityEngine.AI;
 
 namespace Enemies
 {
+    [RequireComponent(typeof(Enemy))]
+    [RequireComponent(typeof(NavMeshAgent))]
     public class GhoulController : MonoBehaviour
     {
-        [SerializeField] private int m_health = 2;
+        [SerializeField] private float m_health = 50f;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
         [SerializeField] private Transform m_patrolRoute;
         [SerializeField] private List<Transform> m_locations;
         
+        private Enemy m_enemy;
         private Player m_player;
         private NavMeshAgent m_agent;
         private Animation m_animation;
@@ -23,11 +26,15 @@ namespace Enemies
         private bool m_isVoice = false;
         private int m_locationIndex = 0;
         
-        void Start()
+        private void Start()
         {
+            m_enemy = GetComponent<Enemy>();
             m_player  = FindObjectOfType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animation = GetComponent<Animation>();
+            
+            m_enemy.m_health = m_health;
+            m_enemy.Death += OnDeath;
             
             m_animation.Play("Walk");
             
@@ -38,15 +45,6 @@ namespace Enemies
         
         private void Update()
         {
-            if (m_health <= 0)
-            {
-                m_agent.isStopped = true;
-                m_animation.Play("Death");
-                Destroy(this.gameObject.GetComponent<Collider>());
-                this.enabled = false;
-                m_isDead = true;
-            }
-            
             View();
             
             /*if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
@@ -54,7 +52,7 @@ namespace Enemies
                 MoveToNextPatrolLocation();
             }*/
 
-            if (m_playerDetected && m_health > 0 && !m_isAttack)
+            if (m_playerDetected && !m_isDead && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);
                 m_animation.Play("Run");
@@ -104,9 +102,8 @@ namespace Enemies
                     }
                 }
             
-                if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
+                if (other.gameObject.TryGetComponent<Bullet>(out var bullet))
                 {
-                    m_health -= 1;
                     m_playerDetected =  true;
                     Debug.Log("Critical hit!");
                 }
@@ -121,20 +118,29 @@ namespace Enemies
 
         private void View()
         {
-            if (m_health > 0)
+            if (!m_isDead)
             {
                 RaycastHit hit;
                 float radius = 4f;
 
                 if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 10f))
                 {
-                    //Debug.Log(hit.transform.name);
                     if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
                     {
                         m_playerDetected =  true;
                     }
                 }
             }
+        }
+        
+        private void OnDeath()
+        {
+            m_agent.isStopped = true;
+            m_animation.Play("Death");
+            Destroy(this.gameObject.GetComponent<Collider>());
+            this.enabled = false;
+            m_isDead = true;
+            m_enemy.Death -= OnDeath;
         }
     }
 }

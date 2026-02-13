@@ -22,11 +22,6 @@ namespace Players
                 }
                 
                 m_health = health < 0 ? 0 : health;
-                
-                if (m_health is 0)
-                {
-                    //Died?.Invoke();
-                }
             }
         }
         

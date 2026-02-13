@@ -95,10 +95,6 @@ namespace Guns
                     {
                         enemy.TakeDamage(m_damage);
                     }
-                    else
-                    {
-                        
-                    }
                 }
             }
         }

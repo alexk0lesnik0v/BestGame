@@ -6,29 +6,37 @@ using UnityEngine.AI;
 
 namespace Enemies
 {
+    [RequireComponent(typeof(Enemy))]
+    [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyMonsterController:  MonoBehaviour
 
     {
-        [SerializeField] private int m_health = 10;
+        [SerializeField] private float m_health = 75f;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
         [SerializeField] private Transform m_patrolRoute;
         [SerializeField] private List<Transform> m_locations;
-        
+
+        private Enemy m_enemy;
         private Player m_player;
         private NavMeshAgent m_agent;
         private Animator m_animator;
         private bool m_playerDetected = false;
         private bool m_isAttack  = false;
+        private bool m_isDead = false;
         private bool m_isVoice = false;
         private int m_locationIndex = 0;
         
-        void Start()
+        private void Start()
         {
+            m_enemy = GetComponent<Enemy>();
             m_player  = FindAnyObjectByType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animator = GetComponent<Animator>();
             
+            m_enemy.m_health = m_health;
+            m_enemy.Death += OnDeath;
+
             //InitializePatrolRoute();
 
             //MoveToNextPatrolLocation();
@@ -36,13 +44,6 @@ namespace Enemies
         
         private void Update()
         {
-            if (m_health <= 0)
-            {
-                m_agent.isStopped = true;
-                m_animator.Play("Death");
-                Destroy(this.gameObject.GetComponent<Collider>());
-            }
-            
             View();
             
             /*if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
@@ -50,12 +51,13 @@ namespace Enemies
                 MoveToNextPatrolLocation();
             }*/
 
-            if (m_playerDetected && m_health > 0 && !m_isAttack)
+            if (m_playerDetected && !m_isDead && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);
                 m_animator.SetBool("isRunning", true);
                 m_animator.Play("Run");
                 m_agent.speed = 4;
+                
                 if (!m_isVoice)
                 {
                     m_audioSource.PlayOneShot(m_audioClip);
@@ -84,26 +86,28 @@ namespace Enemies
         
         public void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.TryGetComponent<Player>(out var character))
+            if (!m_isDead)
             {
-                m_agent.SetDestination(character.transform.position);
-                m_animator.SetBool("isAttack", true);
-                m_animator.Play("Attack");
-                m_isAttack = true;
-                m_agent.isStopped = true;
-
-                if (!m_isVoice)
+                if (other.gameObject.TryGetComponent<Player>(out var character))
                 {
-                    m_audioSource.PlayOneShot(m_audioClip);
-                    m_isVoice = true;
+                    m_agent.SetDestination(character.transform.position);
+                    m_animator.SetBool("isAttack", true);
+                    m_animator.Play("Attack");
+                    m_isAttack = true;
+                    m_agent.isStopped = true;
+
+                    if (!m_isVoice)
+                    {
+                        m_audioSource.PlayOneShot(m_audioClip);
+                        m_isVoice = true;
+                    }
                 }
-            }
             
-            if(other.gameObject.TryGetComponent<Bullet>(out var bullet))
-            {
-                m_health -= 1;
-                m_playerDetected =  true;
-                Debug.Log("Critical hit!");
+                if (other.gameObject.TryGetComponent<Bullet>(out var bullet))
+                {
+                    m_playerDetected =  true;
+                    Debug.Log("Critical hit!");
+                }
             }
         }
 
@@ -116,14 +120,13 @@ namespace Enemies
 
         private void View()
         {
-            if (m_health > 0)
+            if (!m_isDead)
             {
                 RaycastHit hit;
                 float radius = 3f;
 
                 if (Physics.SphereCast(this.transform.position, radius, this.transform.forward, out hit, 10f))
                 {
-                    //Debug.Log(hit.transform.name);
                     if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
                     {
                         m_playerDetected =  true;
@@ -132,11 +135,14 @@ namespace Enemies
             }
         }
 
-        public void Died()
+        private void OnDeath()
         {
+            m_isDead = true;
             m_agent.isStopped = true;
             m_animator.Play("Death");
             Destroy(this.gameObject.GetComponent<Collider>());
+            this.enabled = false;
+            m_enemy.Death -= OnDeath;
         }
     }
 }

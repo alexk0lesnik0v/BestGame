@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float m_time = 301;
     
     [SerializeField] private GameObject m_deathUI;
-    [SerializeField] private PlayerController m_player;
+    [SerializeField] private Player m_player;
 
     private float m_restartTime;
     private bool m_isStart = false;
@@ -38,12 +38,7 @@ public class Timer : MonoBehaviour
         if (m_time <= 0)
         {
             m_time = 0;
-            m_deathUI.SetActive(true);
-            m_player.enabled = false;
-            m_player.m_isNotFiring = true;
-                
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            m_player.TakeDamage(100f);
         }
     }
     public void StartTimer()
