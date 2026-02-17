@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class PhysicalButton : MonoBehaviour
 {
+
     [SerializeField] private UnityEvent onClick;
     [SerializeField] private float m_animationDuration;
     [SerializeField] private Transform m_movable;
@@ -26,4 +27,5 @@ public class PhysicalButton : MonoBehaviour
         onClick.Invoke();
         m_movable.DOLocalMove(Vector3.zero, m_animationDuration / 2).OnComplete(() => m_isAnimating = false);
     }
+
 }
