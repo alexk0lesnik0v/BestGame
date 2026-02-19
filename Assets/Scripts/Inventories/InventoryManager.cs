@@ -90,6 +90,15 @@ namespace Inventories
                     {
                         slot.m_itemAmountText.text = amount.ToString();
                     }
+
+                    if (item.m_itemType == ItemType.Weapon)
+                    {
+                        m_quickslotInventory.m_activeSlot = null;
+                        m_quickslotInventory.m_activeSlot = slot;
+                        m_quickslotInventory.MakeNotSelectedSlots();
+                        slot.GetComponent<Image>().sprite = m_quickslotInventory.m_selectedSprite;
+                    }
+                    
                     break;
                 }
             }

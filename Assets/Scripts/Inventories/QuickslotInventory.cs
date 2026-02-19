@@ -81,6 +81,7 @@ namespace Inventories
                         {
                             m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite = m_notSelectedSprite;
                             m_activeSlot = null;
+                            ShowItemInHand();
                         }
                     }
                     else
@@ -91,6 +92,19 @@ namespace Inventories
                         m_activeSlot = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>();
                         ShowItemInHand();
                     }
+                }
+            }
+        }
+
+        public void MakeNotSelectedSlots()
+        {
+            for (int i = 0; i < m_quickslotParent.childCount; i++)
+            {
+                m_quickslotParent.GetChild(i).GetComponent<Image>().sprite = m_notSelectedSprite;
+
+                if (m_quickslotParent.GetChild(i).GetComponent<InventorySlot>() == m_activeSlot)
+                {
+                    m_currentQuickslotID = i;
                 }
             }
         }
@@ -147,6 +161,12 @@ namespace Inventories
 
         private void ShowItemInHand()
         {
+            if (m_activeSlot is null)
+            {
+                HideItemInHand();
+                return;
+            }
+            
             if (m_activeSlot.m_item is not null)
             {
                 if (m_activeSlot.m_item.m_itemType == ItemType.Weapon)
@@ -180,16 +200,12 @@ namespace Inventories
                 }
                 else
                 {
-                    m_revolver.gameObject.SetActive(false);
-                    m_baraban.gameObject.SetActive(false);
-                    m_axe.gameObject.SetActive(false);
+                   HideItemInHand();
                 }
             }
             else
             {
-                m_revolver.gameObject.SetActive(false);
-                m_baraban.gameObject.SetActive(false);
-                m_axe.gameObject.SetActive(false);
+                HideItemInHand();
             }
         }
 
