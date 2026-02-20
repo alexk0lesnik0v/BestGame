@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
 
     public void OnExit()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.ExitPlaymode();
+#endif
         Application.Quit();
     }
 
