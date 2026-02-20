@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullets
   m_EditorClassIdentifier: Assembly-CSharp::Inventories.ItemCreator
   m_itemName: Bullets
-  m_itemPrefab: {fileID: 8116442804260165218, guid: d9603ca963e25144f961fd9f065cef80, type: 3}
+  m_itemPrefab: {fileID: 4203671270888142010, guid: 87ad4b41bbdbdf2479993c1fe2e1f741, type: 3}
   m_maximumAmount: 1000
   m_icon: {fileID: 21300000, guid: 835f21c1b380b1e4eae64112e4009575, type: 3}
   m_itemType: 3

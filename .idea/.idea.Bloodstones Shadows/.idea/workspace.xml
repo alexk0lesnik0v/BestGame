@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8e6522c-707b-45b1-b2c0-a912c30dcfb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Players/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Players/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/HandLamp.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/HandLamp.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/HandLampTextures/HandLamp_LowExploded_DefaultMaterial_Norma.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/HandLampTextures/HandLamp_LowExploded_DefaultMaterial_Norma.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Data/Bullets.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Data/Bullets.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" afterDir="false" />
@@ -134,7 +136,7 @@
       <workItem from="1770720749911" duration="52000" />
       <workItem from="1770720963210" duration="818000" />
       <workItem from="1771592560009" duration="676000" />
-      <workItem from="1771594170997" duration="413000" />
+      <workItem from="1771594170997" duration="1019000" />
     </task>
     <servers />
   </component>
