@@ -144,19 +144,10 @@ namespace Inventories
 
         private void ChangeCharacteristics()
         {
-            if(m_player.health + m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_changeHealth <= 100)
-            {
-                float heal = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_changeHealth;
-                m_player.Heal(heal);
+            float heal = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_changeHealth;
+            m_player.Heal(heal);
                 
-                Debug.Log("Health " + m_player.health);
-            }
-            else
-            {
-                m_player.Heal(0);
-                
-                Debug.Log("Health " + m_player.health);
-            }
+            Debug.Log("Health " + m_player.health);
         }
 
         private void ShowItemInHand()

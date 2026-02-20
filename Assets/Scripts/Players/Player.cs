@@ -31,6 +31,11 @@ namespace Players
                 throw new ArgumentOutOfRangeException(nameof(heal), heal,"Heal cannot be negative");
             
             m_health += heal;
+
+            if (m_health > 100)
+            {
+                m_health = 100;
+            }
             
             m_deathUI.SetImage(m_health);
         }

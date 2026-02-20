@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventories.Item
   m_item: {fileID: 11400000, guid: 747deadb4fe5c324681f10534a257d1c, type: 2}
-  m_amount: 1
+  m_amount: 2
 --- !u!54 &3581669929117021436
 Rigidbody:
   m_ObjectHideFlags: 0
