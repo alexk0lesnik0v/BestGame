@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.61
+      value: -2.5377092
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.417
+      value: 1.7300472
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -152.25
+      value: -135.62569
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -86,6 +86,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6824898347719539380}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5548799371441751571}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7729332725118993849}
     - targetCorrespondingSourceObject: {fileID: 2879070364656932655, guid: 4d0602f366eef604cb64357c30449a34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5490233664495750418}
@@ -131,6 +137,66 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5548799371441751571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004179971031156482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0.14173192, g: 0.27740088, b: 0.8584906, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &7729332725118993849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004179971031156482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b2a1c6319e4170903ef7511b8d7cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction.MouseActions
+  m_enter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5548799371441751571}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_exit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5548799371441751571}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2799685028578717052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2879070364656932655, guid: 4d0602f366eef604cb64357c30449a34, type: 3}

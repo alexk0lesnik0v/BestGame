@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8506155354627406228}
   - component: {fileID: -5999642869703505431}
   - component: {fileID: 5526377230061196849}
+  - component: {fileID: 2502144005562989002}
+  - component: {fileID: -976016677750177028}
   m_Layer: 0
   m_Name: Cartriidge
   m_TagString: Untagged
@@ -165,6 +167,66 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2502144005562989002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203671270888142010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0.17030083, g: 0.38109064, b: 0.8396226, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &-976016677750177028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4203671270888142010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b2a1c6319e4170903ef7511b8d7cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction.MouseActions
+  m_enter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2502144005562989002}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_exit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2502144005562989002}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &925659014302786644
 PrefabInstance:
   m_ObjectHideFlags: 0

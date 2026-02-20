@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -6377124668030215564}
   - component: {fileID: 3581669929117021436}
   - component: {fileID: -2525937297264552707}
+  - component: {fileID: 1095967439648489629}
+  - component: {fileID: 3630293895041107628}
   m_Layer: 0
   m_Name: firstaid
   m_TagString: Untagged
@@ -177,3 +179,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8154834, y: 0.3475596, z: 0.62949526}
   m_Center: {x: -0.0068259835, y: 0.1600316, z: 0.0025842488}
+--- !u!114 &1095967439648489629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024958044290700849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Outline
+  outlineMode: 0
+  outlineColor: {r: 0.17443931, g: 0.3650863, b: 0.754717, a: 1}
+  outlineWidth: 0
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &3630293895041107628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5024958044290700849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b2a1c6319e4170903ef7511b8d7cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interaction.MouseActions
+  m_enter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1095967439648489629}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_exit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1095967439648489629}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: set_OutlineWidth
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
