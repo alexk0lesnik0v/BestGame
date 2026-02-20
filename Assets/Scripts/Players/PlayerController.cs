@@ -20,6 +20,7 @@ namespace Players
         [SerializeField] private float m_currentSpeed;
         [SerializeField] private float m_walkSpeed = 5f;
         [SerializeField] private float m_sprintSpeed = 10f;
+        [SerializeField] private float m_crounchSpeed = 0.5f;
         [SerializeField] private float m_jumpSpeed = 3f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
@@ -62,12 +63,12 @@ namespace Players
             if (inputValue.Get<float>() > 0.5f && !m_isCrouch)
             {
                 m_isRun = true;
-                m_currentSpeed =  m_sprintSpeed;
+                m_currentSpeed = m_sprintSpeed;
             }
             else
             {
                 m_isRun = false;
-                m_currentSpeed =  m_walkSpeed;
+                m_currentSpeed = m_walkSpeed;
             }
         }
 
@@ -82,10 +83,12 @@ namespace Players
             {
                 m_isCrouch = true;
                 m_characterController.height = m_playerHeight * m_crouch;
+                m_currentSpeed = m_crounchSpeed;
             }
             else
             {
                 m_characterController.height = m_playerHeight;
+                m_currentSpeed = m_walkSpeed;
                 m_isCrouch = false;
             }
         }
