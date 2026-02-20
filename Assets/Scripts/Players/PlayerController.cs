@@ -20,7 +20,7 @@ namespace Players
         [SerializeField] private float m_currentSpeed;
         [SerializeField] private float m_walkSpeed = 5f;
         [SerializeField] private float m_sprintSpeed = 10f;
-        [SerializeField] private float m_crounchSpeed = 0.5f;
+        [SerializeField] private float m_crounchSpeed = 2f;
         [SerializeField] private float m_jumpSpeed = 3f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
@@ -68,7 +68,14 @@ namespace Players
             else
             {
                 m_isRun = false;
-                m_currentSpeed = m_walkSpeed;
+                if (m_isCrouch)
+                {
+                    m_currentSpeed = m_crounchSpeed;
+                }
+                else
+                {
+                    m_currentSpeed = m_walkSpeed;
+                }
             }
         }
 

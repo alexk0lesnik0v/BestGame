@@ -7102,6 +7102,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1876489802}
     - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_crounchSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_quickslotInventory
       value: 
       objectReference: {fileID: 565593126}
