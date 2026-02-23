@@ -5178,7 +5178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -7077,6 +7077,14 @@ PrefabInstance:
       propertyPath: m_playerCameraTransform
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 1043149667867048049, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2649751139261498070, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3575593872562548890, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_deathUI
       value: 
@@ -7085,6 +7093,18 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4933630994369283097, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5153375611810628465, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6097098450476675668, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Intensity
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera
       value: 
