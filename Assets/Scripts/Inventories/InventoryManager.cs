@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using QuestControllers;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,7 @@ namespace Inventories
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
         [SerializeField] private float m_reachDistance = 3f;
+        [SerializeField] private QuestControllerTwo m_questControllerTwo;
         
         public bool m_isOpened = false;
         
@@ -65,6 +67,11 @@ namespace Inventories
 
         public void AddItem(ItemScriptableObject item, int amount)
         {
+            if (item.m_itemType == ItemType.Figurka)
+            {
+                m_questControllerTwo.AddFigurka(item);
+            }
+            
             foreach (InventorySlot slot in m_slots)
             {
                 if (slot.m_item == item)
