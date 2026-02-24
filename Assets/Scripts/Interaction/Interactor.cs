@@ -1,10 +1,14 @@
+using QuestControllers;
 using UnityEngine;
 
 public class Interactor : MonoBehaviour
 {
     [SerializeField] private float m_castDistance = 5f;
     [SerializeField] private GameObject m_interactionUI;
+    [SerializeField] private GameObject m_questInteractionUI;
     [SerializeField] private Camera m_camera;
+    
+    private bool m_questController = false;
 
     private void Update()
     {
@@ -21,11 +25,17 @@ public class Interactor : MonoBehaviour
             else
             {
                 m_interactionUI.SetActive(false);
+
+                if (m_questController)
+                {
+                    m_questInteractionUI.SetActive(true);
+                }
             }
         }
         else
         {
-            m_interactionUI.SetActive(false); 
+            m_interactionUI.SetActive(false);
+            m_questInteractionUI.SetActive(false);
         }
     }
 
@@ -41,6 +51,11 @@ public class Interactor : MonoBehaviour
 
             if (interactable != null)
             {
+                if (hitInfo.collider.GetComponent<QuestControllerTwo>())
+                {
+                    m_questController = true;
+                }
+                
                 return true;
             }
             return false;

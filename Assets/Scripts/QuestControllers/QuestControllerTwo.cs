@@ -10,7 +10,7 @@ namespace QuestControllers
         [SerializeField] private Timer m_timer;
         
         
-        private int m_figurkaAmount = 0;
+        public int m_figurkaAmount = 0;
         private bool m_doorCanOpen = false;
         private bool m_isOpen = false;
         
