@@ -1330,6 +1330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTorch
       objectReference: {fileID: 0}
+    - target: {fileID: 5338103881021750269, guid: 7686447c6fa4eed40bbfddfbacdd5f55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
