@@ -52,6 +52,8 @@ public class PauseState : StateBase
         m_gameStateMachine.Enter<GameplayState>();
         Time.timeScale = 1f;
         m_pauseView.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 }
