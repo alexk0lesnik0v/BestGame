@@ -125,6 +125,13 @@ namespace Players
                                 }
                             }
                         }
+                        else if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Firstaid)
+                        {
+                            if (!m_inventory.m_isOpened)
+                            {
+                                m_quickslotInventory.UseItem();
+                            }
+                        }
                     }
                 }
             }

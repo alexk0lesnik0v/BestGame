@@ -19,7 +19,7 @@ namespace Inventories
         {
             if (this.gameObject.activeSelf)
             {
-                m_bulletsCountText.text = m_revolver.m_bulletCount.ToString() + " / " + (m_revolver.m_bulletCount + m_revolver.m_bulletItemCount).ToString();
+                m_bulletsCountText.text = (m_revolver.m_bulletCount + m_revolver.m_bulletItemCount).ToString();
             }
             
             switch (m_revolver.m_bulletCount)
