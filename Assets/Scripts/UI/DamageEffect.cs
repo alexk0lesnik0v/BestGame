@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
+using Players;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -9,75 +12,101 @@ namespace UI
     {
         [SerializeField] private Volume m_damageVolume;
         [SerializeField] private CanvasGroup m_damageCanvasGroup;
+        [SerializeField] private PlayerController m_player;
         private Tween m_weightTween;
         private Tween m_fadeTween;
         private Tweener m_healTweener;
-        
-        private bool m_isEffectEnabled = false;
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                ToggleEffect(true);
-            }
-            
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                ToggleEffect(false);
-            }
-        }
+        private float m_damageVolumeValueMin;
+        private float m_damageVolumeValueMax;
 
         private void EnableEffect()
         {
-            if (!m_isEffectEnabled)
-            {
-                m_healTweener.Kill();
-                m_weightTween = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, 0.9f, 2f)
-                    .SetEase(Ease.InOutQuad)
-                    .SetLoops(-1, LoopType.Yoyo)
-                    .From(0.15f)
-                    .Pause();
+            m_healTweener.Kill();
+            m_weightTween = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, m_damageVolumeValueMax, 1f)
+                .SetEase(Ease.InOutQuad)
+                .SetLoops(-1, LoopType.Yoyo)
+                .From(m_damageVolumeValueMin)
+                .Pause();
                 
-                m_weightTween.Play();
+            m_weightTween.Play();
                 
-                m_fadeTween = m_damageCanvasGroup.DOFade(0.9f, 2f)
-                    .SetEase(Ease.InOutQuad)
-                    .SetLoops(-1, LoopType.Yoyo)
-                    .From(0.15f)
-                    .Pause();
+            m_fadeTween = m_damageCanvasGroup.DOFade(m_damageVolumeValueMax, 1f)
+                .SetEase(Ease.InOutQuad)
+                .SetLoops(-1, LoopType.Yoyo)
+                .From(m_damageVolumeValueMin)
+                .Pause();
                 
-                m_fadeTween.Play();
-                
-                m_isEffectEnabled = true;
-            }
+            m_fadeTween.Play();
         }
 
         private void DisableEffect()
         {
-            if (m_isEffectEnabled)
-            {
-                m_healTweener.Kill();
-                m_weightTween.Pause();
-                m_healTweener = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, 0f, 1f);
+            m_healTweener.Kill();
+            m_weightTween.Pause();
+            m_healTweener = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, 0f, 1f);
                 
-                m_fadeTween.Pause();
-                m_fadeTween = m_damageCanvasGroup.DOFade(0f, 1f);
-                
-                m_isEffectEnabled = false;
-            }
+            m_fadeTween.Pause();
+            m_fadeTween = m_damageCanvasGroup.DOFade(0f, 1f);
         }
 
-        public void ToggleEffect(bool activate)
+        public void ToggleEffect(bool activate, float health)
         {
+            DisableEffect();
+            
             if (activate)
             {
-                EnableEffect();
+                if (health > 80f)
+                {
+                    return;
+                }
+            
+                if (health <= 0f)
+                {
+                    m_damageVolumeValueMax = 1f;
+                    m_damageVolumeValueMin = 1f;
+                    EnableEffect();
+                    m_player.Dead();
+                    StartCoroutine(WaitRestart(3f));
+                }
+            
+                if (health <= 20f)
+                {
+                    m_damageVolumeValueMax = 0.9f;
+                    m_damageVolumeValueMin = 0.7f;
+                    EnableEffect();
+                    return;
+                }
+
+                if (health <= 40f)
+                {
+                    m_damageVolumeValueMax = 0.7f;
+                    m_damageVolumeValueMin = 0.5f;
+                    EnableEffect();
+                    return;
+                }
+
+                if (health <= 60f)
+                {
+                    m_damageVolumeValueMax = 0.5f;
+                    m_damageVolumeValueMin = 0.3f;
+                    EnableEffect();
+                    return;
+                }
+            
+                if (health <= 80f)
+                {
+                    m_damageVolumeValueMax = 0.3f;
+                    m_damageVolumeValueMin = 0.15f;
+                    EnableEffect();
+                }
             }
-            else
-            {
-                DisableEffect();
-            }
+        }
+        
+        IEnumerator WaitRestart(float time)
+        {
+            yield return new WaitForSeconds(time);
+            Debug.Log("Restart Level");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
