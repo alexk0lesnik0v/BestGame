@@ -8498,7 +8498,7 @@ PrefabInstance:
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 766289400}
     - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_interactor
       value: 
@@ -9940,7 +9940,7 @@ MonoBehaviour:
   m_itemSounds: {fileID: 8300000, guid: a74054929d7a2b54fb7e309a07b4d199, type: 3}
   m_objectGrabPointTransform: {fileID: 1892905061}
   m_quickslotParent: {fileID: 565593131}
-  m_inventoryManager: {fileID: 0}
+  m_inventoryManager: {fileID: 766289400}
   m_currentQuickslotID: 0
   m_selectedSprite: {fileID: 21300000, guid: 8bd3d30bf6f68e04988a65acd09bc7bc, type: 3}
   m_notSelectedSprite: {fileID: 21300000, guid: 5de7c2888c5670447a29bb05a14f4d94, type: 3}
