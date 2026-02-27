@@ -25,12 +25,12 @@ namespace DefaultNamespace.UI
                 return;
             }
             
-            if (health <= 0f)
-            {
-                m_images[0].gameObject.SetActive(true);
-                m_player.Dead();
-                StartCoroutine(WaitRestart(3f));
-            }
+            //if (health <= 0f)
+            //{
+            //    m_images[0].gameObject.SetActive(true);
+            //    m_player.Dead();
+
+            //}
             
             if (health <= 20f)
             {
@@ -56,11 +56,5 @@ namespace DefaultNamespace.UI
             }
         }
         
-        IEnumerator WaitRestart(float time)
-        {
-            yield return new WaitForSeconds(time);
-            Debug.Log("Restart Level");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
     }
 }

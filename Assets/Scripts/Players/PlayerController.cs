@@ -24,13 +24,9 @@ namespace Players
         [SerializeField] private float m_jumpSpeed = 3f;
         [SerializeField] private float m_gravity = -9.81f;
         [SerializeField] private float m_crouch = 0.6f;
-        [SerializeField] private GameObject m_deathUI;
         [SerializeField] private InventoryManager m_inventory;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private AudioSource m_audioSource;
-        [SerializeField] private AudioClip m_walkingSound;
-        [SerializeField] private AudioClip m_runningSound;
-        [SerializeField] private AudioClip m_jumpingSound;
         
         private Vector2 m_move;
         private Vector3 m_movement;

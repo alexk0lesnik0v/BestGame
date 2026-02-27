@@ -7,7 +7,6 @@ public class Timer : MonoBehaviour
     [SerializeField] private TMP_Text m_timerText;
     [SerializeField] private float m_time = 301;
     
-    [SerializeField] private GameObject m_deathUI;
     [SerializeField] private Player m_player;
 
     private float m_restartTime;
