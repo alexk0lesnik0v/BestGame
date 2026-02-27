@@ -1,4 +1,5 @@
-﻿using Players;
+﻿using PickUps;
+using Players;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,18 +8,32 @@ namespace Interaction
     public class MouseActions : MonoBehaviour
     {
         [SerializeField] private Interactor m_interactor;
+
+        private bool m_isObjectGrabbable = false;
         
         public UnityEvent m_enter;
         public UnityEvent m_exit;
 
         private void Start()
         {
-            m_interactor = FindObjectOfType<Player>().GetComponent<Interactor>();
+            if (this.gameObject.TryGetComponent<ObjectGrabbable>(out var objectGrabbable))
+            {
+                m_isObjectGrabbable = true;
+                m_interactor = FindObjectOfType<Player>().GetComponent<Interactor>();
+            }
         }
         
         private void OnMouseEnter()
         {
-            if (!m_interactor.m_isGrab)
+            if (m_isObjectGrabbable)
+            {
+                if (!m_interactor.m_isGrab)
+                {
+                    if (m_enter is null) return;
+                    m_enter?.Invoke();
+                }
+            }
+            else
             {
                 if (m_enter is null) return;
                 m_enter?.Invoke();
