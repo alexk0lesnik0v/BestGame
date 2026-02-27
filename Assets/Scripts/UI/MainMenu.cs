@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnPlay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(GlobalConstants.Scenes.Main);
     }
 
     public void OnExit()
