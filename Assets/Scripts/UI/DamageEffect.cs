@@ -66,7 +66,7 @@ namespace UI
                     m_damageVolumeValueMin = 1f;
                     EnableEffect();
                     m_player.Dead();
-                    StartCoroutine(WaitRestart(3f));
+                    //StartCoroutine(WaitRestart(3f));
                 }
             
                 if (health <= 20f)
