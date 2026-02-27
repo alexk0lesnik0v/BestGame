@@ -5263,7 +5263,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.45, y: 1.754, z: -156.799}
+  m_LocalPosition: {x: -7.45, y: 1.754, z: -12.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8533,7 +8533,7 @@ PrefabInstance:
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_questControllerTwo
       value: 
-      objectReference: {fileID: 879026479}
+      objectReference: {fileID: 1622829531}
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_questInteractionUI
       value: 
@@ -8564,7 +8564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -156.799
+      value: -12.06
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14917,22 +14917,6 @@ Transform:
   - {fileID: 354924256}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &879026479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38a2ee882fea48009e471d157dfc1add, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestControllers.QuestControllerTwo
-  m_doorInteraction: {fileID: 0}
-  m_lever: {fileID: 0}
-  m_timer: {fileID: 0}
-  m_figurkaAmount: 0
 --- !u!1001 &879745210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24430,6 +24414,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3170992a56741a4cb89c578e22597bf, type: 3}
   m_PrefabInstance: {fileID: 150457053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1487811940 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5164643486283890262, guid: 070d4f5fe07612144bf789f5f5493869, type: 3}
+  m_PrefabInstance: {fileID: 537684852}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a9c2edef1e3ee41b976e969de77594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorInteraction
 --- !u!1 &1490396277
 GameObject:
   m_ObjectHideFlags: 0
@@ -26939,6 +26934,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1622829531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6238612220640206478, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+  m_PrefabInstance: {fileID: 1719737693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a2ee882fea48009e471d157dfc1add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestControllers.QuestControllerTwo
 --- !u!4 &1622949290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1355517899105333006, guid: 9f3ab28dbec0d3a4398df0e4f85de8d5, type: 3}
@@ -28693,6 +28699,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3170992a56741a4cb89c578e22597bf, type: 3}
+--- !u!1001 &1719737693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1209956602807706360, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_Name
+      value: Lever door quest2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.747
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1027365
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.531966
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981990320426825794, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238612220640206478, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_timer
+      value: 
+      objectReference: {fileID: 7445915423284078541}
+    - target: {fileID: 6238612220640206478, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_figurkaAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238612220640206478, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
+      propertyPath: m_doorInteraction
+      value: 
+      objectReference: {fileID: 1487811940}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 14ab07f1e1a6d24479af50628a9520c6, type: 3}
 --- !u!1001 &1722979267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31752,7 +31827,7 @@ MonoBehaviour:
   m_quickslotInventory: {fileID: 565593126}
   m_slots: []
   m_reachDistance: 3
-  m_questControllerTwo: {fileID: 879026479}
+  m_questControllerTwo: {fileID: 1622829531}
   m_isOpened: 0
 --- !u!114 &1876489803
 MonoBehaviour:
@@ -39635,3 +39710,4 @@ SceneRoots:
   - {fileID: 1567965890}
   - {fileID: 1140700618}
   - {fileID: 835588134}
+  - {fileID: 1719737693}

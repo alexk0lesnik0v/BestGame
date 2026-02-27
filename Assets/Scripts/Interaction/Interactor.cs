@@ -9,7 +9,6 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private float m_castDistance = 3f;
     [SerializeField] private GameObject m_interactionUI;
-    [SerializeField] private GameObject m_questInteractionUI;
     [SerializeField] private TMP_Text m_interactionText;
     [SerializeField] private Camera m_camera;
     [SerializeField] private QuestControllerTwo m_questControllerTwo;
@@ -39,7 +38,7 @@ public class Interactor : MonoBehaviour
                 if (m_questController)
                 {
                     m_interactionText.text = "Can't Interact! You need " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " more figurkas!";
-                    m_questInteractionUI.SetActive(true);
+                    m_interactionUI.SetActive(true);
                 }
             }
         }
@@ -60,7 +59,6 @@ public class Interactor : MonoBehaviour
         {
             m_interactionText.text = "";
             m_interactionUI.SetActive(false);
-            m_questInteractionUI.SetActive(false);
         }
     }
 
