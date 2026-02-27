@@ -15,7 +15,7 @@ namespace Guns
         [SerializeField] private Camera m_camera;
         [SerializeField] private float m_damage = 25f;
         [SerializeField] private float m_force = 155f;
-        [SerializeField] private float m_range = 10f;
+        [SerializeField] private float m_range = 3f;
         
         private void Start()
         {
