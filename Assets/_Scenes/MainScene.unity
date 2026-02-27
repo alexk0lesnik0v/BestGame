@@ -26965,6 +26965,7 @@ MonoBehaviour:
   m_pauseView: {fileID: 2034660070}
   m_mainMenuBtn: {fileID: 7604551757114223635}
   m_resumeBtn: {fileID: 7925764886540531300}
+  m_player: {fileID: 1542632316}
 --- !u!4 &1611681413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3170992a56741a4cb89c578e22597bf, type: 3}

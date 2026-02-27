@@ -1,3 +1,4 @@
+using Players;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class PauseState : StateBase
     [SerializeField] private GameObject m_pauseView;
     [SerializeField] private Button m_mainMenuBtn;
     [SerializeField] private Button m_resumeBtn;
+    [SerializeField] private PlayerController m_player;
 
     private GameStateMachine m_gameStateMachine;
 
@@ -30,6 +32,7 @@ public class PauseState : StateBase
     public override void Enter()
     {
         Time.timeScale = 0f;
+        m_player.m_isNotFiring = true;
         m_pauseView.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -54,6 +57,7 @@ public class PauseState : StateBase
         m_pauseView.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        m_player.m_isNotFiring = false;
     }
 
 }
