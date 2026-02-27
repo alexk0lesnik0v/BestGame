@@ -9,10 +9,9 @@ namespace Players
 {
     public class PlayerDrop : MonoBehaviour
     {
-        [SerializeField] private Transform m_playerCameraTransform;
         [SerializeField] private Transform m_objectGrabPointTransform;
         [SerializeField] private Transform m_handLmpPointTransform;
-        [SerializeField] private float m_pickUpDistance = 2f;
+        [SerializeField] private float m_pickUpDistance = 3f;
         [SerializeField] private LayerMask m_pickUpLayerMask;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private GameObject m_handLamp;
@@ -20,6 +19,7 @@ namespace Players
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_addItemSounds;
+        [SerializeField] private Interactor m_interactor;
         
         private ObjectGrabbable m_objectGrabbable;
         private HandLamp m_handLmp;
@@ -44,7 +44,7 @@ namespace Players
         {
             if (m_objectGrabbable is null)
             {
-               if (Physics.Raycast(m_playerCameraTransform.position, m_playerCameraTransform.forward,
+               if (Physics.Raycast(m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()),
                         out RaycastHit hit, m_pickUpDistance, m_pickUpLayerMask))
                 {
                     if (hit.transform.TryGetComponent(out m_objectGrabbable))
@@ -52,6 +52,8 @@ namespace Players
                         m_objectGrabbable.Grab(m_objectGrabPointTransform);
                         m_quickslotInventory.HideItemInHand();
                         m_handLamp.SetActive(false);
+                        
+                        m_interactor.m_isGrab = true;
                     }
                 }
             }
@@ -61,6 +63,8 @@ namespace Players
                 m_objectGrabbable = null;
                 m_quickslotInventory.CheckItemInHand();
                 m_handLamp.SetActive(true);
+                
+                m_interactor.m_isGrab = false;
             }
             
             Ray ray = m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
@@ -80,7 +84,7 @@ namespace Players
                 }
             }
             
-            if (Physics.Raycast(m_playerCameraTransform.position, m_playerCameraTransform.forward,
+            if (Physics.Raycast(m_mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()),
                     out RaycastHit lampHit, m_pickUpDistance, m_pickUpLayerMask))
             {
                 if (lampHit.transform.TryGetComponent(out m_handLmp))
