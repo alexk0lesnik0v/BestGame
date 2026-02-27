@@ -1,5 +1,6 @@
 ﻿using System;
 using DefaultNamespace.UI;
+using UI;
 using UnityEngine;
 
 namespace Players
@@ -8,7 +9,8 @@ namespace Players
     {
         [SerializeField] private AudioSource m_source;
         [SerializeField] private AudioClip m_clip;
-        [SerializeField] private DeathUI m_deathUI;
+        [SerializeField] private DamageEffect m_damageEffect;
+        //[SerializeField] private DeathUI m_deathUI;
         private float m_health = 100;
         
         public float health
@@ -32,12 +34,15 @@ namespace Players
             
             m_health += heal;
 
-            if (m_health > 100)
+            if (m_health >= 100)
             {
                 m_health = 100;
+                m_damageEffect.ToggleEffect(false, m_health);
             }
-            
-            m_deathUI.SetImage(m_health);
+            else
+            {
+                m_damageEffect.ToggleEffect(true, m_health);
+            }
         }
       
         public void TakeDamage(float damage)
@@ -45,7 +50,9 @@ namespace Players
             m_health -= damage;
             m_source.PlayOneShot(m_clip);
             
-            m_deathUI.SetImage(m_health);
+            Debug.Log(m_health);
+            
+            m_damageEffect.ToggleEffect(true, m_health);
         }
     }
 }

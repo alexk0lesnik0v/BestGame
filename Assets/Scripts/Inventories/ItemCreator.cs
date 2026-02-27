@@ -9,7 +9,7 @@ namespace Inventories
 
         private void Start()
         {
-            m_itemType =  ItemType.Food;
+            m_itemType =  ItemType.Firstaid;
         }
     }
 }

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0990c4c353e24d4bb5a1114f10edbfff, type: 3}
-  m_Name: Axe
-  m_EditorClassIdentifier: Assembly-CSharp::Inventories.ItemCreator
-  m_itemName: Axe
-  m_itemPrefab: {fileID: 4386009861843685756, guid: 557fba593e05c0c45944cf8cb3092ea5, type: 3}
-  m_maximumAmount: 1
-  m_icon: {fileID: 21300000, guid: 3e79e5802867640408f8e6dbc6dab6ba, type: 3}
-  m_itemType: 1
+  m_Name: Figurka
+  m_EditorClassIdentifier: Assembly-CSharp::Inventories.FoodItem
+  m_itemName: Figurka
+  m_itemPrefab: {fileID: 2133491226471782268, guid: 68e6181330ecf474dbba81a5cb51f271, type: 3}
+  m_maximumAmount: 100
+  m_icon: {fileID: 21300000, guid: d5fd3c6cc7379cc4b8226cf758747998, type: 3}
+  m_itemType: 3
   m_itemDescription: 
   m_isConsumeable: 0
   m_changeHealth: 0
