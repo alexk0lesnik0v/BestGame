@@ -20,6 +20,7 @@ namespace Interaction
         {
             if (!m_interactor.m_isGrab)
             {
+                if (m_enter is null) return;
                 m_enter?.Invoke();
             }
         }
