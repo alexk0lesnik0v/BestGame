@@ -11,6 +11,7 @@ namespace Players
     {
         [SerializeField] private Transform m_playerCameraTransform;
         [SerializeField] private Transform m_objectGrabPointTransform;
+        [SerializeField] private Transform m_handLmpPointTransform;
         [SerializeField] private float m_pickUpDistance = 2f;
         [SerializeField] private LayerMask m_pickUpLayerMask;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
@@ -21,6 +22,7 @@ namespace Players
         [SerializeField] private AudioClip m_addItemSounds;
         
         private ObjectGrabbable m_objectGrabbable;
+        private HandLamp m_handLmp;
         private Item m_item;
         
         private Camera m_mainCamera;
@@ -75,6 +77,17 @@ namespace Players
                     
                     Destroy(m_item.gameObject);
                     m_audioSource.PlayOneShot(m_addItemSounds);
+                }
+            }
+            
+            if (Physics.Raycast(m_playerCameraTransform.position, m_playerCameraTransform.forward,
+                    out RaycastHit lampHit, m_pickUpDistance, m_pickUpLayerMask))
+            {
+                if (lampHit.transform.TryGetComponent(out m_handLmp))
+                {
+                    m_handLmp.PickUp(m_handLmpPointTransform);
+                    m_quickslotInventory.HideItemInHand();
+                    m_handLamp.SetActive(false);
                 }
             }
         }

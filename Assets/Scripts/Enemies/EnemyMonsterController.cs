@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Guns;
 using Players;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Enemies
         [SerializeField] private AudioClip m_audioClip;
         [SerializeField] private Transform m_patrolRoute;
         [SerializeField] private List<Transform> m_locations;
+        [SerializeField] private float m_damage;
 
         private Enemy m_enemy;
         private Player m_player;
@@ -95,12 +97,14 @@ namespace Enemies
                     m_animator.Play("Attack");
                     m_isAttack = true;
                     m_agent.isStopped = true;
-
+                    
                     if (!m_isVoice)
                     {
                         m_audioSource.PlayOneShot(m_audioClip);
                         m_isVoice = true;
                     }
+                    
+                    StartCoroutine(DamageEverySecond(character));
                 }
             
                 if (other.gameObject.TryGetComponent<Bullet>(out var bullet))
@@ -135,12 +139,29 @@ namespace Enemies
             }
         }
 
+        IEnumerator DamageEverySecond(Player player)
+        {
+            while (true)
+            {
+                player.TakeDamage(m_damage);
+                yield return new WaitForSeconds(2f);
+                if (!m_isAttack) yield break;
+            }
+        }
+
         private void OnDeath()
         {
             m_isDead = true;
+            m_isAttack  = false;
             m_agent.isStopped = true;
             m_animator.Play("Death");
-            Destroy(this.gameObject.GetComponent<Collider>());
+            
+            Collider[] colliders = this.GetComponentsInChildren<Collider>();
+            foreach (Collider col in colliders)
+            {
+                Destroy(col);
+            }
+            
             this.enabled = false;
             m_enemy.Death -= OnDeath;
         }

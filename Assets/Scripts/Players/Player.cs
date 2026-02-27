@@ -50,6 +50,8 @@ namespace Players
             m_health -= damage;
             m_source.PlayOneShot(m_clip);
             
+            Debug.Log(m_health);
+            
             m_damageEffect.ToggleEffect(true, m_health);
         }
     }
