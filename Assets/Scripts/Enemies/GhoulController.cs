@@ -37,7 +37,9 @@ namespace Enemies
             m_animation = GetComponent<Animation>();
             
             m_enemy.m_health = m_health;
+            
             m_enemy.Death += OnDeath;
+            m_enemy.PlayerDetected += OnPlayerDetected;
             
             m_animation.Play("Walk");
             
@@ -143,6 +145,13 @@ namespace Enemies
                     }
                 }
             }
+        }
+        
+        private void OnPlayerDetected()
+        {
+            m_playerDetected = true;
+            
+            m_enemy.PlayerDetected -= OnPlayerDetected;
         }
         
         private void OnDeath()

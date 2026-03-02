@@ -38,13 +38,15 @@ namespace Enemies
             m_animator = GetComponent<Animator>();
             
             m_enemy.m_health = m_health;
+            
             m_enemy.Death += OnDeath;
+            m_enemy.PlayerDetected += OnPlayerDetected;
 
             //InitializePatrolRoute();
 
             //MoveToNextPatrolLocation();
         }
-        
+      
         private void Update()
         {
             View();
@@ -145,6 +147,13 @@ namespace Enemies
                     }
                 }
             }
+        }
+        
+        private void OnPlayerDetected()
+        {
+            m_playerDetected = true;
+            
+            m_enemy.PlayerDetected -= OnPlayerDetected;
         }
 
         private void OnDeath()

@@ -5,8 +5,17 @@ namespace Enemies
 {
     public class Enemy : MonoBehaviour
     {
+        public event Action PlayerDetected;
         public event Action Death;
+
+        [SerializeField] private EnemyTrigger m_enemyTrigger;
+        
         public float m_health;
+
+        private void Start()
+        {
+            m_enemyTrigger.PlayerTriggered += OnPlayerTriggered;
+        }
 
         public void TakeDamage(float damage)
         {
@@ -19,6 +28,13 @@ namespace Enemies
             {
                 Death?.Invoke();
             }
+        }
+        
+        private void OnPlayerTriggered()
+        {
+            PlayerDetected?.Invoke();
+            
+            m_enemyTrigger.PlayerTriggered -= OnPlayerTriggered;
         }
     }
 }
