@@ -27,6 +27,7 @@ namespace Enemies
         private bool m_isAttack  = false;
         private bool m_isDead = false;
         private bool m_isVoice = false;
+        private bool m_isDamage = false;
         private int m_locationIndex = 0;
         
         private void Start()
@@ -88,7 +89,7 @@ namespace Enemies
         
         public void OnTriggerEnter(Collider other)
         {
-            if (!m_isDead)
+            if (!m_isDead && !m_isDamage)
             {
                 if (other.gameObject.TryGetComponent<Player>(out var character))
                 {
@@ -104,7 +105,9 @@ namespace Enemies
                         m_isVoice = true;
                     }
                     
-                    StartCoroutine(DamageEverySecond(character));
+                    m_isDamage = true;
+                    character.m_isEnemy = true;
+                    character.TakeDamage(m_damage);
                 }
             
                 if (other.gameObject.TryGetComponent<Bullet>(out var bullet))
@@ -117,9 +120,14 @@ namespace Enemies
 
         public void OnTriggerExit(Collider other)
         {
-            m_animator.SetBool("isAttack", false);
-            m_isAttack  = false;
-            m_agent.isStopped = false;
+            if (other.gameObject.TryGetComponent<Player>(out var player))
+            {
+                m_animator.SetBool("isAttack", false);
+                m_isAttack  = false;
+                m_agent.isStopped = false;
+                m_isDamage = false;
+                player.m_isEnemy = false;
+            }
         }
 
         private void View()
@@ -139,21 +147,13 @@ namespace Enemies
             }
         }
 
-        IEnumerator DamageEverySecond(Player player)
-        {
-            while (true)
-            {
-                player.TakeDamage(m_damage);
-                yield return new WaitForSeconds(2f);
-                if (!m_isAttack) yield break;
-            }
-        }
-
         private void OnDeath()
         {
             m_isDead = true;
             m_isAttack  = false;
             m_agent.isStopped = true;
+            m_isDamage = false;
+            m_player.m_isEnemy = false;
             m_animator.Play("Death");
             
             Collider[] colliders = this.GetComponentsInChildren<Collider>();

@@ -8515,6 +8515,10 @@ PrefabInstance:
       propertyPath: m_playerCameraTransform
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 3524699229518341191, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_range
       value: 3
@@ -8547,6 +8551,18 @@ PrefabInstance:
       propertyPath: m_questInteractionUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_deathUI
       value: 
@@ -8561,7 +8577,15 @@ PrefabInstance:
       objectReference: {fileID: 565593126}
     - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_Radius
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7546873277320716672, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_Name
@@ -18448,6 +18472,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1550564489}
     m_Modifications:
+    - target: {fileID: -6753734758567363507, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3877907880951495791, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_damage
       value: 5
@@ -18455,6 +18483,14 @@ PrefabInstance:
     - target: {fileID: 5889796698577009325, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_Name
       value: Mutant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905237763734478653, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905237763734478653, guid: 9af9772763cee924098f463ac79c3390, type: 3}
+      propertyPath: m_Center.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6554727886518165527, guid: 9af9772763cee924098f463ac79c3390, type: 3}
       propertyPath: m_LocalPosition.x

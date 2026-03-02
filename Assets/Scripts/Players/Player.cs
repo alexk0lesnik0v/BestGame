@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DefaultNamespace.UI;
 using UI;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Players
         [SerializeField] private DamageEffect m_damageEffect;
         //[SerializeField] private DeathUI m_deathUI;
         private float m_health = 100;
+        public bool m_isEnemy = false;
         
         public float health
         {
@@ -47,12 +49,30 @@ namespace Players
       
         public void TakeDamage(float damage)
         {
+            StartCoroutine(DamageEverySecond(damage));
+        }
+        
+        private void OnDamage(float damage)
+        {
             m_health -= damage;
             m_source.PlayOneShot(m_clip);
             
             Debug.Log(m_health);
             
             m_damageEffect.ToggleEffect(true, m_health);
+        }
+        
+        IEnumerator DamageEverySecond(float damage)
+        {
+            while (true)
+            {
+                this.OnDamage(damage);
+                yield return new WaitForSeconds(2f);
+                if (!m_isEnemy)
+                {
+                    yield break;
+                }
+            }
         }
     }
 }
