@@ -453,7 +453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.GhoulController
   m_health: 50
   m_audioSource: {fileID: 438738148723416586}
-  m_audioClip: {fileID: 8300000, guid: f0770a28c787b53429dbff61defe82a2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2ea3aa707c86a2341a413d6284ff2013, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
   m_damage: 5

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyMonsterController
   m_health: 75
   m_audioSource: {fileID: 8379960195130564743}
-  m_audioClip: {fileID: 8300000, guid: dd34675d1ddd6824eae8c703dd45191b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0d854e8678338134bbb7058cf9141773, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
   m_damage: 5
