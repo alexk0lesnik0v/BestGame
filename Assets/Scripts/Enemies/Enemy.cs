@@ -14,7 +14,10 @@ namespace Enemies
 
         private void Start()
         {
-            m_enemyTrigger.PlayerTriggered += OnPlayerTriggered;
+            if (m_enemyTrigger is not null)
+            {
+                m_enemyTrigger.PlayerTriggered += OnPlayerTriggered;
+            }
         }
 
         public void TakeDamage(float damage)
