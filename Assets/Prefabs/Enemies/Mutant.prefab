@@ -135,7 +135,7 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: dd34675d1ddd6824eae8c703dd45191b, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
-  m_damage: 20
+  m_damage: 5
 --- !u!195 &4751472471999102243
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1, z: 0.5}
 --- !u!135 &-6753734758567363507
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -309,4 +309,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afcf1817a85474a93e85575a94d54fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.Enemy
+  m_enemyTrigger: {fileID: 0}
   m_health: 0

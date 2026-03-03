@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afcf1817a85474a93e85575a94d54fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.Enemy
+  m_enemyTrigger: {fileID: 0}
   m_health: 0
 --- !u!82 &438738148723416586
 AudioSource:
@@ -455,6 +456,7 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: f0770a28c787b53429dbff61defe82a2, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
+  m_damage: 5
 --- !u!135 &3538791311421090802
 SphereCollider:
   m_ObjectHideFlags: 0
