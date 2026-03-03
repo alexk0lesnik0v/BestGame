@@ -1,13 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
+    [SerializeField] private CameraMoveForward m_camera;
+    [SerializeField] private GameObject m_fader;
     public void OnPlay()
     {
-        SceneManager.LoadScene(GlobalConstants.Scenes.Main);
+        m_camera.MoveForward();
+        m_fader.SetActive(true);
+        StartCoroutine(LoadScene());
+        
     }
 
     public void OnExit()
@@ -17,5 +22,9 @@ public class MainMenu : MonoBehaviour
 #endif
         Application.Quit();
     }
-
+    private IEnumerator LoadScene()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(GlobalConstants.Scenes.Main);
+    }
 }
