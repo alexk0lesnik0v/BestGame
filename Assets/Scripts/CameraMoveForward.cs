@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class CameraMoveForward : MonoBehaviour
 {
+    private Tweener m_tweener;
     public void MoveForward()
     {
-        transform.DOLocalMove(new Vector3(-1.722f, 2.09500003f, -2.83599997f), 2);
+        m_tweener.Kill();
+        m_tweener = transform.DOLocalMove(new Vector3(-1.722f, 2.09500003f, -2.83599997f), 2);
     }
 }

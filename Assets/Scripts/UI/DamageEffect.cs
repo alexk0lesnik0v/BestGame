@@ -21,6 +21,10 @@ namespace UI
 
         private void EnableEffect()
         {
+            m_fadeTween.Kill();
+            m_weightTween.Kill();
+
+            //////////////////
             m_healTweener.Kill();
             m_weightTween = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, m_damageVolumeValueMax, 1f)
                 .SetEase(Ease.InOutQuad)
@@ -41,6 +45,9 @@ namespace UI
 
         private void DisableEffect()
         {
+            m_fadeTween.Kill();
+            /////////////////////////
+
             m_healTweener.Kill();
             m_weightTween.Pause();
             m_healTweener = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, 0f, 1f);
