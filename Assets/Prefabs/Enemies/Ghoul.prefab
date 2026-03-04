@@ -207,9 +207,9 @@ GameObject:
   - component: {fileID: 3225265448202834035}
   - component: {fileID: 5670145131896210546}
   - component: {fileID: 1469893215944175072}
-  - component: {fileID: 7196404179898928025}
-  - component: {fileID: 3208285505659083117}
   - component: {fileID: 3538791311421090802}
+  - component: {fileID: 8687367262978344898}
+  - component: {fileID: 7195798670339812021}
   m_Layer: 0
   m_Name: Ghoul
   m_TagString: Untagged
@@ -418,45 +418,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 2, z: 0}
---- !u!111 &7196404179898928025
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770230026063570311}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  m_Animations:
-  - {fileID: 7400008, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400002, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400004, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400010, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
---- !u!114 &3208285505659083117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770230026063570311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d257e6d7fa4927bdea6c000b67a2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemies.GhoulController
-  m_health: 50
-  m_audioSource: {fileID: 438738148723416586}
-  m_audioClip: {fileID: 8300000, guid: 2ea3aa707c86a2341a413d6284ff2013, type: 3}
-  m_patrolRoute: {fileID: 0}
-  m_locations: []
-  m_damage: 5
 --- !u!135 &3538791311421090802
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -478,6 +439,46 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!95 &8687367262978344898
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770230026063570311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
+  m_Controller: {fileID: 9100000, guid: f7f443cd20b1bf145a43f1023bd109e9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7195798670339812021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770230026063570311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfcd845ae3842f3ac78d48752717abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyMonsterController
+  m_health: 50
+  m_audioSource: {fileID: 438738148723416586}
+  m_audioClip: {fileID: 8300000, guid: 2ea3aa707c86a2341a413d6284ff2013, type: 3}
+  m_patrolRoute: {fileID: 0}
+  m_locations: []
+  m_damage: 5
 --- !u!1 &993376395100491475
 GameObject:
   m_ObjectHideFlags: 0
