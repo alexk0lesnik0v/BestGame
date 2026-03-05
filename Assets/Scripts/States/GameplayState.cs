@@ -18,26 +18,30 @@ public class GameplayState : StateBase
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            m_gameStateMachine.Enter<PauseState>();
+        }
         if (m_player.health <= 0)
         {
             m_gameStateMachine.Enter<DeadState>();
         }
     }
 
-    private void OnEnable()
-    {
-        m_gameInput.Player.Escape.performed += OnEscape;
-    }
+    //private void OnEnable()
+    //{
+    //    m_gameInput.Player.Escape.performed += OnEscape;
+    //}
 
-    private void OnDisable()
-    {
-        m_gameInput.Player.Escape.performed -= OnEscape;
-    }
+    //private void OnDisable()
+    //{
+    //    m_gameInput.Player.Escape.performed -= OnEscape;
+    //}
 
-    private void OnEscape(InputAction.CallbackContext context)
-    {
-        m_gameStateMachine.Enter<PauseState>();
-    }
+    //private void OnEscape(InputAction.CallbackContext context)
+    //{
+    //    m_gameStateMachine.Enter<PauseState>();
+    //}
 
     public override void Initialize(GameStateMachine gameStateMachine)
     {

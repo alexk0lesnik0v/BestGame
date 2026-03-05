@@ -9,6 +9,8 @@ public class PhysicalButton : MonoBehaviour
     [SerializeField] private float m_animationDuration;
     [SerializeField] private Transform m_movable;
     [SerializeField] private Vector3 m_targetLocalPosition;
+    [SerializeField] private AudioSource m_source;
+    [SerializeField] private AudioClip m_clip;
 
     private Tweener m_tweener;
     private bool m_isAnimating;
@@ -22,6 +24,7 @@ public class PhysicalButton : MonoBehaviour
         }
         m_isAnimating = true;
         m_tweener = m_movable.DOLocalMove(m_targetLocalPosition, m_animationDuration / 2).OnComplete(OnComplete);
+        m_source.PlayOneShot(m_clip);
     }
 
     private void OnComplete()

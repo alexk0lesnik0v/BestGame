@@ -7,12 +7,20 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private CameraMoveForward m_camera;
     [SerializeField] private GameObject m_fader;
+    [SerializeField] private AudioSource m_source;
+    [SerializeField] private AudioClip m_clip;
+
+    private void Start()
+    {
+        m_source.clip = m_clip;
+        m_source.Play();
+    }
+
     public void OnPlay()
     {
         m_camera.MoveForward();
         m_fader.SetActive(true);
         StartCoroutine(LoadScene());
-        
     }
 
     public void OnExit()
@@ -22,6 +30,7 @@ public class MainMenu : MonoBehaviour
 #endif
         Application.Quit();
     }
+
     private IEnumerator LoadScene()
     {
         yield return new WaitForSeconds(2);
