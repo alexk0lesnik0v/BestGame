@@ -585,11 +585,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 724398111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &111006028 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-  m_PrefabInstance: {fileID: 909934820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &175108657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -682,7 +677,6 @@ Transform:
   m_Children:
   - {fileID: 724398111}
   - {fileID: 333202804}
-  - {fileID: 111006028}
   - {fileID: 1294355783}
   - {fileID: 1405548148}
   - {fileID: 1183657064}
@@ -2477,63 +2471,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c793e824b78b4d4fa569e41d6c894f6, type: 3}
---- !u!1001 &909934820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 198485304}
-    m_Modifications:
-    - target: {fileID: 862972364041880215, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_Name
-      value: M Ogre Blue Warpaint 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.1748
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.5865495
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.32539988
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 4441320067919310980, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 08d982c1d786c2746a1cc99374827bfe, type: 3}
 --- !u!1001 &913143497
 PrefabInstance:
   m_ObjectHideFlags: 0
