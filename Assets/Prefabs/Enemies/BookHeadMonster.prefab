@@ -1458,11 +1458,10 @@ GameObject:
   - component: {fileID: 2924520752574490165}
   - component: {fileID: 1315033377114511819}
   - component: {fileID: 1820240161994883995}
-  - component: {fileID: 8342784416783926721}
-  - component: {fileID: 8347144265182804454}
   - component: {fileID: 2310729737374099898}
-  - component: {fileID: -2679320838339920566}
   - component: {fileID: -6611856862610298896}
+  - component: {fileID: 8342784416783926721}
+  - component: {fileID: -4800464732292257107}
   m_Layer: 0
   m_Name: BookHeadMonster
   m_TagString: Untagged
@@ -1514,7 +1513,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!135 &2924520752574490165
 SphereCollider:
@@ -1580,38 +1579,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8342784416783926721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646236361506883588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4afcf1817a85474a93e85575a94d54fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemies.Enemy
-  m_enemyTrigger: {fileID: 0}
-  m_health: 0
---- !u!114 &8347144265182804454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646236361506883588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1d257e6d7fa4927bdea6c000b67a2d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemies.GhoulController
-  m_health: 50
-  m_audioSource: {fileID: 2310729737374099898}
-  m_audioClip: {fileID: 8300000, guid: 21efe7712c531ea4384e709371c197c4, type: 3}
-  m_patrolRoute: {fileID: 0}
-  m_locations: []
-  m_damage: 5
 --- !u!82 &2310729737374099898
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1709,27 +1676,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!111 &-2679320838339920566
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646236361506883588}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  m_Animations:
-  - {fileID: 7400008, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400002, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400004, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400010, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  - {fileID: 7400000, guid: ce65fa103f0e84b4289374b2a4bf93f8, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!95 &-6611856862610298896
 Animator:
   serializedVersion: 7
@@ -1739,11 +1685,11 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4646236361506883588}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 939dd2b1b2633e840b9645b503fa3457, type: 3}
+  m_Controller: {fileID: 9100000, guid: f7f443cd20b1bf145a43f1023bd109e9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1752,6 +1698,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8342784416783926721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646236361506883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afcf1817a85474a93e85575a94d54fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.Enemy
+  m_enemyTrigger: {fileID: 0}
+  m_health: 0
+--- !u!114 &-4800464732292257107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646236361506883588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfcd845ae3842f3ac78d48752717abb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyMonsterController
+  m_health: 50
+  m_audioSource: {fileID: 2310729737374099898}
+  m_audioClip: {fileID: 8300000, guid: 21efe7712c531ea4384e709371c197c4, type: 3}
+  m_patrolRoute: {fileID: 0}
+  m_locations: []
+  m_damage: 5
 --- !u!1 &4651305199121903722
 GameObject:
   m_ObjectHideFlags: 0
