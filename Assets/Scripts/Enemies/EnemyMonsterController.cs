@@ -63,11 +63,11 @@ namespace Enemies
                 m_animator.Play("Run");
                 m_agent.speed = 4;
                 
-                if (!m_isVoice)
-                {
-                    m_audioSource.PlayOneShot(m_audioClip);
-                    m_isVoice = true;
-                }
+                //if (!m_isVoice)
+               //{
+                   // m_audioSource.PlayOneShot(m_audioClip);
+                    //m_isVoice = true;
+                //}
             }
         }
         
@@ -114,6 +114,11 @@ namespace Enemies
             
                 if (other.gameObject.TryGetComponent<Bullet>(out var bullet))
                 {
+                    if (!m_playerDetected)
+                    {
+                        m_audioSource.PlayOneShot(m_audioClip);
+                    }
+                    
                     m_playerDetected =  true;
                     Debug.Log("Critical hit!");
                 }
@@ -143,7 +148,13 @@ namespace Enemies
                 {
                     if (hit.transform.gameObject.TryGetComponent<Player>(out var player))
                     {
-                        m_playerDetected =  true;
+                        if (!m_isVoice)
+                        {
+                            m_audioSource.PlayOneShot(m_audioClip);
+                            m_isVoice = true;
+                        }
+                        
+                        m_playerDetected = true;
                     }
                 }
             }
@@ -151,6 +162,7 @@ namespace Enemies
         
         private void OnPlayerDetected()
         {
+            m_audioSource.PlayOneShot(m_audioClip);
             m_playerDetected = true;
             
             m_enemy.PlayerDetected -= OnPlayerDetected;
