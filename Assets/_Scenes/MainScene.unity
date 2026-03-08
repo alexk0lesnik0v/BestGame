@@ -7472,14 +7472,6 @@ PrefabInstance:
       propertyPath: m_inventoryManager
       value: 
       objectReference: {fileID: 4810326718379102006}
-    - target: {fileID: 859445544665370057, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_interactor
-      value: 
-      objectReference: {fileID: 1542632329}
     - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
@@ -7488,26 +7480,10 @@ PrefabInstance:
       propertyPath: m_quickslotInventory
       value: 
       objectReference: {fileID: 6928472765532791105}
-    - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_playerCameraTransform
-      value: 
-      objectReference: {fileID: 330585546}
-    - target: {fileID: 3524699229518341191, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_range
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 4710817221475695737, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Intensity
-      value: 2.97
-      objectReference: {fileID: 0}
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera
       value: 
@@ -7524,26 +7500,6 @@ PrefabInstance:
       propertyPath: m_questControllerTwo
       value: 
       objectReference: {fileID: 1622829531}
-    - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_questInteractionUI
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7039259011341078258, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_deathUI
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventory
       value: 
@@ -7552,33 +7508,9 @@ PrefabInstance:
       propertyPath: m_quickslotInventory
       value: 
       objectReference: {fileID: 6928472765532791105}
-    - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Radius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7525765607849109805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Center.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7546873277320716672, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7845065404235848004, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7845065404235848004, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 7845065404235848004, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22693,17 +22625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64a8aa83160478b9e21738b66e09cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.Character
---- !u!114 &1542632329 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-  m_PrefabInstance: {fileID: 500337895}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec2596e2b49d5344945b358b3a48f99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactor
 --- !u!1001 &1543639794
 PrefabInstance:
   m_ObjectHideFlags: 0
