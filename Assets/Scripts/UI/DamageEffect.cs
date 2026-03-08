@@ -78,32 +78,32 @@ namespace UI
             
                 if (health <= 20f)
                 {
-                    m_damageVolumeValueMax = 0.9f;
-                    m_damageVolumeValueMin = 0.7f;
+                    m_damageVolumeValueMax = 0.3f;
+                    m_damageVolumeValueMin = 0.1f;
                     EnableEffect();
                     return;
                 }
 
                 if (health <= 40f)
                 {
-                    m_damageVolumeValueMax = 0.7f;
-                    m_damageVolumeValueMin = 0.5f;
+                    m_damageVolumeValueMax = 0.25f;
+                    m_damageVolumeValueMin = 0.1f;
                     EnableEffect();
                     return;
                 }
 
                 if (health <= 60f)
                 {
-                    m_damageVolumeValueMax = 0.5f;
-                    m_damageVolumeValueMin = 0.3f;
+                    m_damageVolumeValueMax = 0.2f;
+                    m_damageVolumeValueMin = 0.1f;
                     EnableEffect();
                     return;
                 }
             
                 if (health <= 80f)
                 {
-                    m_damageVolumeValueMax = 0.3f;
-                    m_damageVolumeValueMin = 0.15f;
+                    m_damageVolumeValueMax = 0.15f;
+                    m_damageVolumeValueMin = 0.1f;
                     EnableEffect();
                 }
             }

@@ -118,7 +118,7 @@ namespace Enemies
             
             Transform currentTransform = this.gameObject.transform;
             Destroy(this.gameObject);
-            Instantiate(m_deathPrefab, currentTransform.position, currentTransform.rotation);
+            Instantiate(m_deathPrefab, currentTransform.position + Vector3.up, currentTransform.rotation);
             m_isDamage = false;
             m_player.m_isEnemy = false;
             m_enemy.Death -= OnDeath;

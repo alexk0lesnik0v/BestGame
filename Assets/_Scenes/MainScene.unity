@@ -7541,22 +7541,6 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 4710817221475695737, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_Range
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6652180382781102125, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6652180382781102125, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.701
-      objectReference: {fileID: 0}
-    - target: {fileID: 6652180382781102125, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.429
-      objectReference: {fileID: 0}
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera
       value: 
@@ -22924,7 +22908,7 @@ PrefabInstance:
     - target: {fileID: 7933990285122959562, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
       propertyPath: m_deathPrefab
       value: 
-      objectReference: {fileID: 7897217843739138018, guid: 6c8fd836fe0876c449928cd0787d787d, type: 3}
+      objectReference: {fileID: 8391264739850618893, guid: 369529be3ad810641968157d6cc20141, type: 3}
     - target: {fileID: 7968301842021289580, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
       propertyPath: m_enemyTrigger
       value: 

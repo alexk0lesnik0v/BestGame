@@ -13,6 +13,7 @@ namespace Enemies
             if (other.gameObject.TryGetComponent<Player>(out var player))
             {
                 PlayerTriggered?.Invoke();
+                Destroy(this.gameObject);
             }
         }
     }
