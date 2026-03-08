@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Players;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -6,7 +7,10 @@ namespace DefaultNamespace
 {
     public class WinMenu : MonoBehaviour
     {
+        [SerializeField] private GameObject m_winMenu;
         [SerializeField] private Button m_mainmenuButton;
+        [SerializeField] private PlayerController m_player;
+        [SerializeField] private GameObject m_inventoryView;
         
         private void OnEnable()
         {
@@ -20,6 +24,19 @@ namespace DefaultNamespace
         private void OnMainMenu()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.TryGetComponent<Player>(out var player))
+            {
+                Time.timeScale = 0f;
+                m_player.m_isNotFiring = true;
+                m_winMenu.SetActive(true);
+                m_inventoryView.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 }

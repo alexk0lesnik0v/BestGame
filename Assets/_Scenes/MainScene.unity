@@ -4728,7 +4728,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.611, y: 1.754, z: -155.684}
+  m_LocalPosition: {x: -5.611, y: 1.754, z: -155.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7609,7 +7609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -155.684
+      value: -155.77
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31620,6 +31620,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2301731494576842846, guid: 4f3ad7a3f8c1297468d32f4e1653f01c, type: 3}
   m_PrefabInstance: {fileID: 549049721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2063793939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2063793942}
+  - component: {fileID: 2063793941}
+  - component: {fileID: 2063793940}
+  m_Layer: 0
+  m_Name: WinGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2063793940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063793939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b73464e5f34fa28a4f9262e70751f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.WinMenu
+  m_winMenu: {fileID: 7972795357289629682}
+  m_mainmenuButton: {fileID: 2367897002920442520}
+  m_player: {fileID: 1542632316}
+  m_inventoryView: {fileID: 8290137398858299791}
+--- !u!65 &2063793941
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063793939}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2063793942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063793939}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.63, y: 1.219, z: -7.568}
+  m_LocalScale: {x: 2.569204, y: 2.2950253, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2065313968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34568,7 +34638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E \u0447\u0442\u043E \u0438\u0433\u0440\u0430\u043B\u0438
+  m_text: "\u0421\u043F\u0430\u0441\u0438\u0431\u043E, \u0447\u0442\u043E \u0438\u0433\u0440\u0430\u043B\u0438
     \u0434\u043E \u043A\u043E\u043D\u0446\u0430!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -40039,8 +40109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.WinController
   m_doorInteraction: {fileID: 333156786}
-  m_timer: {fileID: 7925365940242086469}
-  m_time: 901
+  m_timer: {fileID: 0}
+  m_time: 0
 --- !u!224 &6076725572239080754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -42025,7 +42095,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C! \u0412\u044B
-    \u043F\u0440\u043E\u0448\u043B\u0438!"
+    \u043F\u0440\u043E\u0448\u043B\u0438 \u0434\u0435\u043C\u043E\u0432\u0435\u0440\u0441\u0438\u044E
+    \u0438\u0433\u0440\u044B!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -43701,3 +43772,4 @@ SceneRoots:
   - {fileID: 1746936806}
   - {fileID: 547484508}
   - {fileID: 1297777649}
+  - {fileID: 2063793942}
