@@ -8649,11 +8649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429312249253595310, guid: a80e3d8cf4cc4134892b41f3675f82f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7
+      value: 1.745
       objectReference: {fileID: 0}
     - target: {fileID: 5429312249253595310, guid: a80e3d8cf4cc4134892b41f3675f82f1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.345
+      value: 18.95
       objectReference: {fileID: 0}
     - target: {fileID: 5429312249253595310, guid: a80e3d8cf4cc4134892b41f3675f82f1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16701,67 +16701,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f3ab28dbec0d3a4398df0e4f85de8d5, type: 3}
---- !u!1001 &1626639742
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4975909013851497470, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_Name
-      value: KillerDollWood
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 27.458637
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.131
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -9.814606
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7831318734453990807, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8792783384998778887, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
-      propertyPath: m_enemyTrigger
-      value: 
-      objectReference: {fileID: 859868723}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6620af2a33e0a8048a60188d970d4fe9, type: 3}
 --- !u!114 &1626694367 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
@@ -23277,6 +23216,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e78cf063603213a428657da80f2eb391, type: 3}
+--- !u!1001 &5647046584252048014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 992621379068966450, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_Name
+      value: KillerDollWood
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.458637
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136770324778722640, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7968301842021289580, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
+      propertyPath: m_enemyTrigger
+      value: 
+      objectReference: {fileID: 859868723}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
 --- !u!1001 &8857677171881304987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23358,6 +23358,6 @@ SceneRoots:
   - {fileID: 815761310}
   - {fileID: 187360945}
   - {fileID: 30101164}
-  - {fileID: 1626639742}
+  - {fileID: 5647046584252048014}
   - {fileID: 942732470}
   - {fileID: 859868722}

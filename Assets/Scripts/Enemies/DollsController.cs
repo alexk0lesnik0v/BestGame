@@ -14,6 +14,7 @@ namespace Enemies
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
         [SerializeField] private float m_damage;
+        [SerializeField] private GameObject m_deathPrefab;
 
         private Enemy m_enemy;
         private Player m_player;
@@ -101,6 +102,7 @@ namespace Enemies
         private void OnPlayerDetected()
         {
             m_audioSource.PlayOneShot(m_audioClip);
+            m_enemy.m_health = m_health;
             m_playerDetected = true;
             
             m_enemy.PlayerDetected -= OnPlayerDetected;
@@ -114,20 +116,11 @@ namespace Enemies
                 return;
             }
             
-            m_isDead = true;
-            m_isAttack  = false;
-            m_agent.isStopped = true;
+            Transform currentTransform = this.gameObject.transform;
+            Destroy(this.gameObject);
+            Instantiate(m_deathPrefab, currentTransform.position, currentTransform.rotation);
             m_isDamage = false;
             m_player.m_isEnemy = false;
-            m_animator.Play("Death");
-            
-            Collider[] colliders = this.GetComponentsInChildren<Collider>();
-            foreach (Collider col in colliders)
-            {
-                Destroy(col);
-            }
-            
-            this.enabled = false;
             m_enemy.Death -= OnDeath;
         }
     }
