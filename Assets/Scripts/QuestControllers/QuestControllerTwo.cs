@@ -8,6 +8,7 @@ namespace QuestControllers
         [SerializeField] private DoorInteraction m_doorInteraction;
         [SerializeField] private Lever m_lever;
         [SerializeField] private Timer m_timer;
+        [SerializeField] private float m_time;
         
         
         public int m_figurkaAmount = 0;
@@ -29,7 +30,7 @@ namespace QuestControllers
 
         public bool Interact(Interactor interactor)
         {
-            m_timer.RestartTimer();
+            m_timer.RestartTimer(m_time);
             if (m_isOpen)
             {
                 m_doorInteraction.OpenDoorUp();
@@ -37,7 +38,7 @@ namespace QuestControllers
             }
             else
             {
-                m_timer.StartTimer();
+                m_timer.StartTimer(m_time);
                 m_doorInteraction.OpenDoorDown();
                 m_lever.LeverDown();
             }

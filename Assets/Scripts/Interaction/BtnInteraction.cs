@@ -6,6 +6,7 @@ public class BtnInteraction : MonoBehaviour, IInteractable
     [SerializeField] private DoorInteraction m_doorInteraction;
     [SerializeField] private Lever m_lever;
     [SerializeField] private Timer m_timer;
+    [SerializeField] private float m_time;
     private bool m_isOpen = false;
     public bool CanInteract()
     {
@@ -14,7 +15,7 @@ public class BtnInteraction : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        m_timer.RestartTimer();
+        m_timer.RestartTimer(m_time);
         if (m_isOpen)
         {
             m_doorInteraction.OpenDoorUp();
@@ -22,7 +23,7 @@ public class BtnInteraction : MonoBehaviour, IInteractable
         }
         else
         {
-            m_timer.StartTimer();
+            m_timer.StartTimer(m_time);
             m_doorInteraction.OpenDoorDown();
             m_lever.LeverDown();
         }
