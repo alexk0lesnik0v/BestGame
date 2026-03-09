@@ -23,7 +23,8 @@ namespace DefaultNamespace
         
         private void OnMainMenu()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(GlobalConstants.Scenes.Menu);
+            Time.timeScale = 1f;
         }
         
         private void OnTriggerEnter(Collider other)

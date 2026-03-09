@@ -22997,10 +22997,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7933990285122959562, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
-      propertyPath: m_deathPrefab
-      value: 
-      objectReference: {fileID: 8391264739850618893, guid: 369529be3ad810641968157d6cc20141, type: 3}
     - target: {fileID: 7968301842021289580, guid: c2b78ee380df1144499d15e2f8aae699, type: 3}
       propertyPath: m_enemyTrigger
       value: 
@@ -40109,8 +40105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.WinController
   m_doorInteraction: {fileID: 333156786}
-  m_timer: {fileID: 0}
-  m_time: 0
+  m_timer: {fileID: 7925365940242086469}
+  m_time: 901
 --- !u!224 &6076725572239080754
 RectTransform:
   m_ObjectHideFlags: 0
