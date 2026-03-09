@@ -7567,6 +7567,10 @@ PrefabInstance:
       propertyPath: m_quickslotInventory
       value: 
       objectReference: {fileID: 6928472765532791105}
+    - target: {fileID: 1894237348985293805, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 368250995b044384ca513076723f8e4b, type: 2}
     - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera
       value: 
@@ -25128,10 +25132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WallTorch
       objectReference: {fileID: 0}
-    - target: {fileID: 6142874709554961670, guid: 7686447c6fa4eed40bbfddfbacdd5f55, type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29565,7 +29565,7 @@ AudioSource:
   m_GameObject: {fileID: 1902217344}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 368250995b044384ca513076723f8e4b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 0c1b11e13578e5d44ad2fe5a7037765e, type: 3}
   m_PlayOnAwake: 1
