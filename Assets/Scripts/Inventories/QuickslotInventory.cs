@@ -1,4 +1,5 @@
 ﻿using Guns;
+using PickUps;
 using Players;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,9 +11,9 @@ namespace Inventories
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private BarabanOfBullets m_baraban;
         [SerializeField] private Axe m_axe;
+        [SerializeField] private Firstaid m_firstaid;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_itemSounds;
-        [SerializeField] private Transform m_objectGrabPointTransform;
         
         public Transform m_quickslotParent;
         public InventoryManager m_inventoryManager;
@@ -22,7 +23,6 @@ namespace Inventories
         public InventorySlot m_activeSlot =  null;
         
         private Player m_player;
-        private GameObject m_itemPrefab;
         
         private void Start()
         {
@@ -164,16 +164,12 @@ namespace Inventories
             
             if (m_activeSlot.m_item is not null)
             {
-                if (m_itemPrefab is not null)
-                {
-                    Destroy(m_itemPrefab);
-                }
-                
                 if (m_activeSlot.m_item.m_itemType == ItemType.Weapon)
                 {
                     if (m_activeSlot.m_item.m_itemName == "Revolver")
                     {
                         m_axe.gameObject.SetActive(false);
+                        m_firstaid.gameObject.SetActive(false);
 
                         if (!m_revolver.gameObject.activeSelf)
                         {
@@ -188,6 +184,7 @@ namespace Inventories
                     {
                         m_revolver.gameObject.SetActive(false);
                         m_baraban.gameObject.SetActive(false);
+                        m_firstaid.gameObject.SetActive(false);
 
                         if (!m_axe.gameObject.activeSelf)
                         {
@@ -200,15 +197,17 @@ namespace Inventories
                 }
                 else if (m_activeSlot.m_item.m_itemType == ItemType.Firstaid)
                 {
-                    HideItemInHand();
-                    var obj = Instantiate(m_activeSlot.m_item.m_itemPrefab, m_objectGrabPointTransform);
-                    obj.GetComponent<Rigidbody>().isKinematic = true;
-                    obj.transform.localPosition = Vector3.zero;
-                    obj.transform.localEulerAngles = new Vector3(20f, 180f, 0f);
-                    obj.gameObject.layer = 9;
-                    m_audioSource.PlayOneShot(m_itemSounds);
+                    m_revolver.gameObject.SetActive(false);
+                    m_baraban.gameObject.SetActive(false);
+                    m_axe.gameObject.SetActive(false);
 
-                    m_itemPrefab = obj;
+                    if (!m_firstaid.gameObject.activeSelf)
+                    {
+                        m_firstaid.gameObject.SetActive(true);
+                        m_firstaid.FirstaidOnHand();
+                    
+                        m_audioSource.PlayOneShot(m_itemSounds);
+                    }
                 }
                 else
                 {
@@ -226,10 +225,7 @@ namespace Inventories
             m_revolver.gameObject.SetActive(false);
             m_baraban.gameObject.SetActive(false);
             m_axe.gameObject.SetActive(false);
-            if (m_itemPrefab is not null)
-            {
-                Destroy(m_itemPrefab);
-            }
+            m_firstaid.gameObject.SetActive(false);
             
             m_audioSource.PlayOneShot(m_itemSounds);
         }
