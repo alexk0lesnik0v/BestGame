@@ -15,7 +15,7 @@ public class PhysicalButton : MonoBehaviour
     private Tweener m_tweener;
     private bool m_isAnimating;
 
-    private void OnMouseUpAsButton()
+    private void OnMouseDown()
     {
         m_tweener.Kill();
         if (m_isAnimating)

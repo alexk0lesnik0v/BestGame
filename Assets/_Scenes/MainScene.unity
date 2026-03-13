@@ -42166,8 +42166,8 @@ MonoBehaviour:
     \u043F\u0440\u043E\u0448\u043B\u0438 \u0434\u0435\u043C\u043E\u0432\u0435\u0440\u0441\u0438\u044E
     \u0438\u0433\u0440\u044B!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aeb13709b6577194eac5c9e6dffe5354, type: 2}
+  m_sharedMaterial: {fileID: -834175591375198159, guid: aeb13709b6577194eac5c9e6dffe5354, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
