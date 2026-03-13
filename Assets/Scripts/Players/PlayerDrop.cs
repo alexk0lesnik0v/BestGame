@@ -52,6 +52,7 @@ namespace Players
                         m_objectGrabbable.Grab(m_objectGrabPointTransform);
                         m_quickslotInventory.HideItemInHand();
                         m_handLamp.SetActive(false);
+                        m_quickslotInventory.gameObject.SetActive(false);
                         
                         m_interactor.m_isGrab = true;
                     }
@@ -63,6 +64,7 @@ namespace Players
                 m_objectGrabbable = null;
                 m_quickslotInventory.CheckItemInHand();
                 m_handLamp.SetActive(true);
+                m_quickslotInventory.gameObject.SetActive(true);
                 
                 m_interactor.m_isGrab = false;
             }

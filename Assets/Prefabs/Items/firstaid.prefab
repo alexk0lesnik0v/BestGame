@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickUps.Firstaid
   m_animator: {fileID: 7239232359317176132}
   m_audioSource: {fileID: -1470369925709688900}
+  m_audioClip: {fileID: 8300000, guid: b41b44b026e6c9045add839492fdcdd8, type: 3}
 --- !u!82 &-1470369925709688900
 AudioSource:
   m_ObjectHideFlags: 0

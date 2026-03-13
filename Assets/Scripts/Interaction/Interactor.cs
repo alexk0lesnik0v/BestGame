@@ -12,8 +12,9 @@ public class Interactor : MonoBehaviour
     [SerializeField] private TMP_Text m_interactionText;
     [SerializeField] private Camera m_camera;
     [SerializeField] private QuestControllerTwo m_questControllerTwo;
-    
+
     private bool m_questController = false;
+    private bool m_isFigurkas = false;
     
     public bool m_isGrab = false;
 
@@ -46,7 +47,14 @@ public class Interactor : MonoBehaviour
         {
             if (!m_isGrab)
             {
-                m_interactionText.text = "Press 'E' to interact";
+                if (m_isFigurkas)
+                {
+                    //m_interactionText.text = "You need " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " more figurkas! Press 'E' to pick up";
+                }
+                else
+                {
+                    m_interactionText.text = "Press 'E' to pick up";
+                }
             }
             else
             {
@@ -59,6 +67,7 @@ public class Interactor : MonoBehaviour
         {
             m_interactionText.text = "";
             m_interactionUI.SetActive(false);
+            m_isFigurkas = false;
         }
     }
 
@@ -94,6 +103,14 @@ public class Interactor : MonoBehaviour
         {
             if (_hit.collider.TryGetComponent(out Item item) || _hit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
             {
+                if (item is not null)
+                {
+                    if (item.m_item.m_itemType == ItemType.Figurka)
+                    {
+                        m_isFigurkas = true;
+                    }
+                }
+                
                 return true;
             }
             return false;

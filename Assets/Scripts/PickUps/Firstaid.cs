@@ -5,7 +5,6 @@ namespace PickUps
     public class Firstaid : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
-        [SerializeField] private AudioSource m_audioSource;
         
         private void Start()
         {

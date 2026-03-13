@@ -14,6 +14,7 @@ namespace Inventories
         [SerializeField] private Firstaid m_firstaid;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_itemSounds;
+        [SerializeField] private AudioClip m_firstaidSounds;
         
         public Transform m_quickslotParent;
         public InventoryManager m_inventoryManager;
@@ -150,7 +151,9 @@ namespace Inventories
         {
             float heal = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_changeHealth;
             m_player.Heal(heal);
-                
+            
+            m_audioSource.PlayOneShot(m_firstaidSounds);
+            
             Debug.Log("Health " + m_player.health);
         }
 

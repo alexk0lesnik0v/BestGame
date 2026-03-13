@@ -1,6 +1,7 @@
 ﻿using Enemies;
 using Guns;
 using Inventories;
+using PickUps;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Players
     {
         [SerializeField] private Revolver m_revolver;
         [SerializeField] private Axe m_axe;
+        [SerializeField] private Firstaid m_firstaid;
         [SerializeField] private CharacterController m_characterController;
         [SerializeField] private CinemachineCamera m_cinemachineCamera;
         [SerializeField] private float m_currentSpeed;
@@ -110,14 +112,20 @@ namespace Players
                             {
                                 if (!m_inventory.m_isOpened)
                                 {
-                                    m_revolver.Fire();
+                                    if (m_revolver.gameObject.activeSelf)
+                                    {
+                                        m_revolver.Fire();
+                                    }
                                 }
                             }
                             else if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Axe")
                             {
                                 if (!m_inventory.m_isOpened)
                                 {
-                                    m_axe.Attack();
+                                    if (m_axe.gameObject.activeSelf)
+                                    {
+                                        m_axe.Attack();
+                                    }
                                 }
                             }
                         }
@@ -125,7 +133,10 @@ namespace Players
                         {
                             if (!m_inventory.m_isOpened)
                             {
-                                m_quickslotInventory.UseItem();
+                                if (m_firstaid.gameObject.activeSelf)
+                                {
+                                    m_quickslotInventory.UseItem();
+                                }
                             }
                         }
                     }

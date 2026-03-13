@@ -4728,7 +4728,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.611, y: 1.754, z: -155.77}
+  m_LocalPosition: {x: -5.611, y: 1.754, z: -155.794}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7596,6 +7596,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: c89064b9c6e755c408d25297bf1b126c, type: 2}
     - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_firstaid
+      value: 
+      objectReference: {fileID: 500337896}
+    - target: {fileID: 7308995258162544128, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventory
       value: 
       objectReference: {fileID: 4810326718379102006}
@@ -7617,7 +7621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -155.77
+      value: -155.794
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40998,6 +41002,7 @@ MonoBehaviour:
   m_firstaid: {fileID: 500337896}
   m_audioSource: {fileID: 2950810892738424241}
   m_itemSounds: {fileID: 8300000, guid: a74054929d7a2b54fb7e309a07b4d199, type: 3}
+  m_firstaidSounds: {fileID: 8300000, guid: b41b44b026e6c9045add839492fdcdd8, type: 3}
   m_quickslotParent: {fileID: 4170849306689855278}
   m_inventoryManager: {fileID: 4810326718379102006}
   m_currentQuickslotID: 0
