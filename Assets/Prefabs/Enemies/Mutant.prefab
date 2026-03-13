@@ -133,6 +133,7 @@ MonoBehaviour:
   m_health: 75
   m_audioSource: {fileID: 8379960195130564743}
   m_audioClip: {fileID: 8300000, guid: 0d854e8678338134bbb7058cf9141773, type: 3}
+  m_walkSound: {fileID: 8300000, guid: ac8da35cccfae8e43af1eda00c685b78, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
   m_damage: 5
@@ -209,7 +210,7 @@ AudioSource:
   m_GameObject: {fileID: 5889796698577009325}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 368250995b044384ca513076723f8e4b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1

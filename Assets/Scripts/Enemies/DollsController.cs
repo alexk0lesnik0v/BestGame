@@ -13,8 +13,9 @@ namespace Enemies
         [SerializeField] private float m_health = 75f;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
+        [SerializeField] private AudioClip m_deathAudioClip;
         [SerializeField] private float m_damage;
-        [SerializeField] private GameObject m_deathPrefab;
+        [SerializeField] private DollParts m_deathPrefab;
 
         private Enemy m_enemy;
         private Player m_player;
@@ -29,7 +30,7 @@ namespace Enemies
         private void Start()
         {
             m_enemy = GetComponent<Enemy>();
-            m_player  = FindAnyObjectByType<Player>();
+            m_player = FindAnyObjectByType<Player>();
             m_agent = GetComponent<NavMeshAgent>();
             m_animator = GetComponent<Animator>();
             
