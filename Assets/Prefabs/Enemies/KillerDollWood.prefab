@@ -140,7 +140,7 @@ AudioSource:
   m_GameObject: {fileID: 992621379068966450}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 368250995b044384ca513076723f8e4b, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -279,8 +279,9 @@ MonoBehaviour:
   m_health: 50
   m_audioSource: {fileID: 4691382969699764721}
   m_audioClip: {fileID: 8300000, guid: 756545fc79c66bb4ca9e0744b648e753, type: 3}
+  m_deathAudioClip: {fileID: 8300000, guid: ff11e2773d5b2e24f9cd1998f27b7351, type: 3}
   m_damage: 10
-  m_deathPrefab: {fileID: 8391264739850618893, guid: 369529be3ad810641968157d6cc20141, type: 3}
+  m_deathPrefab: {fileID: 9074881456839432848, guid: 369529be3ad810641968157d6cc20141, type: 3}
 --- !u!1001 &248469961904072019
 PrefabInstance:
   m_ObjectHideFlags: 0

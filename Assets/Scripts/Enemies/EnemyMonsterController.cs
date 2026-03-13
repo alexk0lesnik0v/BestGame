@@ -101,11 +101,11 @@ namespace Enemies
                     m_isAttack = true;
                     m_agent.isStopped = true;
                     
-                    if (!m_isVoice)
+                    /*if (!m_isVoice)
                     {
                         m_audioSource.PlayOneShot(m_audioClip);
                         m_isVoice = true;
-                    }
+                    }*/
                     
                     m_isDamage = true;
                     character.m_isEnemy = true;
