@@ -24,7 +24,7 @@ public class Interactor : MonoBehaviour
         {
             if (interactable.CanInteract())
             {
-                m_interactionText.text = "Press 'F' to interact";
+                m_interactionText.text = "Нажмите 'F' для взаимодейтсвия";
                 m_interactionUI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -38,7 +38,7 @@ public class Interactor : MonoBehaviour
 
                 if (m_questController)
                 {
-                    m_interactionText.text = "Can't Interact! You need " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " more figurkas!";
+                    m_interactionText.text = "Не работает! Вам нужно еще " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " предметов!";
                     m_interactionUI.SetActive(true);
                 }
             }
@@ -53,12 +53,12 @@ public class Interactor : MonoBehaviour
                 }
                 else
                 {
-                    m_interactionText.text = "Press 'E' to pick up";
+                    m_interactionText.text = "Нажмите 'E' чтобы взять";
                 }
             }
             else
             {
-                m_interactionText.text = "Press 'E' to drop";
+                m_interactionText.text = "Нажмите 'E' чтобы бросить";
             }
             
             m_interactionUI.SetActive(true);
