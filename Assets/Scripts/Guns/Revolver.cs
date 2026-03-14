@@ -85,7 +85,7 @@ namespace Guns
                 Debug.Log("I got you!!!" + hit.collider);
 
                 GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                Destroy(impact, 0.1f);
+                //Destroy(impact, 0.1f);
 
                 if (hit.rigidbody is not null)
                 {
