@@ -7556,6 +7556,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_hitEffect
+      value: 
+      objectReference: {fileID: 186584, guid: b85ef8139fbcfa746b2954a470627418, type: 3}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
       objectReference: {fileID: 4810326718379102006}
@@ -7571,6 +7575,10 @@ PrefabInstance:
       propertyPath: m_camera
       value: 
       objectReference: {fileID: 330585545}
+    - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_hitEffect
+      value: 
+      objectReference: {fileID: 186584, guid: b85ef8139fbcfa746b2954a470627418, type: 3}
     - target: {fileID: 4800844371740289926, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_IsActive
       value: 0
