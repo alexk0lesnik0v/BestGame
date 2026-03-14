@@ -21,6 +21,7 @@ namespace Guns
         [SerializeField] private AudioClip m_nullReloadingSFX;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private List<GameObject> m_hitEffectEnemy;
+        [SerializeField] private GameObject m_hitEffect;
         [SerializeField] private Camera m_camera;
         [SerializeField] private GameObject m_bullet;
         [SerializeField] private InventoryManager m_inventoryManager;
@@ -71,24 +72,34 @@ namespace Guns
             if (Physics.Raycast(m_camera.transform.position, m_camera.transform.forward, out hit, m_range))
             {
                 Debug.Log("I got you!!!" + hit.collider);
-
-                if (m_hitEffectEnemy.Count > 0)
-                {
-                    int index = Random.Range(0, m_hitEffectEnemy.Count);
-                    GameObject effect = m_hitEffectEnemy[index];
-                    
-                    GameObject impact = Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(impact, 60f);
-                }
-               
+                
                 if (hit.rigidbody is not null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                     
                     if (hit.rigidbody.TryGetComponent<Enemy>(out var enemy))
                     {
+                        if (m_hitEffectEnemy.Count > 0)
+                        {
+                            int index = Random.Range(0, m_hitEffectEnemy.Count);
+                            GameObject effect = m_hitEffectEnemy[index];
+                    
+                            GameObject impact = Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
+                            Destroy(impact, 60f);
+                        }
+                        
                         enemy.TakeDamage(m_damage);
                     }
+                    else
+                    {
+                        GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impact, 60f);
+                    }
+                }
+                else
+                {
+                    GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impact, 60f);
                 }
             }
         }
