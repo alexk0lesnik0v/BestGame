@@ -1818,6 +1818,18 @@ PrefabInstance:
     - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_hitEffect
       value: 
+      objectReference: {fileID: 1000012142692022, guid: a475880e7da0e9548aa05cb7933752cd, type: 3}
+    - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_hitEffectEnemy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffectEnemy.Array.data[0]'
+      value: 
+      objectReference: {fileID: 163734, guid: 0a5ac034133a7654a8565697adff5548, type: 3}
+    - target: {fileID: 4302655763373322313, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffectEnemy.Array.data[1]'
+      value: 
       objectReference: {fileID: 186584, guid: b85ef8139fbcfa746b2954a470627418, type: 3}
     - target: {fileID: 6678803738929197234, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_camera

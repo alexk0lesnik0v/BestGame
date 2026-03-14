@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Enemies;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Guns
         [SerializeField] private AudioClip m_vzmah;
         [SerializeField] private AudioClip m_udar;
         [SerializeField] private AudioClip m_udarOnMonster;
+        [SerializeField] private List<GameObject> m_hitEffectEnemy;
         [SerializeField] private GameObject m_hitEffect;
         [SerializeField] private Camera m_camera;
         [SerializeField] private float m_damage = 25f;
@@ -37,27 +39,44 @@ namespace Guns
             yield return new WaitForSeconds(time);
             
             RaycastHit hit;
-
+            
             if (Physics.Raycast(m_camera.transform.position, m_camera.transform.forward, out hit, m_range))
             {
                 Debug.Log("I got you!!!" + hit.collider);
-
-                GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                //Destroy(impact, 0.1f);
-
+                
                 if (hit.rigidbody is not null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * m_force);
                     
                     if (hit.rigidbody.TryGetComponent<Enemy>(out var enemy))
                     {
+                        if (m_hitEffectEnemy.Count > 0)
+                        {
+                            int index = Random.Range(0, m_hitEffectEnemy.Count);
+                            GameObject effect = m_hitEffectEnemy[index];
+                    
+                            GameObject impact = Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
+                            Destroy(impact.GetComponent<Collider>(), 0.1f);
+                            Destroy(impact, 60f);
+                        }
+                        
                         m_audioSource.PlayOneShot(m_udarOnMonster);
                         enemy.TakeDamage(m_damage);
                     }
                     else
                     {
+                        GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impact.GetComponent<Collider>(), 0.1f);
+                        Destroy(impact, 60f);
                         m_audioSource.PlayOneShot(m_udar);
                     }
+                }
+                else
+                {
+                    GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impact.GetComponent<Collider>(), 0.1f);
+                    Destroy(impact, 60f);
+                    m_audioSource.PlayOneShot(m_udar);
                 }
             }
         }

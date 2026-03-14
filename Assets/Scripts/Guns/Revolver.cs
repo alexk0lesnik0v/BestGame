@@ -85,6 +85,7 @@ namespace Guns
                             GameObject effect = m_hitEffectEnemy[index];
                     
                             GameObject impact = Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
+                            Destroy(impact.GetComponent<Collider>(), 0.1f);
                             Destroy(impact, 60f);
                         }
                         
@@ -93,12 +94,14 @@ namespace Guns
                     else
                     {
                         GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                        Destroy(impact.GetComponent<Collider>(), 0.1f);
                         Destroy(impact, 60f);
                     }
                 }
                 else
                 {
                     GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impact.GetComponent<Collider>(), 0.1f);
                     Destroy(impact, 60f);
                 }
             }
