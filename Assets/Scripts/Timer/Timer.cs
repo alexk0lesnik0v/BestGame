@@ -6,12 +6,15 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private TMP_Text m_timerText;
     [SerializeField] private float m_time = 301;
+    [SerializeField] private AudioSource m_audioSource;
+    [SerializeField] private AudioClip m_audioClip;
     
     [SerializeField] private Player m_player;
 
     //private float m_restartTime;
     private bool m_isStart = false;
     private bool m_canStart = false;
+    private bool m_isPlaying = false;
     
     private void Start()
     {
@@ -34,6 +37,22 @@ public class Timer : MonoBehaviour
             //m_time = m_restartTime;
         //}
 
+        if (m_time <= 31f)
+        {
+            m_timerText.color = Color.red;
+            if (!m_isPlaying)
+            {
+                m_audioSource.PlayOneShot(m_audioClip);
+                m_isPlaying = true;
+            }
+        }
+        else
+        {
+            m_timerText.color = Color.white;
+            m_isPlaying = false;
+            m_audioSource.Stop();
+        }
+        
         if (m_time <= 0)
         {
             m_time = 0;
