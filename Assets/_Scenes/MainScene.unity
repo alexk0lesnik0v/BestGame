@@ -7558,7 +7558,7 @@ PrefabInstance:
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_hitEffect
       value: 
-      objectReference: {fileID: 186584, guid: b85ef8139fbcfa746b2954a470627418, type: 3}
+      objectReference: {fileID: 163734, guid: 0a5ac034133a7654a8565697adff5548, type: 3}
     - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
@@ -24309,7 +24309,6 @@ MonoBehaviour:
   m_resumeBtn: {fileID: 3694734162573379624}
   m_player: {fileID: 1542632316}
   m_inventoryView: {fileID: 8290137398858299791}
-  m_interactionView: {fileID: 3406784309510959566}
 --- !u!4 &1611681413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3170992a56741a4cb89c578e22597bf, type: 3}
