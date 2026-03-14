@@ -1,47 +1,35 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Enemies;
 using Inventories;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Guns
 {
     public class Revolver : MonoBehaviour
     {
         [SerializeField] private float m_damage = 25f;
-        
         [SerializeField] private float m_force = 155f;
-
         [SerializeField] private float m_range = 100f;
-        
         [SerializeField] private ParticleSystem m_muzzleFlash;
-
         [SerializeField] private Transform m_bulletSpawn;
-
         [SerializeField] private AudioClip m_shotSFX;
-        
         [SerializeField] private AudioClip m_noBulletsSFX;
-        
         [SerializeField] private AudioClip m_reloadingSFX;
-        
         [SerializeField] private AudioClip m_nullReloadingSFX;
-
         [SerializeField] private AudioSource m_audioSource;
-
-        [SerializeField] private GameObject m_hitEffect;
-
+        [SerializeField] private List<GameObject> m_hitEffectEnemy;
         [SerializeField] private Camera m_camera;
-
         [SerializeField] private GameObject m_bullet;
-
         [SerializeField] private InventoryManager m_inventoryManager;
+        [SerializeField] private Animator m_animator;
+        [SerializeField] [Min(0)] public int m_bulletCount = 6;
 
         private bool m_isFiring = false;
         private bool m_isReloading = false;
         
-        [SerializeField] private Animator m_animator;
-        
-        [SerializeField] [Min(0)] public int m_bulletCount = 6;
         [Min(0)] public int m_bulletItemCount = 0;
 
         private void Start()
@@ -84,9 +72,15 @@ namespace Guns
             {
                 Debug.Log("I got you!!!" + hit.collider);
 
-                GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                //Destroy(impact, 0.1f);
-
+                if (m_hitEffectEnemy.Count > 0)
+                {
+                    int index = Random.Range(0, m_hitEffectEnemy.Count);
+                    GameObject effect = m_hitEffectEnemy[index];
+                    
+                    GameObject impact = Instantiate(effect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impact, 60f);
+                }
+               
                 if (hit.rigidbody is not null)
                 {
                     hit.rigidbody.AddForce(-hit.normal * m_force);

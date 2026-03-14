@@ -7563,6 +7563,26 @@ PrefabInstance:
       propertyPath: m_inventoryManager
       value: 
       objectReference: {fileID: 4810326718379102006}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: m_hitEffect.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffect.Array.data[0]'
+      value: 
+      objectReference: {fileID: 163734, guid: 0a5ac034133a7654a8565697adff5548, type: 3}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffect.Array.data[1]'
+      value: 
+      objectReference: {fileID: 186584, guid: b85ef8139fbcfa746b2954a470627418, type: 3}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffect.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1, type: 3}
+    - target: {fileID: 822149255819041058, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
+      propertyPath: 'm_hitEffect.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
     - target: {fileID: 986913845749172153, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_inventoryManager
       value: 
