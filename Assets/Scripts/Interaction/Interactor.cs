@@ -24,7 +24,7 @@ public class Interactor : MonoBehaviour
         {
             if (interactable.CanInteract())
             {
-                m_interactionText.text = "Нажмите 'F' для взаимодейтсвия";
+                m_interactionText.text = "Нажмите 'F' для взаимодействия";
                 m_interactionUI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {

@@ -10,7 +10,6 @@ public class PauseState : StateBase
     [SerializeField] private Button m_resumeBtn;
     [SerializeField] private PlayerController m_player;
     [SerializeField] private GameObject m_inventoryView;
-    [SerializeField] private GameObject m_interactionView;
 
     private GameStateMachine m_gameStateMachine;
 
