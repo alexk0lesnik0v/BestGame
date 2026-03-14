@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3292654675503754492}
   - component: {fileID: 2789424968340930981}
   m_Layer: 0
-  m_Name: WoodCupboard02
+  m_Name: WoodCupboard02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

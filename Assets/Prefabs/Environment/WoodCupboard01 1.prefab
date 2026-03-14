@@ -1270,7 +1270,7 @@ GameObject:
   - component: {fileID: 220671476362757478}
   - component: {fileID: 4441256707782507957}
   m_Layer: 0
-  m_Name: WoodCupboard01
+  m_Name: WoodCupboard01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
