@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfcd845ae3842f3ac78d48752717abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyMonsterController
-  m_health: 100
+  m_health: 75
   m_audioSource: {fileID: 6213154227337166123}
   m_audioClip: {fileID: 8300000, guid: bdf7bf0cafde14b429fd1605fd291169, type: 3}
   m_patrolRoute: {fileID: 0}

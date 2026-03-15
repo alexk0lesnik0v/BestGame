@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dfcd845ae3842f3ac78d48752717abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.EnemyMonsterController
-  m_health: 100
+  m_health: 75
   m_audioSource: {fileID: 3558858130458695682}
   m_audioClip: {fileID: 8300000, guid: 1604b640d5ad5c7408207fb70baf426d, type: 3}
   m_patrolRoute: {fileID: 0}

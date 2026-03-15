@@ -95,14 +95,14 @@ namespace Guns
                     {
                         GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
                         Destroy(impact.GetComponent<Collider>(), 0.1f);
-                        Destroy(impact, 60f);
+                        Destroy(impact, 1f);
                     }
                 }
                 else
                 {
                     GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
                     Destroy(impact.GetComponent<Collider>(), 0.1f);
-                    Destroy(impact, 60f);
+                    Destroy(impact, 1f);
                 }
             }
         }

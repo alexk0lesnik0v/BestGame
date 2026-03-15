@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_audioClip: {fileID: 8300000, guid: 21efe7712c531ea4384e709371c197c4, type: 3}
   m_patrolRoute: {fileID: 0}
   m_locations: []
-  m_damage: 5
+  m_damage: 10
 --- !u!1 &4651305199121903722
 GameObject:
   m_ObjectHideFlags: 0

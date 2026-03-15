@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d773110299a84869b1036a045380c5ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemies.DollsController
-  m_health: 50
+  m_health: 25
   m_audioSource: {fileID: 4691382969699764721}
   m_audioClip: {fileID: 8300000, guid: 756545fc79c66bb4ca9e0744b648e753, type: 3}
   m_deathAudioClip: {fileID: 8300000, guid: ff11e2773d5b2e24f9cd1998f27b7351, type: 3}
