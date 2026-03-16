@@ -6,7 +6,7 @@ namespace Enemies
     public class TurnAround : MonoBehaviour
     {
         [SerializeField] private GameObject m_text;
-        [SerializeField] private Gost m_gost;
+        [SerializeField] private GameObject m_gost;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
         
@@ -16,8 +16,12 @@ namespace Enemies
         {
             if (other.gameObject.TryGetComponent<Player>(out var player))
             {
-                m_text.SetActive(true);
-                m_gost.gameObject.SetActive(true);
+                if (m_text is not null)
+                {
+                    m_text.SetActive(true);
+                }
+                
+                m_gost.SetActive(true);
 
                 if (!m_isPlaying)
                 {

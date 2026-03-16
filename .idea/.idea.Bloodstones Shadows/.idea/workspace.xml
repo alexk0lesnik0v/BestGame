@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8e6522c-707b-45b1-b2c0-a912c30dcfb0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/SimpleGost.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/SimpleGost.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bloodstones Shadows/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Guns/Revolver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Guns/Revolver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ExternalAssets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/TurnAround.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/TurnAround.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Guns/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Guns/Axe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scenes/CharacterTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/CharacterTest.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/DollParts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemies/SimpleGost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Guns/Revolver.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -157,7 +159,7 @@
       <workItem from="1773397568577" duration="604000" />
       <workItem from="1773398345672" duration="4136000" />
       <workItem from="1773404743033" duration="365000" />
-      <workItem from="1773650626658" duration="668000" />
+      <workItem from="1773650626658" duration="3760000" />
     </task>
     <servers />
   </component>
