@@ -79,7 +79,11 @@ namespace Guns
                     
                     if (hit.rigidbody.TryGetComponent<Enemy>(out var enemy))
                     {
-                        if (m_hitEffectEnemy.Count > 0)
+                        if (enemy.TryGetComponent<DollsController>(out var dollsController))
+                        {
+                            StandartHitEffect(hit);
+                        }
+                        else if (m_hitEffectEnemy.Count > 0)
                         {
                             int index = Random.Range(0, m_hitEffectEnemy.Count);
                             GameObject effect = m_hitEffectEnemy[index];
@@ -93,18 +97,21 @@ namespace Guns
                     }
                     else
                     {
-                        GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                        Destroy(impact.GetComponent<Collider>(), 0.1f);
-                        Destroy(impact, 1f);
+                        StandartHitEffect(hit);
                     }
                 }
                 else
                 {
-                    GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                    Destroy(impact.GetComponent<Collider>(), 0.1f);
-                    Destroy(impact, 1f);
+                    StandartHitEffect(hit);
                 }
             }
+        }
+
+        private void StandartHitEffect(RaycastHit hit)
+        {
+            GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impact.GetComponent<Collider>(), 0.1f);
+            Destroy(impact, 1f);
         }
 
         public void Reloading()
