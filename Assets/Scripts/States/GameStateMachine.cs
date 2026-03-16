@@ -29,5 +29,4 @@ public class GameStateMachine : MonoBehaviour
             }
         }
     }
-
 }

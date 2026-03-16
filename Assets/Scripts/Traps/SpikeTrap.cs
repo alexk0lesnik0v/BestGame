@@ -24,6 +24,5 @@ public class SpikeTrap : MonoBehaviour
             player.TakeDamage(m_spikeDamage);
             Debug.Log($"Your current health: {player.health}");
         }
-        
     }
 }

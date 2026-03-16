@@ -11,15 +11,10 @@ public class Timer : MonoBehaviour
     
     [SerializeField] private Player m_player;
 
-    //private float m_restartTime;
     private bool m_isStart = false;
     private bool m_canStart = false;
     private bool m_isPlaying = false;
     
-    private void Start()
-    {
-        //m_restartTime = m_time;
-    }
     void Update()
     {
         if (m_isStart)
@@ -32,10 +27,6 @@ public class Timer : MonoBehaviour
             m_time -= Time.deltaTime;
             m_timerText.text = ((int)(m_time / 60)).ToString("D2") + " : " + ((int)(m_time % 60)).ToString("D2");
         }
-        //else
-        //{
-            //m_time = m_restartTime;
-        //}
 
         if (m_time <= 31f)
         {

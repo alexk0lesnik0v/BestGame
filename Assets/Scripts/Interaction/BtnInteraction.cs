@@ -1,4 +1,3 @@
-using DG.Tweening;
 using UnityEngine;
 
 public class BtnInteraction : MonoBehaviour, IInteractable
@@ -8,6 +7,7 @@ public class BtnInteraction : MonoBehaviour, IInteractable
     [SerializeField] private Timer m_timer;
     [SerializeField] private float m_time;
     private bool m_isOpen = false;
+    
     public bool CanInteract()
     {
         return true;

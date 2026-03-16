@@ -1,13 +1,9 @@
-﻿using Enemies;
-using Guns;
+﻿using Guns;
 using Inventories;
 using PickUps;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Players
 {
@@ -34,8 +30,6 @@ namespace Players
         private Vector3 m_movement;
         private bool m_isJump = false;
         private bool m_isCrouch = false;
-        private bool m_isWalk = false;
-        private bool m_isRun = false;
         public bool m_isNotFiring = false;
         private float m_playerHeight;
 
@@ -60,12 +54,10 @@ namespace Players
         {
             if (inputValue.Get<float>() > 0.5f && !m_isCrouch)
             {
-                m_isRun = true;
                 m_currentSpeed = m_sprintSpeed;
             }
             else
             {
-                m_isRun = false;
                 if (m_isCrouch)
                 {
                     m_currentSpeed = m_crounchSpeed;

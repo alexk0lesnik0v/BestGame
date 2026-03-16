@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class WinState : StateBase
 {
-
     private GameStateMachine m_gameStateMachine;
     public override void Initialize(GameStateMachine gameStateMachine)
     {
@@ -17,5 +16,4 @@ public class WinState : StateBase
     {
         throw new System.NotImplementedException();
     }
-
 }

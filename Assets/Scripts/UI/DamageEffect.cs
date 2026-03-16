@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
-using DG.Tweening;
+﻿using DG.Tweening;
 using Players;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -24,7 +21,6 @@ namespace UI
             m_fadeTween.Kill();
             m_weightTween.Kill();
 
-            //////////////////
             m_healTweener.Kill();
             m_weightTween = DOTween.To(() => m_damageVolume.weight, x => m_damageVolume.weight = x, m_damageVolumeValueMax, 1f)
                 .SetEase(Ease.InOutQuad)
@@ -46,7 +42,6 @@ namespace UI
         private void DisableEffect()
         {
             m_fadeTween.Kill();
-            /////////////////////////
 
             m_healTweener.Kill();
             m_weightTween.Pause();
@@ -73,7 +68,6 @@ namespace UI
                     m_damageVolumeValueMin = 1f;
                     EnableEffect();
                     m_player.Dead();
-                    //StartCoroutine(WaitRestart(3f));
                 }
             
                 if (health <= 20f)
@@ -107,13 +101,6 @@ namespace UI
                     EnableEffect();
                 }
             }
-        }
-        
-        IEnumerator WaitRestart(float time)
-        {
-            yield return new WaitForSeconds(time);
-            Debug.Log("Restart Level");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

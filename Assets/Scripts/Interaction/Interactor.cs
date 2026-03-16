@@ -18,7 +18,6 @@ public class Interactor : MonoBehaviour
     [SerializeField] private QuestControllerTwo m_questControllerTwo;
 
     private bool m_questController = false;
-    private bool m_isFigurkas = false;
     
     public bool m_isGrab = false;
 
@@ -42,7 +41,25 @@ public class Interactor : MonoBehaviour
 
                 if (m_questController)
                 {
-                    m_interactionText.text = "Не доступно! Вам нужно ещё " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " статуэток!";
+                    int figurkasCount = (5 - m_questControllerTwo.m_figurkaAmount);
+
+                    switch (figurkasCount)
+                    {
+                        case 5:
+                            m_interactionText.text = "Не доступно! Вам нужно ещё 5 статуэток!"; 
+                            break;
+                        
+                        case 4:
+                        case 3: 
+                        case 2:
+                            m_interactionText.text = "Не доступно! Вам нужно ещё " + figurkasCount.ToString() + " статуэтки!";
+                            break;
+                        
+                        case 1:
+                            m_interactionText.text = "Не доступно! Вам нужна ещё 1 статуэтка!";
+                            break;
+                    }
+                    
                     m_interactionUI.SetActive(true);
                 }
             }
@@ -51,15 +68,7 @@ public class Interactor : MonoBehaviour
         {
             if (!m_isGrab)
             {
-                if (m_isFigurkas)
-                {
-                    //m_interactionText.text = "You need " + (5 - m_questControllerTwo.m_figurkaAmount).ToString() + " more figurkas! Press 'E' to pick up";
-                    m_interactionText.text = "Нажмите 'E' чтобы взять";
-                }
-                else
-                {
-                    m_interactionText.text = "Нажмите 'E' чтобы взять";
-                }
+                m_interactionText.text = "Нажмите 'E' чтобы взять";
             }
             else
             {
@@ -76,7 +85,6 @@ public class Interactor : MonoBehaviour
         {
             m_interactionText.text = "";
             m_interactionUI.SetActive(false);
-            m_isFigurkas = false;
         }
     }
 
@@ -111,14 +119,6 @@ public class Interactor : MonoBehaviour
         {
             if (_hit.collider.TryGetComponent(out Item item) || _hit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
             {
-                if (item is not null)
-                {
-                    if (item.m_item.m_itemType == ItemType.Figurka)
-                    {
-                        m_isFigurkas = true;
-                    }
-                }
-                
                 return true;
             }
         }

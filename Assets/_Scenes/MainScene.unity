@@ -4728,7 +4728,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.494, y: 1.754, z: -68.609}
+  m_LocalPosition: {x: -7.494, y: 1.754, z: -156.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7673,7 +7673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -68.609
+      value: -156.09
       objectReference: {fileID: 0}
     - target: {fileID: 8786424589294598458, guid: 8824bee1b97a64343a159be5e4f03c4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -39741,7 +39741,6 @@ MonoBehaviour:
   m_quickslotPanel: {fileID: 4170849306689855278}
   m_quickslotInventory: {fileID: 6928472765532791105}
   m_slots: []
-  m_reachDistance: 3
   m_questControllerTwo: {fileID: 1622829531}
   m_isOpened: 0
 --- !u!1 &4825148444391566622

@@ -2,8 +2,5 @@
 
 namespace Guns
 {
-    public class Bullet : MonoBehaviour
-    {
-        
-    }
+    public class Bullet : MonoBehaviour {  }
 }

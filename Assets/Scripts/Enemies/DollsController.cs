@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Guns;
+﻿using Guns;
 using Players;
 using UnityEngine;
 using UnityEngine.AI;
@@ -42,7 +41,6 @@ namespace Enemies
         
         private void Update()
         {
-
             if (m_playerDetected && !m_isDead && !m_isAttack)
             {
                 m_agent.SetDestination(m_player.transform.position);

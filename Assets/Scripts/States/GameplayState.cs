@@ -1,7 +1,5 @@
 using Players;
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class GameplayState : StateBase
 {
@@ -28,21 +26,6 @@ public class GameplayState : StateBase
         }
     }
 
-    //private void OnEnable()
-    //{
-    //    m_gameInput.Player.Escape.performed += OnEscape;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    m_gameInput.Player.Escape.performed -= OnEscape;
-    //}
-
-    //private void OnEscape(InputAction.CallbackContext context)
-    //{
-    //    m_gameStateMachine.Enter<PauseState>();
-    //}
-
     public override void Initialize(GameStateMachine gameStateMachine)
     {
         enabled = false;
@@ -58,5 +41,4 @@ public class GameplayState : StateBase
     {
         enabled = false;
     }
-
 }

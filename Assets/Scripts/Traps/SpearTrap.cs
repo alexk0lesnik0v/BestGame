@@ -16,7 +16,6 @@ public class SpearTrap : MonoBehaviour
             player.TakeDamage(m_spearDamage);
             Debug.Log($"Your current health: {player.health}");
         }
-        
     }
     
     private void OnTriggerExit(Collider other)

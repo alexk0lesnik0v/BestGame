@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class CameraManager : MonoBehaviour
 {
-
     [SerializeField] private CameraPoint[] m_cameras;
     [SerializeField] private int m_activePriority;
     [SerializeField] private int m_inactivePriority;
@@ -61,11 +60,9 @@ public class CameraManager : MonoBehaviour
     [Serializable]
     private struct CameraPoint
     {
-
         public CinemachineCamera camera;
         public CinemachineCamera previousCamera;
         public UnityEvent onOpen;
         public UnityEvent onClose;
     }
-
 }

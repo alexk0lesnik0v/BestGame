@@ -62,5 +62,4 @@ public class PauseState : StateBase
         Cursor.visible = false;
         m_player.m_isNotFiring = false;
     }
-
 }

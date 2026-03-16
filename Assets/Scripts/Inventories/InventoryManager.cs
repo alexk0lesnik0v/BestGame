@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using QuestControllers;
-using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace Inventories
@@ -15,7 +12,6 @@ namespace Inventories
         [SerializeField] private Transform m_quickslotPanel;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private List<InventorySlot> m_slots  = new List<InventorySlot>();
-        [SerializeField] private float m_reachDistance = 3f;
         [SerializeField] private QuestControllerTwo m_questControllerTwo;
         
         public bool m_isOpened = false;

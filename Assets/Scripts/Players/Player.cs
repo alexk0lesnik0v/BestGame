@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using DefaultNamespace.UI;
 using UI;
 using UnityEngine;
 
@@ -11,7 +10,6 @@ namespace Players
         [SerializeField] private AudioSource m_source;
         [SerializeField] private AudioClip m_clip;
         [SerializeField] private DamageEffect m_damageEffect;
-        //[SerializeField] private DeathUI m_deathUI;
         private float m_health = 100;
         public bool m_isEnemy = false;
         

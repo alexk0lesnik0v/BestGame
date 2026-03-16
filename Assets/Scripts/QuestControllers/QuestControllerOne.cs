@@ -1,5 +1,4 @@
-﻿using System;
-using Interaction;
+﻿using Interaction;
 using Players;
 using UnityEngine;
 

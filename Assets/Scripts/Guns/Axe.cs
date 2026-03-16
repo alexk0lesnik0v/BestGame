@@ -53,7 +53,6 @@ namespace Guns
                         if (enemy.TryGetComponent<DollsController>(out var dollsController))
                         {
                             StandartHitEffect(hit);
-                            m_audioSource.PlayOneShot(m_udar);
                         }
                         else if (m_hitEffectEnemy.Count > 0)
                         {
@@ -71,13 +70,11 @@ namespace Guns
                     else
                     {
                         StandartHitEffect(hit);
-                        m_audioSource.PlayOneShot(m_udar);
                     }
                 }
                 else
                 {
                     StandartHitEffect(hit);
-                    m_audioSource.PlayOneShot(m_udar);
                 }
             }
         }
@@ -87,6 +84,8 @@ namespace Guns
             GameObject impact = Instantiate(m_hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impact.GetComponent<Collider>(), 0.1f);
             Destroy(impact, 1f);
+            
+            m_audioSource.PlayOneShot(m_udar);
         }
 
         public void AxeOnHand()

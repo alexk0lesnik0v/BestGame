@@ -14,8 +14,6 @@ namespace PickUps
         public void Grab(Transform objectGrabPointTransform)
         {
             this.m_objectGrabPointTransform = objectGrabPointTransform;
-            //m_objectRigidBody.useGravity = false;
-            //m_objectRigidBody.freezeRotation = false;
             m_objectRigidBody.isKinematic = true;
             
             this.transform.parent = m_objectGrabPointTransform;
@@ -28,19 +26,8 @@ namespace PickUps
         {
             this.m_objectGrabPointTransform = null;
             this.transform.parent = null;
-            //m_objectRigidBody.useGravity = true;
             m_objectRigidBody.isKinematic = false;
             this.gameObject.layer = 0;
-        }
-
-        private void Update()  
-        {
-            /*if (m_objectGrabPointTransform is not null)
-            {
-                float m_lerpSpeed = 100f;
-                Vector3 newPosition = Vector3.Lerp(transform.position, m_objectGrabPointTransform.position, Time.deltaTime * m_lerpSpeed);
-                m_objectRigidBody.MovePosition(m_objectGrabPointTransform.position);
-            }*/
         }
     }
 }

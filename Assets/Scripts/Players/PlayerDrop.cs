@@ -1,5 +1,4 @@
-﻿using System;
-using Guns;
+﻿using Guns;
 using Inventories;
 using PickUps;
 using UnityEngine;
@@ -30,14 +29,6 @@ namespace Players
         private void Start()
         {
             m_mainCamera = Camera.main;
-        }
-
-        public bool IsGrabbed()
-        {
-            if (m_objectGrabbable is null) 
-                return false;
-            else 
-                return true;
         }
        
         public void OnInteract(InputValue inputValue)

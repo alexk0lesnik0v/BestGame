@@ -21,6 +21,7 @@ public class DoorInteraction : MonoBehaviour, IInteractable
     {
         return true;
     }
+    
     public void OpenDoorDown()
     {
         m_tweener.Kill();
@@ -32,6 +33,7 @@ public class DoorInteraction : MonoBehaviour, IInteractable
         m_tweener = transform.DOLocalMove(m_openDoorDown, m_duration);
         m_isOpen = true;
     }
+    
     public void OpenDoorUp()
     {
         m_tweener.Kill();

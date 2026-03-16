@@ -15,7 +15,5 @@ namespace Inventories
         
         [Header("Consumable Characteristics")]
         public float m_changeHealth;
-        public float m_changeHunger;
-        public float m_changeThirst;
     }
 }

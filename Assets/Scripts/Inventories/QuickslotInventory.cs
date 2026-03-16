@@ -116,7 +116,9 @@ namespace Inventories
         { 
             if (m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item is not null)
             {
-                if (m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_item.m_isConsumeable && !m_inventoryManager.m_isOpened && m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite == m_selectedSprite)
+                if (m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>()
+                        .m_item.m_isConsumeable && !m_inventoryManager
+                        .m_isOpened && m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<Image>().sprite == m_selectedSprite)
                 {
                     ChangeCharacteristics();
 
@@ -127,7 +129,9 @@ namespace Inventories
                     else
                     {
                         m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_amount--;
-                        m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_itemAmountText.text = m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_amount.ToString();
+                        m_quickslotParent.GetChild(m_currentQuickslotID).GetComponent<InventorySlot>().m_itemAmountText.text = m_quickslotParent
+                            .GetChild(m_currentQuickslotID)
+                            .GetComponent<InventorySlot>().m_amount.ToString();
                     }
                 }
             }
@@ -185,8 +189,7 @@ namespace Inventories
                     }
                     else if (m_activeSlot.m_item.m_itemName == "Axe")
                     {
-                        m_revolver.gameObject.SetActive(false);
-                        m_baraban.gameObject.SetActive(false);
+                        HideRevolver();
                         m_firstaid.gameObject.SetActive(false);
 
                         if (!m_axe.gameObject.activeSelf)
@@ -200,8 +203,7 @@ namespace Inventories
                 }
                 else if (m_activeSlot.m_item.m_itemType == ItemType.Firstaid)
                 {
-                    m_revolver.gameObject.SetActive(false);
-                    m_baraban.gameObject.SetActive(false);
+                    HideRevolver();
                     m_axe.gameObject.SetActive(false);
 
                     if (!m_firstaid.gameObject.activeSelf)
@@ -225,12 +227,17 @@ namespace Inventories
 
         public void HideItemInHand()
         {
-            m_revolver.gameObject.SetActive(false);
-            m_baraban.gameObject.SetActive(false);
+            HideRevolver();
             m_axe.gameObject.SetActive(false);
             m_firstaid.gameObject.SetActive(false);
             
             m_audioSource.PlayOneShot(m_itemSounds);
+        }
+
+        private void HideRevolver()
+        {
+            m_revolver.gameObject.SetActive(false);
+            m_baraban.gameObject.SetActive(false);
         }
     }
 }

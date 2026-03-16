@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Guns;
 using Players;
 using UnityEngine;
@@ -10,13 +9,10 @@ namespace Enemies
     [RequireComponent(typeof(Enemy))]
     [RequireComponent(typeof(NavMeshAgent))]
     public class EnemyMonsterController:  MonoBehaviour
-
     {
         [SerializeField] private float m_health = 75f;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
-        [SerializeField] private Transform m_patrolRoute;
-        [SerializeField] private List<Transform> m_locations;
         [SerializeField] private float m_damage;
 
         private Enemy m_enemy;
@@ -28,7 +24,6 @@ namespace Enemies
         private bool m_isDead = false;
         private bool m_isVoice = false;
         private bool m_isDamage = false;
-        private int m_locationIndex = 0;
         
         private void Start()
         {
@@ -41,20 +36,11 @@ namespace Enemies
             
             m_enemy.Death += OnDeath;
             m_enemy.PlayerDetected += OnPlayerDetected;
-
-            //InitializePatrolRoute();
-
-            //MoveToNextPatrolLocation();
         }
       
         private void Update()
         {
             View();
-            
-            /*if(m_agent.remainingDistance < 0.2f && !m_agent.pathPending)
-            {
-                MoveToNextPatrolLocation();
-            }*/
 
             if (m_playerDetected && !m_isDead && !m_isAttack)
             {
@@ -62,31 +48,7 @@ namespace Enemies
                 m_animator.SetBool("isRunning", true);
                 m_animator.Play("Run");
                 m_agent.speed = 4;
-                
-                //if (!m_isVoice)
-               //{
-                   // m_audioSource.PlayOneShot(m_audioClip);
-                    //m_isVoice = true;
-                //}
             }
-        }
-        
-        void InitializePatrolRoute()
-        {
-            foreach (Transform child in m_patrolRoute)
-            {
-                m_locations.Add(child);
-            }
-        }
-
-        void MoveToNextPatrolLocation()
-        { 
-            if(m_locations.Count == 0)
-                return;
-
-            m_agent.destination = m_locations[m_locationIndex].position;
-
-            m_locationIndex = (m_locationIndex + 1) % m_locations.Count;
         }
         
         public void OnTriggerEnter(Collider other)
@@ -100,13 +62,6 @@ namespace Enemies
                     m_animator.Play("Attack");
                     m_isAttack = true;
                     m_agent.isStopped = true;
-                    
-                    /*if (!m_isVoice)
-                    {
-                        m_audioSource.PlayOneShot(m_audioClip);
-                        m_isVoice = true;
-                    }*/
-                    
                     m_isDamage = true;
                     character.m_isEnemy = true;
                     character.TakeDamage(m_damage);

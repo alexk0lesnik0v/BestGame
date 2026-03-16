@@ -15,7 +15,6 @@ namespace Interaction
         private void Start()
         {
             m_startTransform = this.gameObject.transform.position;
-            //m_doorLight1.SetActive(true);
         }
         private void Update()
         {
@@ -23,17 +22,10 @@ namespace Interaction
             if (m_positionY >= 0.07)
             {
                 m_isPushed = true;
-                
-                /*if(!m_doorLight2.activeSelf)
-                m_doorLight1.SetActive(false);
-                else 
-                    m_doorLight1.SetActive(true);
-                    */
             }
             else 
             {
                 m_isPushed = false;
-                //m_doorLight1.SetActive(true);
             }
         }
     }

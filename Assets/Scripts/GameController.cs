@@ -3,11 +3,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Camera m_camera;
-    private void Start()
-    {
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-    }
+    
     private void OnGUI()
     {
         int m_size = 12;
