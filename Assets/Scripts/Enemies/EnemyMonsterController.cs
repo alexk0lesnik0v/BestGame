@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Guns;
+﻿using Guns;
 using Players;
 using UnityEngine;
 using UnityEngine.AI;

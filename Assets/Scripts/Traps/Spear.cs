@@ -19,6 +19,5 @@ public class Spear : MonoBehaviour
     {
         m_tweener.Kill();
         m_tweener = transform.DOLocalMove(m_isNoActive, m_duration);
-    }
-
+    } 
 }

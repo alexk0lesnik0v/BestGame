@@ -14,6 +14,5 @@ public class BootstrapState : StateBase
         m_gameStateMachine.Enter<GameplayState>();
     }
 
-    public override void Exit() { }
-
+    public override void Exit() { } 
 }
