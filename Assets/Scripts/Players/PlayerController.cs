@@ -25,6 +25,7 @@ namespace Players
         [SerializeField] private InventoryManager m_inventory;
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private AudioSource m_audioSource;
+        [SerializeField] private Player m_player;
         
         private Vector2 m_move;
         private Vector3 m_movement;
@@ -159,6 +160,40 @@ namespace Players
                         }
                     }
                 }
+            }
+        }
+        
+        public void OnReload(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                if (!m_isNotFiring)
+                {
+                    if (m_quickslotInventory.m_activeSlot is not null)
+                    {
+                        if (m_quickslotInventory.m_activeSlot.m_item is not null)
+                        {
+                            if (m_quickslotInventory.m_activeSlot.m_item.m_itemType == ItemType.Weapon)
+                            {
+                                if (m_quickslotInventory.m_activeSlot.m_item.m_itemName == "Revolver")
+                                {
+                                    if (!m_inventory.m_isOpened)
+                                    {
+                                        m_revolver.m_bulletCount = 6;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void OnHeal(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_player.Heal(100f);
             }
         }
         
