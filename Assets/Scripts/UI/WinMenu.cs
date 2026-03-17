@@ -11,6 +11,7 @@ namespace DefaultNamespace
         [SerializeField] private Button m_mainmenuButton;
         [SerializeField] private PlayerController m_player;
         [SerializeField] private GameObject m_inventoryView;
+        [SerializeField] private GameObject m_timer;
         
         private void OnEnable()
         {
@@ -35,6 +36,7 @@ namespace DefaultNamespace
                 m_player.m_isNotFiring = true;
                 m_winMenu.SetActive(true);
                 m_inventoryView.SetActive(false);
+                m_timer.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
