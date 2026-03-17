@@ -1,4 +1,5 @@
-﻿using Players;
+﻿using System;
+using Players;
 using UnityEngine;
 
 namespace Enemies
@@ -9,9 +10,15 @@ namespace Enemies
         [SerializeField] private GameObject m_gost;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private AudioClip m_audioClip;
+        [SerializeField] private Interactor m_interactor;
         
         private bool m_isPlaying = false;
-        
+
+        private void Start()
+        {
+            m_interactor.OnGostView += OnGostActivate;
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.TryGetComponent<Player>(out var player))
@@ -31,6 +38,12 @@ namespace Enemies
                 
                 Destroy(this.gameObject, 2f);
             }
+        }
+        
+        private void OnGostActivate()
+        {
+            Destroy(m_text.gameObject);
+            m_interactor.OnGostView -= OnGostActivate;
         }
     }
 }

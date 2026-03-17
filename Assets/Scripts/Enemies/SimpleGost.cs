@@ -14,6 +14,8 @@ namespace Enemies
         
         private NavMeshAgent m_agent;
 
+        private bool m_isPlaing = false;
+
         private void Start()
         {
             m_agent = GetComponent<NavMeshAgent>();
@@ -24,10 +26,16 @@ namespace Enemies
         {
             if (this.gameObject.activeSelf)
             {
-                m_agent.SetDestination(m_targetPosition.position);
-                m_agent.speed = 10f;
+                if (!m_isPlaing)
+                {
+                    m_audioSource.PlayOneShot(m_audioClip);
+                    m_isPlaing = true;
+                }
                 
-                Destroy(this.gameObject, 2f);
+                m_agent.SetDestination(m_targetPosition.position);
+                m_agent.speed = 4f;
+                
+                Destroy(this.gameObject, 4f);
             }
         }
     }
