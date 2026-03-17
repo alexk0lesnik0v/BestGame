@@ -219,6 +219,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Figurkas"",
+                    ""type"": ""Value"",
+                    ""id"": ""da5d7a4c-e66b-4c6b-a061-a49936e6d872"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""Escape"",
                     ""type"": ""Button"",
                     ""id"": ""79b9a4f2-2066-4fc7-8327-e928d598b5af"",
@@ -655,6 +664,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1c3d0c6c-040c-490f-9f26-07d1e936c998"",
+                    ""path"": ""<Keyboard>/rightBracket"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Figurkas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1295,6 +1315,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Reloading = m_Player.FindAction("Reloading", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Heal = m_Player.FindAction("Heal", throwIfNotFound: true);
+        m_Player_Figurkas = m_Player.FindAction("Figurkas", throwIfNotFound: true);
         m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -1407,6 +1428,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Reloading;
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Heal;
+    private readonly InputAction m_Player_Figurkas;
     private readonly InputAction m_Player_Escape;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
@@ -1475,6 +1497,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Heal".
         /// </summary>
         public InputAction @Heal => m_Wrapper.m_Player_Heal;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Figurkas".
+        /// </summary>
+        public InputAction @Figurkas => m_Wrapper.m_Player_Figurkas;
         /// <summary>
         /// Provides access to the underlying input action "Player/Escape".
         /// </summary>
@@ -1547,6 +1573,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Heal.started += instance.OnHeal;
             @Heal.performed += instance.OnHeal;
             @Heal.canceled += instance.OnHeal;
+            @Figurkas.started += instance.OnFigurkas;
+            @Figurkas.performed += instance.OnFigurkas;
+            @Figurkas.canceled += instance.OnFigurkas;
             @Escape.started += instance.OnEscape;
             @Escape.performed += instance.OnEscape;
             @Escape.canceled += instance.OnEscape;
@@ -1603,6 +1632,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Heal.started -= instance.OnHeal;
             @Heal.performed -= instance.OnHeal;
             @Heal.canceled -= instance.OnHeal;
+            @Figurkas.started -= instance.OnFigurkas;
+            @Figurkas.performed -= instance.OnFigurkas;
+            @Figurkas.canceled -= instance.OnFigurkas;
             @Escape.started -= instance.OnEscape;
             @Escape.performed -= instance.OnEscape;
             @Escape.canceled -= instance.OnEscape;
@@ -2100,6 +2132,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnHeal(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Figurkas" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnFigurkas(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Escape" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

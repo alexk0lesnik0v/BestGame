@@ -133,6 +133,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Figurkas",
+                    "type": "Value",
+                    "id": "da5d7a4c-e66b-4c6b-a061-a49936e6d872",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Escape",
                     "type": "Button",
                     "id": "79b9a4f2-2066-4fc7-8327-e928d598b5af",
@@ -569,6 +578,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c3d0c6c-040c-490f-9f26-07d1e936c998",
+                    "path": "<Keyboard>/rightBracket",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Figurkas",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

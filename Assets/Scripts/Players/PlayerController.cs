@@ -1,6 +1,7 @@
 ﻿using Guns;
 using Inventories;
 using PickUps;
+using QuestControllers;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,6 +27,7 @@ namespace Players
         [SerializeField] private QuickslotInventory m_quickslotInventory;
         [SerializeField] private AudioSource m_audioSource;
         [SerializeField] private Player m_player;
+        [SerializeField] private QuestControllerTwo m_questController;
         
         private Vector2 m_move;
         private Vector3 m_movement;
@@ -194,6 +196,14 @@ namespace Players
             if (inputValue.Get<float>() > 0.5f)
             {
                 m_player.Heal(100f);
+            }
+        }
+        
+        public void OnFigurkas(InputValue inputValue)
+        {
+            if (inputValue.Get<float>() > 0.5f)
+            {
+                m_questController.m_figurkaAmount = 5;
             }
         }
         
