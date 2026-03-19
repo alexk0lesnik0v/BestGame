@@ -39,7 +39,7 @@ namespace Enemies
       
         private void Update()
         {
-            View();
+            //View();
 
             if (m_playerDetected && !m_isDead && !m_isAttack)
             {
@@ -50,7 +50,7 @@ namespace Enemies
             }
         }
         
-        public void OnTriggerEnter(Collider other)
+        /*public void OnTriggerEnter(Collider other)
         {
             if (!m_isDead && !m_isDamage)
             {
@@ -77,9 +77,9 @@ namespace Enemies
                     Debug.Log("Critical hit!");
                 }
             }
-        }
+        }*/
 
-        public void OnTriggerExit(Collider other)
+        /*public void OnTriggerExit(Collider other)
         {
             if (other.gameObject.TryGetComponent<Player>(out var player))
             {
@@ -89,7 +89,7 @@ namespace Enemies
                 m_isDamage = false;
                 player.m_isEnemy = false;
             }
-        }
+        }*/
 
         private void View()
         {
